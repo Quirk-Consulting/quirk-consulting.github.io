@@ -31,7 +31,6 @@ const IconPreview = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [iconPaths, setIconPaths] = useState<Record<string, string>>({});
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   useEffect(() => {
     // Load all SVG files when component mounts
@@ -103,7 +102,11 @@ const IconPreview = () => {
     // Convert map to sorted array of entries, only including categories with icons
     return Array.from(groupedByCategory.entries())
       .filter(([_, icons]) => icons.length > 0)
-      .sort((a, b) => a[0].localeCompare(b[0]));
+      .map(([category, icons]) => ({
+        category,
+        icons: icons.sort((a, b) => a.name.localeCompare(b.name)),
+      }))
+      .sort((a, b) => a.category.localeCompare(b.category));
   }, [searchQuery]);
 
   const renderSvgPreview = (
@@ -178,12 +181,7 @@ const IconPreview = () => {
   const handleIconSelect = (icon: IconType) => {
     setSelectedIcon(icon);
     if (!isSheetOpen) {
-      // Only animate when first opening
-      setShouldAnimate(true);
       setIsSheetOpen(true);
-    } else {
-      // Prevent animation when switching icons
-      setShouldAnimate(false);
     }
   };
 
@@ -211,7 +209,7 @@ const IconPreview = () => {
         {/* Scrollable grid container */}
         <div className="flex-grow overflow-y-auto">
           <div className="space-y-8">
-            {categorizedFilteredIcons.map(([category, icons]) => (
+            {categorizedFilteredIcons.map(({ category, icons }) => (
               <div key={category} className="space-y-4">
                 <h2 className="text-lg font-semibold text-muted-foreground">
                   {category}
@@ -241,26 +239,10 @@ const IconPreview = () => {
       </div>
 
       {/* Sheet with Color Variants and Selected Icon */}
-      <Sheet
-        open={isSheetOpen}
-        onOpenChange={(open) => {
-          if (!open) {
-            const activeElement = document.activeElement;
-            const isFilteredIconClick = activeElement?.closest(
-              ".filtered-icon-trigger"
-            );
-
-            if (!isFilteredIconClick) {
-              setShouldAnimate(true);
-              setIsSheetOpen(false);
-            }
-          }
-        }}
-        modal={false}
-      >
+      <Sheet open={isSheetOpen} modal={false}>
         <SheetContent
           side="bottom"
-          className={`h-[400px] ${!shouldAnimate ? "transition-none" : ""}`}
+          className={`h-[400px]`}
           // Prevent click events inside sheet from bubbling up
           onClick={(e) => e.stopPropagation()}
         >
