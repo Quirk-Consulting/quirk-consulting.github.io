@@ -219,7 +219,7 @@ const IconPreview = () => {
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
                   {icons.map((icon) => (
                     <Card
-                      key={icon.name}
+                      key={`${category}-${icon.name}`}
                       className={`filtered-icon-trigger cursor-pointer hover:bg-accent transition-colors ${
                         selectedIcon.name === icon.name ? "border-primary" : ""
                       }`}

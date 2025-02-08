@@ -6,11 +6,18 @@ export type IconType = {
   categories: string[];
 };
 
+// Utility function to get the correct path
+const getIconPath = (iconName: string) => {
+  // For GitHub Pages, we need to include the repo name in production
+  const basePath = import.meta.env.DEV ? '' : '/quirk-consulting.github.io';
+  return `${basePath}/icons/${iconName}`;
+};
+
 export const iconTypes: IconType[] = [
   /* Accessibility */
   {
     name: "Accessibility",
-    path: "/src/assets/icons/accessibility.svg",
+    path: getIconPath("accessibility.svg"),
     searchTerms: [
       "accessibility",
       "wheelchair",
@@ -23,37 +30,37 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Baby",
-    path: "/src/assets/icons/baby.svg",
+    path: getIconPath("baby.svg"),
     searchTerms: ["baby", "child", "infant", "toddler", "newborn", "crib"],
     categories: ["Accessibility"],
   },
   {
     name: "Ear",
-    path: "/src/assets/icons/ear.svg",
+    path: getIconPath("ear.svg"),
     searchTerms: ["ear", "hearing", "listen", "sound", "deaf", "earlobe"],
     categories: ["Accessibility"],
   },
   {
     name: "Ear Off",
-    path: "/src/assets/icons/ear-off.svg",
+    path: getIconPath("ear-off.svg"),
     searchTerms: ["ear off", "deaf", "hearing", "loss", "mute", "sound"],
     categories: ["Accessibility"],
   },
   {
     name: "Eye",
-    path: "/src/assets/icons/eye.svg",
+    path: getIconPath("eye.svg"),
     searchTerms: ["eye", "vision", "look", "see", "sight", "watch"],
     categories: ["Accessibility"],
   },
   {
     name: "Eye Closed",
-    path: "/src/assets/icons/eye-closed.svg",
+    path: getIconPath("eye-closed.svg"),
     searchTerms: ["eye closed", "sleep", "rest", "nap", "blink", "shut"],
     categories: ["Accessibility"],
   },
   {
     name: "Eye Off",
-    path: "/src/assets/icons/eye-off.svg",
+    path: getIconPath("eye-off.svg"),
     searchTerms: [
       "eye off",
       "blind",
@@ -66,7 +73,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Glasses",
-    path: "/src/assets/icons/glasses.svg",
+    path: getIconPath("glasses.svg"),
     searchTerms: [
       "glasses",
       "spectacles",
@@ -79,13 +86,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Hand",
-    path: "/src/assets/icons/hand.svg",
+    path: getIconPath("hand.svg"),
     searchTerms: ["hand", "palm", "fingers", "gesture", "wave", "point"],
     categories: ["Accessibility"],
   },
   {
     name: "Person Standing",
-    path: "/src/assets/icons/person-standing.svg",
+    path: getIconPath("person-standing.svg"),
     searchTerms: [
       "person standing",
       "human",
@@ -98,7 +105,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Scan Eye",
-    path: "/src/assets/icons/scan-eye.svg",
+    path: getIconPath("scan-eye.svg"),
     searchTerms: [
       "scan eye",
       "retina",
@@ -111,81 +118,81 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Speech",
-    path: "/src/assets/icons/speech.svg",
+    path: getIconPath("speech.svg"),
     searchTerms: ["speech", "talk", "say", "voice", "communicate", "words"],
     categories: ["Accessibility"],
   },
   /* Animals */
   {
     name: "Bird",
-    path: "/src/assets/icons/bird.svg",
+    path: getIconPath("bird.svg"),
     searchTerms: ["bird", "animal", "flying", "wings", "feathers", "beak"],
     categories: ["Animals"],
   },
   {
     name: "Bug",
-    path: "/src/assets/icons/bug.svg",
+    path: getIconPath("bug.svg"),
     searchTerms: ["bug", "insect", "antennae", "legs", " wings"],
     categories: ["Animals"],
   },
   {
     name: "Cat",
-    path: "/src/assets/icons/cat.svg",
+    path: getIconPath("cat.svg"),
     searchTerms: ["cat", "animal", "feline", "whiskers", "ears", "paws"],
     categories: ["Animals"],
   },
   {
     name: "Dog",
-    path: "/src/assets/icons/dog.svg",
+    path: getIconPath("dog.svg"),
     searchTerms: ["dog", "animal", "canine", "paws", "ears", "tail"],
     categories: ["Animals"],
   },
   {
     name: "Fish",
-    path: "/src/assets/icons/fish.svg",
+    path: getIconPath("fish.svg"),
     searchTerms: ["fish", "animal", "swimming", "fins", "gills", "scales"],
     categories: ["Animals"],
   },
   {
     name: "Paw Print",
-    path: "/src/assets/icons/paw-print.svg",
+    path: getIconPath("paw-print.svg"),
     searchTerms: ["paw print", "animal", "footprint", "dog", "cat"],
     categories: ["Animals"],
   },
   {
     name: "Rabbit",
-    path: "/src/assets/icons/rabbit.svg",
+    path: getIconPath("rabbit.svg"),
     searchTerms: ["rabbit", "animal", "bunny", "ears", "whiskers", "tail"],
     categories: ["Animals"],
   },
   {
     name: "Rat",
-    path: "/src/assets/icons/rat.svg",
+    path: getIconPath("rat.svg"),
     searchTerms: ["rat", "animal", "rodent", "whiskers", "tail", "ears"],
     categories: ["Animals"],
   },
   {
     name: "Snail",
-    path: "/src/assets/icons/snail.svg",
+    path: getIconPath("snail.svg"),
     searchTerms: ["snail", "animal", "shell", "slime", "antennae", "eyes"],
     categories: ["Animals"],
   },
   {
     name: "Turtle",
-    path: "/src/assets/icons/turtle.svg",
+    path: getIconPath("turtle.svg"),
     searchTerms: ["turtle", "animal", "reptile", "shell", "slow", "swimming"],
     categories: ["Animals"],
   },
   {
     name: "Worm",
-    path: "/src/assets/icons/worm.svg",
+    path: getIconPath("worm.svg"),
     searchTerms: ["worm", "animal", "invertebrate", "slimy", "crawl", "earth"],
     categories: ["Animals"],
   },
   /* Accounts & Access */
   {
     name: "Activity",
-    path: "/src/assets/icons/activity.svg",
+    path: getIconPath("activity.svg"),
     searchTerms: [
       "activity",
       "exercise",
@@ -198,19 +205,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "@ Sign",
-    path: "/src/assets/icons/at-sign.svg",
+    path: getIconPath("at-sign.svg"),
     searchTerms: ["@ sign", "at", "email", "address", "handle", "username"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Award",
-    path: "/src/assets/icons/award.svg",
+    path: getIconPath("award.svg"),
     searchTerms: ["award", "trophy", "prize", "medal", "achievement", "winner"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Ban",
-    path: "/src/assets/icons/ban.svg",
+    path: getIconPath("ban.svg"),
     searchTerms: [
       "ban",
       "forbidden",
@@ -223,13 +230,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Bell",
-    path: "/src/assets/icons/bell.svg",
+    path: getIconPath("bell.svg"),
     searchTerms: ["bell", "notification", "alert", "ring", "sound", "alarm"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Book User",
-    path: "/src/assets/icons/book-user.svg",
+    path: getIconPath("book-user.svg"),
     searchTerms: [
       "book user",
       "reader",
@@ -242,13 +249,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Bookmark",
-    path: "/src/assets/icons/bookmark.svg",
+    path: getIconPath("bookmark.svg"),
     searchTerms: ["bookmark", "save", "favorite", "read later", "mark", "tag"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Bookmark Check",
-    path: "/src/assets/icons/bookmark-check.svg",
+    path: getIconPath("bookmark-check.svg"),
     searchTerms: [
       "bookmark check",
       "save",
@@ -261,7 +268,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Bookmark Minus",
-    path: "/src/assets/icons/bookmark-minus.svg",
+    path: getIconPath("bookmark-minus.svg"),
     searchTerms: [
       "bookmark minus",
       "save",
@@ -274,7 +281,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Bookmark Plus",
-    path: "/src/assets/icons/bookmark-plus.svg",
+    path: getIconPath("bookmark-plus.svg"),
     searchTerms: [
       "bookmark plus",
       "save",
@@ -287,7 +294,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Bookmark X",
-    path: "/src/assets/icons/bookmark-x.svg",
+    path: getIconPath("bookmark-x.svg"),
     searchTerms: [
       "bookmark x",
       "save",
@@ -300,7 +307,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Building",
-    path: "/src/assets/icons/building.svg",
+    path: getIconPath("building.svg"),
     searchTerms: [
       "building",
       "office",
@@ -313,7 +320,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Building 2",
-    path: "/src/assets/icons/building-2.svg",
+    path: getIconPath("building-2.svg"),
     searchTerms: [
       "building 2",
       "office",
@@ -326,13 +333,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Cake",
-    path: "/src/assets/icons/cake.svg",
+    path: getIconPath("cake.svg"),
     searchTerms: ["cake", "birthday", "celebrate", "dessert", "party", "sweet"],
     categories: ["Accounts & Access", "Food & Drink"],
   },
   {
     name: "Circle User",
-    path: "/src/assets/icons/circle-user.svg",
+    path: getIconPath("circle-user.svg"),
     searchTerms: [
       "circle user",
       "person",
@@ -345,7 +352,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Cog",
-    path: "/src/assets/icons/cog.svg",
+    path: getIconPath("cog.svg"),
     searchTerms: [
       "cog",
       "gear",
@@ -358,7 +365,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Contact Round",
-    path: "/src/assets/icons/contact-round.svg",
+    path: getIconPath("contact-round.svg"),
     searchTerms: [
       "contact round",
       "person",
@@ -371,7 +378,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Cookie",
-    path: "/src/assets/icons/cookie.svg",
+    path: getIconPath("cookie.svg"),
     searchTerms: [
       "cookie",
       "biscuit",
@@ -384,7 +391,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Credit Card",
-    path: "/src/assets/icons/credit-card.svg",
+    path: getIconPath("credit-card.svg"),
     searchTerms: [
       "credit card",
       "payment",
@@ -397,7 +404,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Fingerprint",
-    path: "/src/assets/icons/fingerprint.svg",
+    path: getIconPath("fingerprint.svg"),
     searchTerms: [
       "fingerprint",
       "biometric",
@@ -410,7 +417,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Flag",
-    path: "/src/assets/icons/flag.svg",
+    path: getIconPath("flag.svg"),
     searchTerms: [
       "flag",
       "country",
@@ -423,7 +430,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Flag off",
-    path: "/src/assets/icons/flag-off.svg",
+    path: getIconPath("flag-off.svg"),
     searchTerms: [
       "flag off",
       "country",
@@ -436,7 +443,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Frown",
-    path: "/src/assets/icons/frown.svg",
+    path: getIconPath("frown.svg"),
     searchTerms: [
       "frown",
       "sad",
@@ -450,7 +457,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Gift",
-    path: "/src/assets/icons/gift.svg",
+    path: getIconPath("gift.svg"),
     searchTerms: [
       "gift",
       "present",
@@ -463,19 +470,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Hand Coins",
-    path: "/src/assets/icons/hand-coins.svg",
+    path: getIconPath("hand-coins.svg"),
     searchTerms: ["hand coins", "money", "donate", "give", "charity", "fund"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Handshake",
-    path: "/src/assets/icons/handshake.svg",
+    path: getIconPath("handshake.svg"),
     searchTerms: ["handshake", "deal", "agreement", "partnership", "greeting"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Id Card",
-    path: "/src/assets/icons/id-card.svg",
+    path: getIconPath("id-card.svg"),
     searchTerms: [
       "id card",
       "identification",
@@ -488,7 +495,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Inbox",
-    path: "/src/assets/icons/inbox.svg",
+    path: getIconPath("inbox.svg"),
     searchTerms: [
       "inbox",
       "email",
@@ -501,13 +508,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Key",
-    path: "/src/assets/icons/key.svg",
+    path: getIconPath("key.svg"),
     searchTerms: ["key", "lock", "unlock", "password", "access", "secure"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Key Square",
-    path: "/src/assets/icons/key-square.svg",
+    path: getIconPath("key-square.svg"),
     searchTerms: [
       "key square",
       "lock",
@@ -520,13 +527,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Link",
-    path: "/src/assets/icons/link.svg",
+    path: getIconPath("link.svg"),
     searchTerms: ["link", "chain", "connect", "url", "hyperlink", "anchor"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Log In",
-    path: "/src/assets/icons/log-in.svg",
+    path: getIconPath("log-in.svg"),
     searchTerms: [
       "log in",
       "sign in",
@@ -539,19 +546,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Log Out",
-    path: "/src/assets/icons/log-out.svg",
+    path: getIconPath("log-out.svg"),
     searchTerms: ["log out", "sign out", "exit", "logout", "leave", "end"],
     categories: ["Accounts & Access", "Arrows"],
   },
   {
     name: "Mail",
-    path: "/src/assets/icons/mail.svg",
+    path: getIconPath("mail.svg"),
     searchTerms: ["mail", "email", "letter", "message", "post", "send"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Map",
-    path: "/src/assets/icons/map.svg",
+    path: getIconPath("map.svg"),
     searchTerms: [
       "map",
       "location",
@@ -564,7 +571,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Map Pinned",
-    path: "/src/assets/icons/map-pinned.svg",
+    path: getIconPath("map-pinned.svg"),
     searchTerms: [
       "map pin",
       "location",
@@ -577,7 +584,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Settings",
-    path: "/src/assets/icons/settings.svg",
+    path: getIconPath("settings.svg"),
     searchTerms: [
       "settings",
       "preferences",
@@ -590,7 +597,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Settings 2",
-    path: "/src/assets/icons/settings-2.svg",
+    path: getIconPath("settings-2.svg"),
     searchTerms: [
       "settings 2",
       "preferences",
@@ -603,25 +610,25 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Share",
-    path: "/src/assets/icons/share.svg",
+    path: getIconPath("share.svg"),
     searchTerms: ["share", "send", "arrow", "up", "forward", "out"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Share 2",
-    path: "/src/assets/icons/share-2.svg",
+    path: getIconPath("share-2.svg"),
     searchTerms: ["share 2", "send", "arrow", "up", "forward", "out"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Shield",
-    path: "/src/assets/icons/shield.svg",
+    path: getIconPath("shield.svg"),
     searchTerms: ["shield", "protect", "security", "defend", "safe", "guard"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Shield Alert",
-    path: "/src/assets/icons/shield-alert.svg",
+    path: getIconPath("shield-alert.svg"),
     searchTerms: [
       "shield alert",
       "protect",
@@ -634,7 +641,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield Ban",
-    path: "/src/assets/icons/shield-ban.svg",
+    path: getIconPath("shield-ban.svg"),
     searchTerms: [
       "shield ban",
       "protect",
@@ -647,7 +654,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield Check",
-    path: "/src/assets/icons/shield-check.svg",
+    path: getIconPath("shield-check.svg"),
     searchTerms: [
       "shield check",
       "protect",
@@ -660,7 +667,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield Off",
-    path: "/src/assets/icons/shield-off.svg",
+    path: getIconPath("shield-off.svg"),
     searchTerms: [
       "shield off",
       "protect",
@@ -673,7 +680,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield Plus",
-    path: "/src/assets/icons/shield-plus.svg",
+    path: getIconPath("shield-plus.svg"),
     searchTerms: [
       "shield plus",
       "protect",
@@ -686,20 +693,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield Question",
-    path: "/src/assets/icons/shield-question.svg",
-    searchTerms: [
-      "shield question",
-      "protect",
-      "security",
-      "defend",
-      "safe",
-      "guard",
-    ],
-    categories: ["Accounts & Access"],
-  },
-  {
-    name: "Shield Question",
-    path: "/src/assets/icons/shield-question.svg",
+    path: getIconPath("shield-question.svg"),
     searchTerms: [
       "shield question",
       "protect",
@@ -712,13 +706,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Shield X",
-    path: "/src/assets/icons/shield-x.svg",
+    path: getIconPath("shield-x.svg"),
     searchTerms: ["shield x", "protect", "security", "defend", "safe", "guard"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Slack",
-    path: "/src/assets/icons/slack.svg",
+    path: getIconPath("slack.svg"),
     searchTerms: [
       "slack",
       "logo",
@@ -731,7 +725,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Sliders Horizontal",
-    path: "/src/assets/icons/sliders-horizontal.svg",
+    path: getIconPath("sliders-horizontal.svg"),
     searchTerms: [
       "sliders horizontal",
       "settings",
@@ -744,7 +738,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Sliders Vertical",
-    path: "/src/assets/icons/sliders-vertical.svg",
+    path: getIconPath("sliders-vertical.svg"),
     searchTerms: [
       "sliders vertical",
       "settings",
@@ -757,19 +751,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Smile",
-    path: "/src/assets/icons/smile.svg",
+    path: getIconPath("smile.svg"),
     searchTerms: ["smile", "happy", "joy", "face", "emotion", "emoji"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Star",
-    path: "/src/assets/icons/star.svg",
+    path: getIconPath("star.svg"),
     searchTerms: ["star", "favorite", "rate", "review", "bookmark", "save"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Tag",
-    path: "/src/assets/icons/tag.svg",
+    path: getIconPath("tag.svg"),
     searchTerms: [
       "tag",
       "label",
@@ -782,7 +776,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Thumbs Down",
-    path: "/src/assets/icons/thumbs-down.svg",
+    path: getIconPath("thumbs-down.svg"),
     searchTerms: [
       "thumbs down",
       "dislike",
@@ -795,13 +789,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Thumbs Up",
-    path: "/src/assets/icons/thumbs-up.svg",
+    path: getIconPath("thumbs-up.svg"),
     searchTerms: ["thumbs up", "like", "approve", "agree", "yes", "vote"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Trello",
-    path: "/src/assets/icons/trello.svg",
+    path: getIconPath("trello.svg"),
     searchTerms: [
       "trello",
       "logo",
@@ -814,19 +808,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Twitter",
-    path: "/src/assets/icons/twitter.svg",
+    path: getIconPath("twitter.svg"),
     searchTerms: ["twitter", "logo", "brand", "social media", "tweet", "bird"],
     categories: ["Accounts & Access", "Logos"],
   },
   {
     name: "User",
-    path: "/src/assets/icons/user.svg",
+    path: getIconPath("user.svg"),
     searchTerms: ["user", "person", "human", "profile", "account", "avatar"],
     categories: ["Accounts & Access"],
   },
   {
     name: "User Check",
-    path: "/src/assets/icons/user-check.svg",
+    path: getIconPath("user-check.svg"),
     searchTerms: [
       "user check",
       "person",
@@ -839,7 +833,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "User Minus",
-    path: "/src/assets/icons/user-minus.svg",
+    path: getIconPath("user-minus.svg"),
     searchTerms: [
       "user minus",
       "person",
@@ -852,7 +846,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "User Pen",
-    path: "/src/assets/icons/user-pen.svg",
+    path: getIconPath("user-pen.svg"),
     searchTerms: [
       "user pen",
       "person",
@@ -865,7 +859,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "User Plus",
-    path: "/src/assets/icons/user-plus.svg",
+    path: getIconPath("user-plus.svg"),
     searchTerms: [
       "user plus",
       "person",
@@ -878,13 +872,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "User X",
-    path: "/src/assets/icons/user-x.svg",
+    path: getIconPath("user-x.svg"),
     searchTerms: ["user x", "person", "human", "profile", "account", "avatar"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Users",
-    path: "/src/assets/icons/users.svg",
+    path: getIconPath("users.svg"),
     searchTerms: [
       "users",
       "people",
@@ -897,7 +891,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Venetian Mask",
-    path: "/src/assets/icons/venetian-mask.svg",
+    path: getIconPath("venetian-mask.svg"),
     searchTerms: [
       "venetian mask",
       "mask",
@@ -910,7 +904,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Wallet",
-    path: "/src/assets/icons/wallet.svg",
+    path: getIconPath("wallet.svg"),
     searchTerms: [
       "wallet",
       "money",
@@ -923,7 +917,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Wallpaper",
-    path: "/src/assets/icons/wallpaper.svg",
+    path: getIconPath("wallpaper.svg"),
     searchTerms: [
       "wallpaper",
       "background",
@@ -936,7 +930,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Waypoints",
-    path: "/src/assets/icons/waypoints.svg",
+    path: getIconPath("waypoints.svg"),
     searchTerms: [
       "waypoints",
       "location",
@@ -949,44 +943,44 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Webhook",
-    path: "/src/assets/icons/webhook.svg",
+    path: getIconPath("webhook.svg"),
     searchTerms: ["webhook", "api", "integration", "web", "hook", "connect"],
     categories: ["Accounts & Access"],
   },
   {
     name: "Wrench",
-    path: "/src/assets/icons/wrench.svg",
+    path: getIconPath("wrench.svg"),
     searchTerms: ["wrench", "tool", "repair", "fix", "adjust", "settings"],
     categories: ["Accounts & Access"],
   },
   /* Arrows */
   {
     name: "Arrow Big Down",
-    path: "/src/assets/icons/arrow-big-down.svg",
+    path: getIconPath("arrow-big-down.svg"),
     searchTerms: ["arrow big down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Big Left",
-    path: "/src/assets/icons/arrow-big-left.svg",
+    path: getIconPath("arrow-big-left.svg"),
     searchTerms: ["arrow big left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Big Right",
-    path: "/src/assets/icons/arrow-big-right.svg",
+    path: getIconPath("arrow-big-right.svg"),
     searchTerms: ["arrow big right", "arrow", "right", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Big Up",
-    path: "/src/assets/icons/arrow-big-up.svg",
+    path: getIconPath("arrow-big-up.svg"),
     searchTerms: ["arrow big up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Down Left",
-    path: "/src/assets/icons/arrow-down-left.svg",
+    path: getIconPath("arrow-down-left.svg"),
     searchTerms: [
       "arrow down left",
       "arrow",
@@ -999,7 +993,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Down Right",
-    path: "/src/assets/icons/arrow-down-right.svg",
+    path: getIconPath("arrow-down-right.svg"),
     searchTerms: [
       "arrow down right",
       "arrow",
@@ -1012,13 +1006,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Down Up",
-    path: "/src/assets/icons/arrow-down-up.svg",
+    path: getIconPath("arrow-down-up.svg"),
     searchTerms: ["arrow down up", "arrow", "down", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Down Z-A",
-    path: "/src/assets/icons/arrow-down-z-a.svg",
+    path: getIconPath("arrow-down-z-a.svg"),
     searchTerms: [
       "arrow down z-a",
       "arrow",
@@ -1031,13 +1025,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Down",
-    path: "/src/assets/icons/arrow-down.svg",
+    path: getIconPath("arrow-down.svg"),
     searchTerms: ["arrow down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Left Right",
-    path: "/src/assets/icons/arrow-left-right.svg",
+    path: getIconPath("arrow-left-right.svg"),
     searchTerms: [
       "arrow left right",
       "arrow",
@@ -1050,13 +1044,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Left",
-    path: "/src/assets/icons/arrow-left.svg",
+    path: getIconPath("arrow-left.svg"),
     searchTerms: ["arrow left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Right-Left",
-    path: "/src/assets/icons/arrow-right-left.svg",
+    path: getIconPath("arrow-right-left.svg"),
     searchTerms: [
       "arrow right left",
       "arrow",
@@ -1069,31 +1063,31 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Right",
-    path: "/src/assets/icons/arrow-right.svg",
+    path: getIconPath("arrow-right.svg"),
     searchTerms: ["arrow right", "arrow", "right", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Up A-Z",
-    path: "/src/assets/icons/arrow-up-a-z.svg",
+    path: getIconPath("arrow-up-a-z.svg"),
     searchTerms: ["arrow up a-z", "arrow", "up", "a-z", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Up Down",
-    path: "/src/assets/icons/arrow-up-down.svg",
+    path: getIconPath("arrow-up-down.svg"),
     searchTerms: ["arrow up down", "arrow", "up", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Up Left",
-    path: "/src/assets/icons/arrow-up-left.svg",
+    path: getIconPath("arrow-up-left.svg"),
     searchTerms: ["arrow up left", "arrow", "up", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Arrow Up Right",
-    path: "/src/assets/icons/arrow-up-right.svg",
+    path: getIconPath("arrow-up-right.svg"),
     searchTerms: [
       "arrow up right",
       "arrow",
@@ -1106,13 +1100,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Arrow Up",
-    path: "/src/assets/icons/arrow-up.svg",
+    path: getIconPath("arrow-up.svg"),
     searchTerms: ["arrow up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Calendar Sync",
-    path: "/src/assets/icons/calendar-sync.svg",
+    path: getIconPath("calendar-sync.svg"),
     searchTerms: [
       "calendar sync",
       "arrow",
@@ -1125,31 +1119,31 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Chevron Down",
-    path: "/src/assets/icons/chevron-down.svg",
+    path: getIconPath("chevron-down.svg"),
     searchTerms: ["chevron down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevron Left",
-    path: "/src/assets/icons/chevron-left.svg",
+    path: getIconPath("chevron-left.svg"),
     searchTerms: ["chevron left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevron Right",
-    path: "/src/assets/icons/chevron-right.svg",
+    path: getIconPath("chevron-right.svg"),
     searchTerms: ["chevron right", "arrow", "right", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevron Up",
-    path: "/src/assets/icons/chevron-up.svg",
+    path: getIconPath("chevron-up.svg"),
     searchTerms: ["chevron up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevrons Down-Up",
-    path: "/src/assets/icons/chevrons-down-up.svg",
+    path: getIconPath("chevrons-down-up.svg"),
     searchTerms: [
       "chevrons down-up",
       "arrow",
@@ -1162,13 +1156,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Chevrons Down",
-    path: "/src/assets/icons/chevrons-down.svg",
+    path: getIconPath("chevrons-down.svg"),
     searchTerms: ["chevrons down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevrons Left-Right",
-    path: "/src/assets/icons/chevrons-left-right.svg",
+    path: getIconPath("chevrons-left-right.svg"),
     searchTerms: [
       "chevrons left-right",
       "arrow",
@@ -1181,13 +1175,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Chevrons Left",
-    path: "/src/assets/icons/chevrons-left.svg",
+    path: getIconPath("chevrons-left.svg"),
     searchTerms: ["chevrons left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevrons Right-Left",
-    path: "/src/assets/icons/chevrons-right-left.svg",
+    path: getIconPath("chevrons-right-left.svg"),
     searchTerms: [
       "chevrons right-left",
       "arrow",
@@ -1200,13 +1194,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Chevrons Right",
-    path: "/src/assets/icons/chevrons-right.svg",
+    path: getIconPath("chevrons-right.svg"),
     searchTerms: ["chevrons right", "arrow", "right", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Chevrons Up-Down",
-    path: "/src/assets/icons/chevrons-up-down.svg",
+    path: getIconPath("chevrons-up-down.svg"),
     searchTerms: [
       "chevrons up-down",
       "arrow",
@@ -1219,25 +1213,25 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Chevrons Up",
-    path: "/src/assets/icons/chevrons-up.svg",
+    path: getIconPath("chevrons-up.svg"),
     searchTerms: ["chevrons up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Arrow Down",
-    path: "/src/assets/icons/circle-arrow-down.svg",
+    path: getIconPath("circle-arrow-down.svg"),
     searchTerms: ["circle arrow down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Arrow Left",
-    path: "/src/assets/icons/circle-arrow-left.svg",
+    path: getIconPath("circle-arrow-left.svg"),
     searchTerms: ["circle arrow left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Arrow Out Down Left",
-    path: "/src/assets/icons/circle-arrow-out-down-left.svg",
+    path: getIconPath("circle-arrow-out-down-left.svg"),
     searchTerms: [
       "circle arrow out down left",
       "arrow",
@@ -1250,7 +1244,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Circle Arrow Out Down Right",
-    path: "/src/assets/icons/circle-arrow-out-down-right.svg",
+    path: getIconPath("circle-arrow-out-down-right.svg"),
     searchTerms: [
       "circle arrow out down right",
       "arrow",
@@ -1263,7 +1257,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Circle Arrow Out Up Left",
-    path: "/src/assets/icons/circle-arrow-out-up-left.svg",
+    path: getIconPath("circle-arrow-out-up-left.svg"),
     searchTerms: [
       "circle arrow out up left",
       "arrow",
@@ -1276,7 +1270,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Circle Arrow Out Up Right",
-    path: "/src/assets/icons/circle-arrow-out-up-right.svg",
+    path: getIconPath("circle-arrow-out-up-right.svg"),
     searchTerms: [
       "circle arrow out up right",
       "arrow",
@@ -1289,31 +1283,31 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Circle Arrow Right",
-    path: "/src/assets/icons/circle-arrow-right.svg",
+    path: getIconPath("circle-arrow-right.svg"),
     searchTerms: ["circle arrow right", "arrow", "right", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Arrow Up",
-    path: "/src/assets/icons/circle-arrow-up.svg",
+    path: getIconPath("circle-arrow-up.svg"),
     searchTerms: ["circle arrow up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Chevron Down",
-    path: "/src/assets/icons/circle-chevron-down.svg",
+    path: getIconPath("circle-chevron-down.svg"),
     searchTerms: ["circle chevron down", "arrow", "down", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Chevron Left",
-    path: "/src/assets/icons/circle-chevron-left.svg",
+    path: getIconPath("circle-chevron-left.svg"),
     searchTerms: ["circle chevron left", "arrow", "left", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Circle Chevron Right",
-    path: "/src/assets/icons/circle-chevron-right.svg",
+    path: getIconPath("circle-chevron-right.svg"),
     searchTerms: [
       "circle chevron right",
       "arrow",
@@ -1325,13 +1319,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Circle Chevron Up",
-    path: "/src/assets/icons/circle-chevron-up.svg",
+    path: getIconPath("circle-chevron-up.svg"),
     searchTerms: ["circle chevron up", "arrow", "up", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Clipboard Copy",
-    path: "/src/assets/icons/clipboard-copy.svg",
+    path: getIconPath("clipboard-copy.svg"),
     searchTerms: [
       "clipboard copy",
       "arrow",
@@ -1344,7 +1338,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Clipboard Paste",
-    path: "/src/assets/icons/clipboard-paste.svg",
+    path: getIconPath("clipboard-paste.svg"),
     searchTerms: [
       "clipboard paste",
       "arrow",
@@ -1357,7 +1351,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Cloud Download",
-    path: "/src/assets/icons/cloud-download.svg",
+    path: getIconPath("cloud-download.svg"),
     searchTerms: [
       "cloud download",
       "arrow",
@@ -1370,7 +1364,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Cloud Upload",
-    path: "/src/assets/icons/cloud-upload.svg",
+    path: getIconPath("cloud-upload.svg"),
     searchTerms: [
       "cloud upload",
       "arrow",
@@ -1383,7 +1377,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Database Backup",
-    path: "/src/assets/icons/database-backup.svg",
+    path: getIconPath("database-backup.svg"),
     searchTerms: [
       "database backup",
       "arrow",
@@ -1396,79 +1390,79 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Delete",
-    path: "/src/assets/icons/delete.svg",
+    path: getIconPath("delete.svg"),
     searchTerms: ["delete", "remove", "trash", "bin", "erase", "clear"],
     categories: ["Arrows"],
   },
   {
     name: "Download",
-    path: "/src/assets/icons/download.svg",
+    path: getIconPath("download.svg"),
     searchTerms: ["download", "save", "export", "backup", "get", "fetch"],
     categories: ["Arrows"],
   },
   {
     name: "External Link",
-    path: "/src/assets/icons/external-link.svg",
+    path: getIconPath("external-link.svg"),
     searchTerms: ["external link", "link", "arrow", "out", "new tab", "open"],
     categories: ["Arrows"],
   },
   {
     name: "Fast Forward",
-    path: "/src/assets/icons/fast-forward.svg",
+    path: getIconPath("fast-forward.svg"),
     searchTerms: ["fast forward", "arrow", "skip", "next", "forward", "right"],
     categories: ["Arrows"],
   },
   {
     name: "File Down",
-    path: "/src/assets/icons/file-down.svg",
+    path: getIconPath("file-down.svg"),
     searchTerms: ["file down", "arrow", "download", "save", "export", "get"],
     categories: ["Arrows"],
   },
   {
     name: "File Input",
-    path: "/src/assets/icons/file-input.svg",
+    path: getIconPath("file-input.svg"),
     searchTerms: ["file input", "arrow", "upload", "import", "get", "fetch"],
     categories: ["Arrows"],
   },
   {
     name: "File Output",
-    path: "/src/assets/icons/file-output.svg",
+    path: getIconPath("file-output.svg"),
     searchTerms: ["file output", "arrow", "download", "save", "export", "get"],
     categories: ["Arrows"],
   },
   {
     name: "File Up",
-    path: "/src/assets/icons/file-up.svg",
+    path: getIconPath("file-up.svg"),
     searchTerms: ["file up", "arrow", "upload", "import", "get", "fetch"],
     categories: ["Arrows"],
   },
   {
     name: "Fold Horizontal",
-    path: "/src/assets/icons/fold-horizontal.svg",
+    path: getIconPath("fold-horizontal.svg"),
     searchTerms: ["fold horizontal", "arrow", "fold", "collapse", "hide", "up"],
     categories: ["Arrows"],
   },
   {
     name: "Fold Vertical",
-    path: "/src/assets/icons/fold-vertical.svg",
+    path: getIconPath("fold-vertical.svg"),
     searchTerms: ["fold vertical", "arrow", "fold", "collapse", "hide", "up"],
     categories: ["Arrows"],
   },
   {
     name: "Folder Down",
-    path: "/src/assets/icons/folder-down.svg",
+    path: getIconPath("folder-down.svg"),
     searchTerms: ["folder down", "arrow", "download", "save", "export", "get"],
     categories: ["Arrows"],
   },
   {
     name: "Folder Input",
-    path: "/src/assets/icons/folder-input.svg",
+    path: getIconPath("folder-input.svg"),
     searchTerms: ["folder input", "arrow", "upload", "import", "get", "fetch"],
     categories: ["Arrows"],
   },
   {
     name: "Folder Output",
-    path: "/src/assets/icons/folder-output.svg",
+    path: getIconPath("folder-output.svg"),
     searchTerms: [
       "folder output",
       "arrow",
@@ -1481,7 +1475,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Folder Sync",
-    path: "/src/assets/icons/folder-sync.svg",
+    path: getIconPath("folder-sync.svg"),
     searchTerms: [
       "folder sync",
       "arrow",
@@ -1494,13 +1488,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Folder Up",
-    path: "/src/assets/icons/folder-up.svg",
+    path: getIconPath("folder-up.svg"),
     searchTerms: ["folder up", "arrow", "upload", "import", "get", "fetch"],
     categories: ["Arrows"],
   },
   {
     name: "Git Compare Arrows",
-    path: "/src/assets/icons/git-compare-arrows.svg",
+    path: getIconPath("git-compare-arrows.svg"),
     searchTerms: [
       "git compare arrows",
       "arrow",
@@ -1513,7 +1507,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Git Pull Request Arrow",
-    path: "/src/assets/icons/git-pull-request-arrow.svg",
+    path: getIconPath("git-pull-request-arrow.svg"),
     searchTerms: [
       "git pull request arrows",
       "arrow",
@@ -1526,7 +1520,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Git Pull Request Create Arrow",
-    path: "/src/assets/icons/git-pull-request-create-arrow.svg",
+    path: getIconPath("git-pull-request-create-arrow.svg"),
     searchTerms: [
       "git pull request create arrow",
       "arrow",
@@ -1539,7 +1533,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Hard Drive Download",
-    path: "/src/assets/icons/hard-drive-download.svg",
+    path: getIconPath("hard-drive-download.svg"),
     searchTerms: [
       "hard drive download",
       "arrow",
@@ -1552,7 +1546,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Hard Drive Upload",
-    path: "/src/assets/icons/hard-drive-upload.svg",
+    path: getIconPath("hard-drive-upload.svg"),
     searchTerms: [
       "hard drive upload",
       "arrow",
@@ -1565,19 +1559,19 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "History",
-    path: "/src/assets/icons/history.svg",
+    path: getIconPath("history.svg"),
     searchTerms: ["history", "arrow", "back", "forward", "time", "record"],
     categories: ["Arrows"],
   },
   {
     name: "Import",
-    path: "/src/assets/icons/import.svg",
+    path: getIconPath("import.svg"),
     searchTerms: ["import", "arrow", "upload", "get", "fetch", "receive"],
     categories: ["Arrows"],
   },
   {
     name: "Iteration CCW",
-    path: "/src/assets/icons/iteration-ccw.svg",
+    path: getIconPath("iteration-ccw.svg"),
     searchTerms: [
       "iteration ccw",
       "arrow",
@@ -1590,7 +1584,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Iteration CW",
-    path: "/src/assets/icons/iteration-cw.svg",
+    path: getIconPath("iteration-cw.svg"),
     searchTerms: [
       "iteration cw",
       "arrow",
@@ -1603,13 +1597,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Merge",
-    path: "/src/assets/icons/merge.svg",
+    path: getIconPath("merge.svg"),
     searchTerms: ["merge", "arrow", "combine", "join", "unite", "connect"],
     categories: ["Arrows"],
   },
   {
     name: "Milestone",
-    path: "/src/assets/icons/milestone.svg",
+    path: getIconPath("milestone.svg"),
     searchTerms: [
       "milestone",
       "arrow",
@@ -1622,7 +1616,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Mouse Pointer",
-    path: "/src/assets/icons/mouse-pointer.svg",
+    path: getIconPath("mouse-pointer.svg"),
     searchTerms: [
       "mouse pointer",
       "arrow",
@@ -1635,49 +1629,49 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Move Down",
-    path: "/src/assets/icons/move-down.svg",
+    path: getIconPath("move-down.svg"),
     searchTerms: ["move down", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move Horizontal",
-    path: "/src/assets/icons/move-horizontal.svg",
+    path: getIconPath("move-horizontal.svg"),
     searchTerms: ["move horizontal", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move Left",
-    path: "/src/assets/icons/move-left.svg",
+    path: getIconPath("move-left.svg"),
     searchTerms: ["move left", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move Right",
-    path: "/src/assets/icons/move-right.svg",
+    path: getIconPath("move-right.svg"),
     searchTerms: ["move right", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move Up",
-    path: "/src/assets/icons/move-up.svg",
+    path: getIconPath("move-up.svg"),
     searchTerms: ["move up", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move Vertical",
-    path: "/src/assets/icons/move-vertical.svg",
+    path: getIconPath("move-vertical.svg"),
     searchTerms: ["move vertical", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Move",
-    path: "/src/assets/icons/move.svg",
+    path: getIconPath("move.svg"),
     searchTerms: ["move", "arrow", "move", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Panel Bottom Open",
-    path: "/src/assets/icons/panel-bottom-open.svg",
+    path: getIconPath("panel-bottom-open.svg"),
     searchTerms: [
       "panel bottom open",
       "arrow",
@@ -1690,13 +1684,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Panel Left Open",
-    path: "/src/assets/icons/panel-left-open.svg",
+    path: getIconPath("panel-left-open.svg"),
     searchTerms: ["panel left open", "arrow", "open", "expand", "left", "show"],
     categories: ["Arrows"],
   },
   {
     name: "Panel Right Open",
-    path: "/src/assets/icons/panel-right-open.svg",
+    path: getIconPath("panel-right-open.svg"),
     searchTerms: [
       "panel right open",
       "arrow",
@@ -1709,13 +1703,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Panel Top Open",
-    path: "/src/assets/icons/panel-top-open.svg",
+    path: getIconPath("panel-top-open.svg"),
     searchTerms: ["panel top open", "arrow", "open", "expand", "up", "show"],
     categories: ["Arrows"],
   },
   {
     name: "Phone Forwarded",
-    path: "/src/assets/icons/phone-forwarded.svg",
+    path: getIconPath("phone-forwarded.svg"),
     searchTerms: [
       "phone forwarded",
       "arrow",
@@ -1728,7 +1722,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Phone Incoming",
-    path: "/src/assets/icons/phone-incoming.svg",
+    path: getIconPath("phone-incoming.svg"),
     searchTerms: [
       "phone incoming",
       "arrow",
@@ -1741,7 +1735,7 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Phone Outgoing",
-    path: "/src/assets/icons/phone-outgoing.svg",
+    path: getIconPath("phone-outgoing.svg"),
     searchTerms: [
       "phone outgoing",
       "arrow",
@@ -1754,85 +1748,85 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Play",
-    path: "/src/assets/icons/play.svg",
+    path: getIconPath("play.svg"),
     searchTerms: ["play", "arrow", "start", "begin", "go", "forward"],
     categories: ["Arrows"],
   },
   {
     name: "Refresh CCW",
-    path: "/src/assets/icons/refresh-ccw.svg",
+    path: getIconPath("refresh-ccw.svg"),
     searchTerms: ["refresh ccw", "arrow", "repeat", "update", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Refresh CW",
-    path: "/src/assets/icons/refresh-cw.svg",
+    path: getIconPath("refresh-cw.svg"),
     searchTerms: ["refresh cw", "arrow", "repeat", "update", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Repeat",
-    path: "/src/assets/icons/repeat.svg",
+    path: getIconPath("repeat.svg"),
     searchTerms: ["repeat", "arrow", "loop", "cycle", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Repeat 2",
-    path: "/src/assets/icons/repeat-2.svg",
+    path: getIconPath("repeat-2.svg"),
     searchTerms: ["repeat 2", "arrow", "loop", "cycle", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Rewind",
-    path: "/src/assets/icons/rewind.svg",
+    path: getIconPath("rewind.svg"),
     searchTerms: ["rewind", "arrow", "skip", "back", "previous", "left"],
     categories: ["Arrows"],
   },
   {
     name: "Rotate CCW",
-    path: "/src/assets/icons/rotate-ccw.svg",
+    path: getIconPath("rotate-ccw.svg"),
     searchTerms: ["rotate ccw", "arrow", "repeat", "update", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Rotate CW",
-    path: "/src/assets/icons/rotate-cw.svg",
+    path: getIconPath("rotate-cw.svg"),
     searchTerms: ["rotate cw", "arrow", "repeat", "update", "reload", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Shuffle",
-    path: "/src/assets/icons/shuffle.svg",
+    path: getIconPath("shuffle.svg"),
     searchTerms: ["shuffle", "arrow", "random", "mix", "order", "sync"],
     categories: ["Arrows"],
   },
   {
     name: "Signpost",
-    path: "/src/assets/icons/signpost.svg",
+    path: getIconPath("signpost.svg"),
     searchTerms: ["signpost", "arrow", "direction", "point", "guide", "post"],
     categories: ["Arrows"],
   },
   {
     name: "Signpost Big",
-    path: "/src/assets/icons/signpost-big.svg",
+    path: getIconPath("signpost-big.svg"),
     searchTerms: ["signpost big", "arrow", "big", "direction", "point"],
     categories: ["Arrows"],
   },
   {
     name: "Sunrise",
-    path: "/src/assets/icons/sunrise.svg",
+    path: getIconPath("sunrise.svg"),
     searchTerms: ["sunrise", "arrow", "morning", "day", "sun", "rise"],
     categories: ["Arrows"],
   },
   {
     name: "Sunset",
-    path: "/src/assets/icons/sunset.svg",
+    path: getIconPath("sunset.svg"),
     searchTerms: ["sunset", "arrow", "evening", "night", "sun", "set"],
     categories: ["Arrows"],
   },
   {
     name: "Trending Down",
-    path: "/src/assets/icons/trending-down.svg",
+    path: getIconPath("trending-down.svg"),
     searchTerms: [
       "trending down",
       "arrow",
@@ -1845,13 +1839,13 @@ export const iconTypes: IconType[] = [
   },
   {
     name: "Trending Up",
-    path: "/src/assets/icons/trending-up.svg",
+    path: getIconPath("trending-up.svg"),
     searchTerms: ["trending up", "arrow", "up", "trend", "increase", "rise"],
     categories: ["Arrows"],
   },
   {
     name: "Upload",
-    path: "/src/assets/icons/upload.svg",
+    path: getIconPath("upload.svg"),
     searchTerms: ["upload", "arrow", "save", "import", "restore", "send"],
     categories: ["Arrows"],
   },
