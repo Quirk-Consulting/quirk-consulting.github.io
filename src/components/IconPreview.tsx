@@ -4,12 +4,7 @@ import { Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
   ColorHue,
   Variant,
@@ -284,13 +279,13 @@ const IconPreview = () => {
         </div>
 
         <div className="flex-grow overflow-y-auto">
-          <div className="mb-6 space-y-6 md:space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {categorizedFilteredIcons.map(({ category, icons }) => (
               <div key={category} className="space-y-3 md:space-y-4">
                 <h2 className="text-base font-semibold md:text-lg text-muted-foreground">
                   {category}
                 </h2>
-                <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 md:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 md:gap-4">
                   {icons.map((icon) => (
                     <Card
                       key={`${category}-${icon.name}`}
@@ -316,24 +311,21 @@ const IconPreview = () => {
         </div>
       </div>
 
-      <Sheet open={isSheetOpen} modal={false}>
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetContent
           side="bottom"
-          className="h-[75vh] md:h-[35vh] p-4 md:p-6"
+          className="max-h-[90dvh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <SheetHeader className="mb-4">
+          <div className="sticky top-0 w-1/2 pt-2 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
-              {selectedVariant === "medium"
-                ? ""
-                : selectedVariant.charAt(0).toUpperCase() +
-                  selectedVariant.slice(1)}{" "}
-              {selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)}
+              {selectedVariant === "medium" ? "" : selectedVariant}{" "}
+              {selectedHue}
             </SheetTitle>
-          </SheetHeader>
+          </div>
 
-          <div className="grid gap-6 overflow-y-auto md:grid-cols-2">
+          <div className="space-y-6">
             {/* Color Variants Section */}
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-muted-foreground">
@@ -382,21 +374,18 @@ const IconPreview = () => {
             </div>
 
             {/* Preview Section */}
-            <div className="flex flex-col h-full md:justify-center">
+            <div className="flex flex-col md:justify-center">
               {/* Desktop layout - side by side */}
-              <h3 className="text-sm font-medium md:pb-2 text-muted-foreground">
-                Preview
-              </h3>
-              <div className="hidden gap-6 md:flex">
+              <div className="items-center justify-center hidden gap-6 md:flex">
                 {/* Hero Preview */}
                 <div
-                  className="flex items-center justify-center w-40 h-40 p-4 rounded-lg"
+                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg shrink-0"
                   style={{
                     backgroundColor:
                       backgroundColors[selectedHue][selectedVariant],
                   }}
                 >
-                  {renderSvgPreview(selectedIcon, 121, false)}
+                  {renderSvgPreview(selectedIcon, 88, false)}
                 </div>
 
                 {/* Desktop: Buttons in column */}
@@ -422,7 +411,7 @@ const IconPreview = () => {
               <div className="flex flex-col items-center gap-4 md:hidden">
                 {/* Hero Preview */}
                 <div
-                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg"
+                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg shrink-0"
                   style={{
                     backgroundColor:
                       backgroundColors[selectedHue][selectedVariant],
