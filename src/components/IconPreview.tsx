@@ -387,7 +387,7 @@ const IconPreview = () => {
                   </Button>
                   <Button
                     onClick={() => handleDownload("png")}
-                    variant="secondary"
+                    variant="default"
                     className="w-32"
                   >
                     Download PNG
