@@ -2586,5 +2586,78 @@ export const iconTypes: IconType[] = [
     path: getIconPath("webcam.svg"),
     searchTerms: ["webcam", "camera", "video", "record", "stream", "live"],
     categories: ["Communication"],
+  },
+  /* Connectivity */
+  {
+    name: "Battery Charging",
+    path: getIconPath("battery-charging.svg"),
+    searchTerms: ["battery charging", "battery", "power", "charge", "electric", "energy"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Bluetooth",
+    path: getIconPath("bluetooth.svg"),
+    searchTerms: ["bluetooth", "wireless", "connection", "device", "transfer", "connect"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Cable",
+    path: getIconPath("cable.svg"),
+    searchTerms: ["cable", "wire", "connect", "plug", "socket", "electric"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Cast",
+    path: getIconPath("cast.svg"),
+    searchTerms: ["cast", "stream", "connect", "send", "display", "show"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Monitor",
+    path: getIconPath("monitor.svg"),
+    searchTerms: ["monitor", "screen", "display", "show", "view", "watch"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Power",
+    path: getIconPath("power.svg"),
+    searchTerms: ["power", "on", "off", "switch", "electric", "energy"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Router",
+    path: getIconPath("router.svg"),
+    searchTerms: ["router", "internet", "connection", "network", "wifi", "wireless"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Satellite Dish",
+    path: getIconPath("satellite-dish.svg"),
+    searchTerms: ["satellite dish", "dish", "signal", "broadcast", "transmit", "receive"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Satellite",
+    path: getIconPath("satellite.svg"),
+    searchTerms: ["satellite", "signal, broadcast", "transmit", "receive", "space"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Smartphone",
+    path: getIconPath("smartphone.svg"),
+    searchTerms: ["smartphone", "phone", "mobile", "device", "cell", "call"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Wifi",
+    path: getIconPath("wifi.svg"),
+    searchTerms: ["wifi", "wireless", "internet", "connection", "network", "signal"],
+    categories: ["Connectivity"],
+  },
+  {
+    name: "Zap",
+    path: getIconPath("zap.svg"),
+    searchTerms: ["zap", "electric", "energy", "power", "charge", "lightning"],
+    categories: ["Connectivity"],
   }
 ];

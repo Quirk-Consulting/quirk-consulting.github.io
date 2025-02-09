@@ -144,7 +144,7 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
         </Sheet>
 
         {/* Main content */}
-        <div className="flex-1 overflow-auto">{children}</div>
+        <div className="flex-1 mb-6 overflow-auto">{children}</div>
       </div>
     </div>
   );
