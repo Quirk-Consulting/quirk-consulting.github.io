@@ -9,7 +9,7 @@ export type IconType = {
 // Utility function to get the correct path
 const getIconPath = (iconName: string) => {
   // For GitHub Pages, we need to include the repo name in production
-  const basePath = import.meta.env.DEV ? '' : '/quirk-consulting.github.io';
+  const basePath = '';
   return `${basePath}/icons/${iconName}`;
 };
 
