@@ -1,34 +1,58 @@
-// src/components/project-icons.tsx
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Rocket, Stars, Timer } from "lucide-react";
+
 export function ProjectIcons() {
   return (
-    <div className="p-8">
-      <h1 className="mb-4 text-2xl font-bold">Project Icons</h1>
-      {/* Add your project icons content */}
+    <div className="max-w-4xl p-6 mx-auto">
+      <Card className="transition-all duration-300 shadow-lg bg-background hover:shadow-xl">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-3xl font-bold">
+            Project Icons
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-4">
+            <p className="leading-relaxed animate-fade-in text-muted-foreground">
+              We're putting the finishing touches on something spectacular! 🎨✨
+            </p>
+
+            <div className="flex items-center justify-center p-12">
+              <div className="space-y-6 text-center">
+                <div className="flex justify-center space-x-4">
+                  <div className="text-6xl animate-bounce">⌛</div>
+                </div>
+                
+                <h2 className="text-2xl font-semibold animate-fade-in">
+                  Coming Soon! 🚀
+                </h2>
+                
+                <p className="text-lg text-muted-foreground">
+                  Our team of pixel-perfect perfectionists are sourcing beautiful icons 
+                  to help bring clarity to your Jira projects.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 mt-8 border rounded-lg bg-muted">
+              <h3 className="mb-2 text-lg font-semibold">
+                Want to be the first to know? 🔔
+              </h3>
+              <p className="mb-4 text-muted-foreground">
+                We're working hard to launch soon. In the meantime, why not explore our
+                other tools and services that help turn chaos into clarity?
+              </p>
+              <div className="flex flex-col gap-4 pt-2 md:flex-row">
+                <p className="text-sm text-muted-foreground">
+                  Check back soon for our growing collection of project icons!
+                </p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
 
-// src/components/license.tsx
-export function License() {
-  return (
-    <div className="p-8">
-      <h1 className="mb-4 text-2xl font-bold">License</h1>
-      <p>This project is licensed under the MIT License.</p>
-      {/* Add your license content */}
-    </div>
-  );
-}
-
-// src/components/about.tsx
-export function About() {
-  return (
-    <div className="p-8">
-      <h1 className="mb-4 text-2xl font-bold">About Quirk</h1>
-      <p>
-        Quirk helps organisations turn chaos into clarity through modern work
-        management and enterprise tooling solutions.
-      </p>
-      {/* Add more about content */}
-    </div>
-  );
-}
+export default ProjectIcons;
