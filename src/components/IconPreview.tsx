@@ -24,26 +24,40 @@ import {
 } from "../utils/iconGenerator";
 import { iconTypes, type IconType } from "../lib/iconTypes";
 
+interface IconPathState {
+  path: string | null;
+  loading: boolean;
+}
+
 const IconPreview = () => {
   const [selectedHue, setSelectedHue] = useState<ColorHue>("blue");
   const [selectedVariant, setSelectedVariant] = useState<Variant>("medium");
   const [selectedIcon, setSelectedIcon] = useState<IconType>(iconTypes[0]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [iconPaths, setIconPaths] = useState<Record<string, string>>({});
+  const [iconPaths, setIconPaths] = useState<Record<string, IconPathState>>({});
+  const [intersectionObserver, setIntersectionObserver] =
+    useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
+  // Set up intersection observer on mount
   useEffect(() => {
-    // Load all SVG files when component mounts
-    const loadIcons = async () => {
-      const paths: Record<string, string> = {};
-      for (const icon of iconTypes) {
-        const svgContent = await loadSvgContent(icon.path);
-        paths[icon.name] = extractPathsFromSvg(svgContent);
-      }
-      setIconPaths(paths);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const iconName = entry.target.getAttribute("data-icon-name");
+            if (iconName) {
+              loadIcon(iconName);
+            }
+          }
+        });
+      },
+      { rootMargin: "50px" }
+    );
 
-    loadIcons();
+    setIntersectionObserver(observer);
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -72,6 +86,36 @@ const IconPreview = () => {
       document.removeEventListener("mouseup", handleClickOutside);
     };
   }, [isSheetOpen]);
+
+  // Modified load function to handle single icon
+  const loadIcon = async (iconName: string) => {
+    // Skip if already loaded or loading
+    if (iconPaths[iconName]?.path || iconPaths[iconName]?.loading) return;
+
+    setIconPaths((prev) => ({
+      ...prev,
+      [iconName]: { path: null, loading: true },
+    }));
+
+    const icon = iconTypes.find((i) => i.name === iconName);
+    if (!icon) return;
+
+    try {
+      const svgContent = await loadSvgContent(icon.path);
+      const path = extractPathsFromSvg(svgContent);
+
+      setIconPaths((prev) => ({
+        ...prev,
+        [iconName]: { path, loading: false },
+      }));
+    } catch (error) {
+      console.error(`Failed to load icon: ${iconName}`, error);
+      setIconPaths((prev) => ({
+        ...prev,
+        [iconName]: { path: null, loading: false },
+      }));
+    }
+  };
 
   const categorizedFilteredIcons = React.useMemo(() => {
     const searchLower = searchQuery.toLowerCase();
@@ -110,32 +154,66 @@ const IconPreview = () => {
   }, [searchQuery]);
 
   const renderSvgPreview = (
-    name: string,
+    icon: IconType,
     size: number = 24,
     useThemeColor: boolean = true
   ) => {
-    const pathContent = iconPaths[name] || "";
-    const fgColor = useThemeColor
-      ? "currentColor"
-      : foregroundMappings[selectedHue][selectedVariant];
-    const svgString = generateSVGString(pathContent, fgColor, "none", size, 4);
+    const iconState = iconPaths[icon.name];
 
-    return (
-      <div
-        className={
-          useThemeColor
-            ? "[&>svg]:text-foreground [&>svg>g]:stroke-current"
-            : ""
-        }
-        dangerouslySetInnerHTML={{ __html: svgString }}
-      />
-    );
+    // If we have no observer yet, return placeholder
+    if (!intersectionObserver) {
+      return (
+        <div className="w-[36px] h-[36px] bg-muted animate-pulse rounded-md" />
+      );
+    }
+
+    // If we're loading, show loading state
+    if (!iconState || iconState.loading) {
+      return (
+        <div
+          data-icon-name={icon.name}
+          ref={(el) => {
+            if (el) intersectionObserver.observe(el);
+          }}
+          className="w-[36px] h-[36px] bg-muted animate-pulse rounded-md"
+        />
+      );
+    }
+
+    // If we have the path, render the SVG
+    if (iconState.path) {
+      const fgColor = useThemeColor
+        ? "currentColor"
+        : foregroundMappings[selectedHue][selectedVariant];
+      const svgString = generateSVGString(
+        iconState.path,
+        fgColor,
+        "none",
+        size,
+        4
+      );
+
+      return (
+        <div
+          className={
+            useThemeColor
+              ? "[&>svg]:text-foreground [&>svg>g]:stroke-current"
+              : ""
+          }
+          dangerouslySetInnerHTML={{ __html: svgString }}
+        />
+      );
+    }
+
+    // Fallback for failed loads
+    return <div className="w-[36px] h-[36px] bg-destructive/20 rounded-md" />;
   };
 
   const renderIcon = (hue: ColorHue, variant: Variant) => {
     const bgColor = backgroundColors[hue][variant];
     const fgColor = foregroundMappings[hue][variant];
-    const pathContent = iconPaths[selectedIcon.name] || "";
+    const iconState = iconPaths[selectedIcon.name];
+    const pathContent = iconState?.path || "";
 
     const svgString = generateSVGString(pathContent, fgColor, bgColor, 32);
 
@@ -155,7 +233,8 @@ const IconPreview = () => {
   const handleDownload = async (format: "svg" | "png") => {
     const bgColor = backgroundColors[selectedHue][selectedVariant];
     const fgColor = foregroundMappings[selectedHue][selectedVariant];
-    const pathContent = iconPaths[selectedIcon.name] || "";
+    const iconState = iconPaths[selectedIcon.name];
+    const pathContent = iconState?.path || "";
 
     if (format === "svg") {
       const svgString = generateSVGString(pathContent, fgColor, bgColor);
@@ -225,7 +304,7 @@ const IconPreview = () => {
                     >
                       <CardContent className="p-2 text-center">
                         <div className="flex justify-center mb-2">
-                          {renderSvgPreview(icon.name, 36)}
+                          {renderSvgPreview(icon, 36)}
                         </div>
                         <div className="text-sm font-medium">{icon.name}</div>
                       </CardContent>
@@ -290,7 +369,7 @@ const IconPreview = () => {
                       backgroundColors[selectedHue][selectedVariant],
                   }}
                 >
-                  {renderSvgPreview(selectedIcon.name, 88, false)}{" "}
+                  {renderSvgPreview(selectedIcon, 88, false)}{" "}
                 </div>
 
                 {/* Download Controls */}
