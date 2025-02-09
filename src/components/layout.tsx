@@ -1,4 +1,12 @@
-import { Dock, InfoIcon, Copyright, Package, Menu, X } from "lucide-react";
+import {
+  Dock,
+  InfoIcon,
+  Copyright,
+  Package,
+  Menu,
+  X,
+  BugIcon,
+} from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
@@ -8,6 +16,7 @@ type Tab = {
   id: string;
   icon: React.ReactNode;
   label: string;
+  href?: string;
 };
 
 const tabs: Tab[] = [
@@ -31,6 +40,12 @@ const tabs: Tab[] = [
     icon: <InfoIcon className="w-4 h-4" />,
     label: "About Quirk",
   },
+  {
+    id: "issues",
+    icon: <BugIcon className="w-4 h-4" />,
+    label: "Report Issue",
+    href: "https://github.com/quirk-consulting/quirk-consulting.github.io/issues",
+  },
 ];
 
 type LayoutProps = {
@@ -44,24 +59,42 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
 
   const NavContent = () => (
     <nav className="p-2">
-      {tabs.map((tab) => (
-        <button
-          key={tab.id}
-          onClick={() => {
-            onTabChange(tab.id);
-            setIsMobileMenuOpen(false);
-          }}
-          className={`w-full flex items-center gap-2 px-4 py-2 mb-1 rounded-md text-sm transition-colors
-            ${
-              activeTab === tab.id
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-accent"
-            }`}
-        >
-          {tab.icon}
-          {tab.label}
-        </button>
-      ))}
+      {tabs.map((tab) => {
+        const ButtonContent = () => (
+          <>
+            {tab.icon}
+            {tab.label}
+          </>
+        );
+
+        return tab.href ? (
+          <a
+            key={tab.id}
+            href={tab.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center w-full gap-2 px-4 py-2 mb-1 text-sm transition-colors rounded-md hover:bg-accent"
+          >
+            <ButtonContent />
+          </a>
+        ) : (
+          <button
+            key={tab.id}
+            onClick={() => {
+              onTabChange(tab.id);
+              setIsMobileMenuOpen(false);
+            }}
+            className={`w-full flex items-center gap-2 px-4 py-2 mb-1 rounded-md text-sm transition-colors
+              ${
+                activeTab === tab.id
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-accent"
+              }`}
+          >
+            <ButtonContent />
+          </button>
+        );
+      })}
     </nav>
   );
 
