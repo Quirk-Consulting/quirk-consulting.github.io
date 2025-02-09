@@ -388,7 +388,7 @@ const IconPreview = () => {
                       backgroundColors[selectedHue][selectedVariant],
                   }}
                 >
-                  {renderSvgPreview(selectedIcon, 88, false)}
+                  {renderSvgPreview(selectedIcon, 121, false)}
                 </div>
 
                 {/* Desktop: Buttons in column */}
