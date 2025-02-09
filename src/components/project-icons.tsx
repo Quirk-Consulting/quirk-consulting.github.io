@@ -1,6 +1,4 @@
-import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Rocket, Stars, Timer } from "lucide-react";
 
 export function ProjectIcons() {
   return (
