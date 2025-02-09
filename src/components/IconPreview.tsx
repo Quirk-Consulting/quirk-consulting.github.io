@@ -317,7 +317,7 @@ const IconPreview = () => {
           className="max-h-[90dvh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sticky top-0 w-1/2 pt-2 mb-4 bg-background">
+          <div className="top-0 pt-2 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
               {selectedVariant === "medium" ? "" : selectedVariant}{" "}
@@ -325,7 +325,7 @@ const IconPreview = () => {
             </SheetTitle>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {/* Color Variants Section */}
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-muted-foreground">
@@ -375,11 +375,14 @@ const IconPreview = () => {
 
             {/* Preview Section */}
             <div className="flex flex-col md:justify-center">
+              <h3 className="mb-2 text-sm font-medium text-muted-foreground">
+                Color Variants
+              </h3>
               {/* Desktop layout - side by side */}
-              <div className="items-center justify-center hidden gap-6 md:flex">
+              <div className="hidden gap-6 md:flex">
                 {/* Hero Preview */}
                 <div
-                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg shrink-0"
+                  className="flex items-center justify-center w-40 h-40 p-4 rounded-lg shrink-0"
                   style={{
                     backgroundColor:
                       backgroundColors[selectedHue][selectedVariant],
