@@ -234,7 +234,6 @@ const IconPreview = () => {
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
       <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Icons</h1>
-
       <div className="flex flex-col flex-grow">
         <div className="relative mb-4">
           <Search
@@ -305,8 +304,8 @@ const IconPreview = () => {
           <div className="top-0 pt-2 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
-              {selectedVariant === "medium" ? "" : selectedVariant}{" "}
-              {selectedHue}
+              {selectedVariant === "medium" ? "" : selectedVariant.charAt(0).toUpperCase() + selectedVariant.slice(1)}{" "}
+              {selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)}
             </SheetTitle>
           </div>
 
