@@ -55,33 +55,6 @@ const IconPreview = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      // Don't close if clicked on a filtered icon or its children
-      if ((event.target as Element).closest(".filtered-icon-trigger")) {
-        return;
-      }
-
-      // Don't close if clicked inside the sheet
-      if ((event.target as Element).closest('[role="dialog"]')) {
-        return;
-      }
-
-      // Only close if we clicked outside both the icons and the sheet
-      setIsSheetOpen(false);
-    }
-
-    if (isSheetOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("mouseup", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("mouseup", handleClickOutside);
-    };
-  }, [isSheetOpen]);
-
   // Modified load function to handle single icon
   const loadIcon = async (iconName: string) => {
     // Skip if already loaded or loading
@@ -254,9 +227,8 @@ const IconPreview = () => {
 
   const handleIconSelect = (icon: IconType) => {
     setSelectedIcon(icon);
-    if (!isSheetOpen) {
-      setIsSheetOpen(true);
-    }
+    console.log(isSheetOpen);
+    setIsSheetOpen(true);
   };
 
   return (
@@ -311,7 +283,20 @@ const IconPreview = () => {
         </div>
       </div>
 
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+      <Sheet
+        open={isSheetOpen}
+        onOpenChange={(open) => {
+          // If trying to close (open becoming false) and clicked on filtered-icon-trigger, prevent closing
+          if (
+            !open &&
+            (event?.target as Element)?.closest(".filtered-icon-trigger")
+          ) {
+            return;
+          }
+          setIsSheetOpen(open);
+        }}
+        modal={false}
+      >
         <SheetContent
           side="bottom"
           className="max-h-[90dvh] overflow-y-auto"

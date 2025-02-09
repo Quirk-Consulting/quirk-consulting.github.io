@@ -1,4 +1,4 @@
-import { FileIcon, InfoIcon, Copyright, Package, Menu, X } from "lucide-react";
+import { Dock, InfoIcon, Copyright, Package, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
@@ -18,7 +18,7 @@ const tabs: Tab[] = [
   },
   {
     id: "project-icons",
-    icon: <FileIcon className="w-4 h-4" />,
+    icon: <Dock className="w-4 h-4" />,
     label: "Project Icons",
   },
   {
