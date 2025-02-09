@@ -265,12 +265,10 @@ const IconPreview = () => {
   };
 
   return (
-    <div className="flex flex-col h-full p-8">
-      <h1 className="mb-6 text-2xl font-bold">Jira Icons</h1>
+    <div className="flex flex-col h-full p-4 md:p-8">
+      <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Icons</h1>
 
-      {/* Main content area with flex-grow */}
       <div className="flex flex-col flex-grow">
-        {/* Search bar stays at top */}
         <div className="relative mb-4">
           <Search
             className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2"
@@ -285,15 +283,14 @@ const IconPreview = () => {
           />
         </div>
 
-        {/* Scrollable grid container */}
         <div className="flex-grow overflow-y-auto">
-          <div className="space-y-8">
+          <div className="mb-6 space-y-6 md:space-y-8">
             {categorizedFilteredIcons.map(({ category, icons }) => (
-              <div key={category} className="space-y-4">
-                <h2 className="text-lg font-semibold text-muted-foreground">
+              <div key={category} className="space-y-3 md:space-y-4">
+                <h2 className="text-base font-semibold md:text-lg text-muted-foreground">
                   {category}
                 </h2>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 md:gap-4">
                   {icons.map((icon) => (
                     <Card
                       key={`${category}-${icon.name}`}
@@ -306,7 +303,9 @@ const IconPreview = () => {
                         <div className="flex justify-center mb-2">
                           {renderSvgPreview(icon, 36)}
                         </div>
-                        <div className="text-sm font-medium">{icon.name}</div>
+                        <div className="text-xs font-medium truncate md:text-sm">
+                          {icon.name}
+                        </div>
                       </CardContent>
                     </Card>
                   ))}
@@ -317,28 +316,57 @@ const IconPreview = () => {
         </div>
       </div>
 
-      {/* Sheet with Color Variants and Selected Icon */}
       <Sheet open={isSheetOpen} modal={false}>
         <SheetContent
           side="bottom"
-          className={`h-[400px]`}
-          // Prevent click events inside sheet from bubbling up
+          className="h-[75vh] md:h-[35vh] p-4 md:p-6"
           onClick={(e) => e.stopPropagation()}
         >
-          {" "}
-          {/* Reduced height */}
-          <SheetHeader>
-            <SheetTitle></SheetTitle>
+          <SheetHeader className="mb-4">
+            <SheetTitle className="text-base md:text-lg">
+              {selectedIcon.name} -{" "}
+              {selectedVariant === "medium"
+                ? ""
+                : selectedVariant.charAt(0).toUpperCase() +
+                  selectedVariant.slice(1)}{" "}
+              {selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)}
+            </SheetTitle>
           </SheetHeader>
-          <div className="grid grid-cols-2 gap-8 p-6">
-            {/* Color Variants Grid - Left Side */}
-            <div>
-              <h3 className="mb-4 text-lg font-semibold">Color Variants</h3>
-              <div className="grid grid-cols-12 gap-2">
-                {" "}
-                {/* Changed to grid-cols-8 */}
+
+          <div className="grid gap-6 overflow-y-auto md:grid-cols-2">
+            {/* Color Variants Section */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Color Variants
+              </h3>
+
+              {/* Mobile: 6x6 grid */}
+              <div className="grid grid-cols-6 gap-2 md:hidden">
+                {[0, 1].map((row) => (
+                  <React.Fragment key={row}>
+                    {Object.keys(backgroundColors)
+                      .slice(row * 6, (row + 1) * 6)
+                      .map((hue) => (
+                        <div key={hue} className="space-y-2">
+                          {(["dark", "medium", "light"] as const).map(
+                            (variant) => (
+                              <div
+                                key={`${hue}-${variant}`}
+                                className="flex items-center justify-center"
+                              >
+                                {renderIcon(hue as ColorHue, variant)}
+                              </div>
+                            )
+                          )}
+                        </div>
+                      ))}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              {/* Desktop: 12x3 grid */}
+              <div className="hidden grid-cols-12 gap-2 md:grid">
                 {Object.keys(backgroundColors).map((hue) => (
-                  // Each hue column
                   <div key={hue} className="space-y-2">
                     {(["dark", "medium", "light"] as const).map((variant) => (
                       <div
@@ -353,42 +381,74 @@ const IconPreview = () => {
               </div>
             </div>
 
-            {/* Download Section - Right Side */}
-            <div className="flex items-start">
-              <div>
-                <h3 className="mb-4 text-lg font-semibold">
-                  {selectedIcon.name} -{" "}
-                  {selectedVariant == "medium" ? "" : selectedVariant}{" "}
-                  {selectedHue}
-                </h3>
-                {/* Selected Preview */}
+            {/* Preview Section */}
+            <div className="flex flex-col h-full md:justify-center">
+              {/* Desktop layout - side by side */}
+              <h3 className="text-sm font-medium md:pb-2 text-muted-foreground">
+                Preview
+              </h3>
+              <div className="hidden gap-6 md:flex">
+                {/* Hero Preview */}
                 <div
-                  className="inline-block p-2 rounded-lg"
+                  className="flex items-center justify-center w-40 h-40 p-4 rounded-lg"
                   style={{
                     backgroundColor:
                       backgroundColors[selectedHue][selectedVariant],
                   }}
                 >
-                  {renderSvgPreview(selectedIcon, 88, false)}{" "}
+                  {renderSvgPreview(selectedIcon, 121, false)}
                 </div>
 
-                {/* Download Controls */}
-                <div>
-                  <p className="mb-4 text-sm text-muted-foreground"></p>
-                  <div className="flex gap-2">
-                    <Button
-                      onClick={() => handleDownload("svg")}
-                      variant="default"
-                    >
-                      Download SVG
-                    </Button>
-                    <Button
-                      onClick={() => handleDownload("png")}
-                      variant="secondary"
-                    >
-                      Download PNG
-                    </Button>
-                  </div>
+                {/* Desktop: Buttons in column */}
+                <div className="flex flex-col gap-2">
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    className="w-32"
+                  >
+                    Download SVG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("png")}
+                    variant="secondary"
+                    className="w-32"
+                  >
+                    Download PNG
+                  </Button>
+                </div>
+              </div>
+
+              {/* Mobile layout - stacked */}
+              <div className="flex flex-col items-center gap-4 md:hidden">
+                {/* Hero Preview */}
+                <div
+                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg"
+                  style={{
+                    backgroundColor:
+                      backgroundColors[selectedHue][selectedVariant],
+                  }}
+                >
+                  {renderSvgPreview(selectedIcon, 88, false)}
+                </div>
+
+                {/* Mobile: Buttons in row */}
+                <div className="flex flex-row gap-2">
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    size="sm"
+                    className="w-32"
+                  >
+                    Download SVG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("png")}
+                    variant="secondary"
+                    size="sm"
+                    className="w-32"
+                  >
+                    Download PNG
+                  </Button>
                 </div>
               </div>
             </div>
