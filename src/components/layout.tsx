@@ -6,6 +6,7 @@ import {
   Menu,
   X,
   BugIcon,
+  BookOpen,
 } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
@@ -29,6 +30,11 @@ const tabs: Tab[] = [
     id: "project-icons",
     icon: <Dock className="w-4 h-4" />,
     label: "Project Icons",
+  },
+  {
+    id: "installation",
+    icon: <BookOpen className="w-4 h-4" />,
+    label: "Installation Guide",
   },
   {
     id: "license",
