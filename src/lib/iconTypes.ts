@@ -1,10 +1,4 @@
 // src/lib/iconTypes.ts
-export type IconType = {
-  name: string;
-  path: string;
-  searchTerms: string[];
-  categories: string[];
-};
 
 // Utility function to get the correct path
 const getIconPath = (iconName: string) => {
@@ -58,6 +52,14 @@ export const categoryNames = [
   "Weather",
   "Writing & Editing",
 ];
+
+//IconType categories based on the categoryNames array
+export type IconType = {
+  name: string;
+  path: string;
+  searchTerms: string[];
+  categories: string[];
+};
 
 export const iconTypes: IconType[] = [
   /* Accessibility */
@@ -2464,7 +2466,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Antenna",
     path: getIconPath("antenna.svg"),
-    searchTerms: ["antenna", "signal", "radio", "broadcast", "transmit", "wave"],
+    searchTerms: [
+      "antenna",
+      "signal",
+      "radio",
+      "broadcast",
+      "transmit",
+      "wave",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2476,7 +2485,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Audio Waveform",
     path: getIconPath("audio-waveform.svg"),
-    searchTerms: ["audio waveform", "sound", "music", "wave", "volume", "listen"],
+    searchTerms: [
+      "audio waveform",
+      "sound",
+      "music",
+      "wave",
+      "volume",
+      "listen",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2488,19 +2504,40 @@ export const iconTypes: IconType[] = [
   {
     name: "Cassette Tape",
     path: getIconPath("cassette-tape.svg"),
-    searchTerms: ["cassette tape", "audio", "music", "record", "play", "listen"],
+    searchTerms: [
+      "cassette tape",
+      "audio",
+      "music",
+      "record",
+      "play",
+      "listen",
+    ],
     categories: ["Communication"],
   },
   {
     name: "CCTV",
     path: getIconPath("cctv.svg"),
-    searchTerms: ["cctv", "camera", "security", "surveillance", "monitor", "watch"],
+    searchTerms: [
+      "cctv",
+      "camera",
+      "security",
+      "surveillance",
+      "monitor",
+      "watch",
+    ],
     categories: ["Communication"],
   },
   {
     name: "Ethernet Port",
     path: getIconPath("ethernet-port.svg"),
-    searchTerms: ["ethernet port", "network", "internet", "connection", "plug", "socket"],
+    searchTerms: [
+      "ethernet port",
+      "network",
+      "internet",
+      "connection",
+      "plug",
+      "socket",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2518,7 +2555,14 @@ export const iconTypes: IconType[] = [
   {
     name: "NFC",
     path: getIconPath("nfc.svg"),
-    searchTerms: ["nfc", "near field communication", "wireless", "contactless", "tag", "smart"],
+    searchTerms: [
+      "nfc",
+      "near field communication",
+      "wireless",
+      "contactless",
+      "tag",
+      "smart",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2530,7 +2574,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Projector",
     path: getIconPath("projector.svg"),
-    searchTerms: ["projector", "screen", "display", "show", "presentation", "movie"],
+    searchTerms: [
+      "projector",
+      "screen",
+      "display",
+      "show",
+      "presentation",
+      "movie",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2542,7 +2593,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Send Horizontal",
     path: getIconPath("send-horizontal.svg"),
-    searchTerms: ["send horizontal", "send", "arrow", "direction", "point", "transfer"],
+    searchTerms: [
+      "send horizontal",
+      "send",
+      "arrow",
+      "direction",
+      "point",
+      "transfer",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2591,13 +2649,27 @@ export const iconTypes: IconType[] = [
   {
     name: "Battery Charging",
     path: getIconPath("battery-charging.svg"),
-    searchTerms: ["battery charging", "battery", "power", "charge", "electric", "energy"],
+    searchTerms: [
+      "battery charging",
+      "battery",
+      "power",
+      "charge",
+      "electric",
+      "energy",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Bluetooth",
     path: getIconPath("bluetooth.svg"),
-    searchTerms: ["bluetooth", "wireless", "connection", "device", "transfer", "connect"],
+    searchTerms: [
+      "bluetooth",
+      "wireless",
+      "connection",
+      "device",
+      "transfer",
+      "connect",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2627,19 +2699,39 @@ export const iconTypes: IconType[] = [
   {
     name: "Router",
     path: getIconPath("router.svg"),
-    searchTerms: ["router", "internet", "connection", "network", "wifi", "wireless"],
+    searchTerms: [
+      "router",
+      "internet",
+      "connection",
+      "network",
+      "wifi",
+      "wireless",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Satellite Dish",
     path: getIconPath("satellite-dish.svg"),
-    searchTerms: ["satellite dish", "dish", "signal", "broadcast", "transmit", "receive"],
+    searchTerms: [
+      "satellite dish",
+      "dish",
+      "signal",
+      "broadcast",
+      "transmit",
+      "receive",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Satellite",
     path: getIconPath("satellite.svg"),
-    searchTerms: ["satellite", "signal, broadcast", "transmit", "receive", "space"],
+    searchTerms: [
+      "satellite",
+      "signal, broadcast",
+      "transmit",
+      "receive",
+      "space",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2651,7 +2743,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Wifi",
     path: getIconPath("wifi.svg"),
-    searchTerms: ["wifi", "wireless", "internet", "connection", "network", "signal"],
+    searchTerms: [
+      "wifi",
+      "wireless",
+      "internet",
+      "connection",
+      "network",
+      "signal",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2659,5 +2758,432 @@ export const iconTypes: IconType[] = [
     path: getIconPath("zap.svg"),
     searchTerms: ["zap", "electric", "energy", "power", "charge", "lightning"],
     categories: ["Connectivity"],
-  }
+  },
+  /* Cursors */
+  {
+    name: "Cirle Plus",
+    path: getIconPath("circle-plus.svg"),
+    searchTerms: ["circle plus", "add", "create", "new", "more", "increase"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Lasso",
+    path: getIconPath("lasso.svg"),
+    searchTerms: ["lasso", "select", "choose", "pick", "highlight", "outline"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Loader Pinwheel",
+    path: getIconPath("loader-pinwheel.svg"),
+    searchTerms: [
+      "loader pinwheel",
+      "loading",
+      "spinner",
+      "wait",
+      "progress",
+      "circle",
+    ],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Loader",
+    path: getIconPath("loader.svg"),
+    searchTerms: ["loader", "loading", "spinner", "wait", "progress", "circle"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pen Tool",
+    path: getIconPath("pen-tool.svg"),
+    searchTerms: ["pen tool", "draw", "create", "design", "sketch", "outline"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pencil",
+    path: getIconPath("pencil.svg"),
+    searchTerms: ["pencil", "draw", "write", "sketch", "outline", "edit"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Plus",
+    path: getIconPath("plus.svg"),
+    searchTerms: ["plus", "add", "create", "new", "more", "increase"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pointer",
+    path: getIconPath("pointer.svg"),
+    searchTerms: ["pointer", "cursor", "click", "select", "point", "choose"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Sparkles",
+    path: getIconPath("sparkles.svg"),
+    searchTerms: ["sparkles", "shine", "glow", "twinkle", "light", "bright"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Stamp",
+    path: getIconPath("stamp.svg"),
+    searchTerms: ["stamp", "seal", "approve", "confirm", "validate", "mark"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Text Cursor",
+    path: getIconPath("text-cursor.svg"),
+    searchTerms: ["text cursor", "type", "write", "edit", "select", "click"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Wand Sparkles",
+    path: getIconPath("wand-sparkles.svg"),
+    searchTerms: [
+      "wand sparkles",
+      "magic",
+      "sparkle",
+      "shine",
+      "glow",
+      "twinkle",
+    ],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Wand",
+    path: getIconPath("wand.svg"),
+    searchTerms: ["wand", "magic", "sparkle", "shine", "glow", "twinkle"],
+    categories: ["Cursors"],
+  },
+  /* Design */
+  {
+    name: "App Window Mac",
+    path: getIconPath("app-window-mac.svg"),
+    searchTerms: [
+      "app window mac",
+      "mac",
+      "window",
+      "app",
+      "application",
+      "software",
+    ],
+    categories: ["Design"],
+  },
+  {
+    name: "App Window",
+    path: getIconPath("app-window.svg"),
+    searchTerms: [
+      "app window",
+      "window",
+      "app",
+      "application",
+      "software",
+      "program",
+    ],
+    categories: ["Design"],
+  },
+  {
+    name: "Blend",
+    path: getIconPath("blend.svg"),
+    searchTerms: ["blend", "mix", "combine", "merge", "unite", "connect"],
+    categories: ["Design"],
+  },
+  {
+    name: "Book Type",
+    path: getIconPath("book-type.svg"),
+    searchTerms: ["book type", "book", "read", "learn", "study", "knowledge"],
+    categories: ["Design"],
+  },
+  {
+    name: "Bring to Front",
+    path: getIconPath("bring-to-front.svg"),
+    searchTerms: [
+      "bring to front",
+      "front",
+      "move",
+      "forward",
+      "bring",
+      "top",
+    ],
+    categories: ["Design"],
+  },
+  {
+    name: "Brush",
+    path: getIconPath("brush.svg"),
+    searchTerms: ["brush", "paint", "draw", "art", "design", "sketch"],
+    categories: ["Design"],
+  },
+  {
+    name: "Candle Holder Lit",
+    path: getIconPath("candle-holder-lit.svg"),
+    searchTerms: ["candle holder lit", "candle", "light", "fire", "burn", "glow"],
+    categories: ["Design"],
+  },
+  {
+    name: "Candle Tealight Lit",
+    path: getIconPath("candle-tealight-lit.svg"),
+    searchTerms: ["candle tealight lit", "candle", "light", "fire", "burn", "glow"],
+    categories: ["Design"],
+  },
+  {
+    name: "Candlestick Big Lit",
+    path: getIconPath("candlestick-big-lit.svg"),
+    searchTerms: ["candlestick big lit", "candle", "light", "fire", "burn", "glow"],
+    categories: ["Design"],
+  },
+  {
+    name: "Component",
+    path: getIconPath("component.svg"),
+    searchTerms: ["component", "part", "piece", "element", "section", "module"],
+    categories: ["Design"],
+  },
+  {
+    name: "Contrast",
+    path: getIconPath("contrast.svg"),
+    searchTerms: ["contrast", "brightness", "light", "dark", "shade", "color"],
+    categories: ["Design"],
+  },
+  {
+    name: "Crop",
+    path: getIconPath("crop.svg"),
+    searchTerms: ["crop", "cut", "edit", "resize", "adjust", "design"],
+    categories: ["Design"],
+  },
+  {
+    name: "Cylinder",
+    path: getIconPath("cylinder.svg"),
+    searchTerms: ["cylinder", "tube", "round", "shape", "3d", "dimension"],
+    categories: ["Design"],
+  },
+  {
+    name: "Diameter",
+    path: getIconPath("diameter.svg"),
+    searchTerms: ["diameter", "circle", "round", "shape", "3d", "dimension"],
+    categories: ["Design"],
+  },
+  {
+    name: "Drafting Compass",
+    path: getIconPath("drafting-compass.svg"),
+    searchTerms: ["drafting compass", "compass", "circle", "round", "shape"],
+    categories: ["Design"],
+  },
+  {
+    name: "Eclipse",
+    path: getIconPath("eclipse.svg"),
+    searchTerms: ["eclipse", "circle", "round", "shape", "3d", "dimension"],
+    categories: ["Design"],
+  },
+  {
+    name: "File Axis 3D",
+    path: getIconPath("file-axis-3d.svg"),
+    searchTerms: ["file axis 3d", "3d", "dimension", "axis", "file", "data"],
+    categories: ["Design"],
+  },
+  {
+    name: "Frame",
+    path: getIconPath("frame.svg"),
+    searchTerms: ["frame", "border", "outline", "edge", "picture", "photo"],
+    categories: ["Design"],
+  },
+  {
+    name: "Fullscreen",
+    path: getIconPath("fullscreen.svg"),
+    searchTerms: ["fullscreen", "expand", "maximize", "view", "screen", "window"],
+    categories: ["Design"],
+  },
+  {
+    name: "Highlighter",
+    path: getIconPath("highlighter.svg"),
+    searchTerms: ["highlighter", "highlight", "color", "marker", "draw", "mark"],
+    categories: ["Design"],
+  },
+  {
+    name: "Land Plot",
+    path: getIconPath("land-plot.svg"),
+    searchTerms: ["land plot", "land", "plot", "property", "real estate", "area"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layers",
+    path: getIconPath("layers.svg"),
+    searchTerms: ["layers", "stack", "order", "arrange", "organize", "group"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layers 2",
+    path: getIconPath("layers-2.svg"),
+    searchTerms: ["layers 2", "stack", "order", "arrange", "organize", "group"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layout Dashboard",
+    path: getIconPath("layout-dashboard.svg"),
+    searchTerms: ["layout dashboard", "layout", "dashboard", "grid", "design"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layout Grid",
+    path: getIconPath("layout-grid.svg"),
+    searchTerms: ["layout grid", "layout", "grid", "design", "arrange", "order"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layout List",
+    path: getIconPath("layout-list.svg"),
+    searchTerms: ["layout list", "layout", "list", "design", "arrange", "order"],
+    categories: ["Design"],
+  },
+  {
+    name: "Layout Panel Left",
+    path: getIconPath("layout-panel-left.svg"),
+    searchTerms: ["layout panel left", "layout", "panel", "design", "arrange"],
+    categories: ["Design"],
+  },
+  {
+    name: "Magnet",
+    path: getIconPath("magnet.svg"),
+    searchTerms: ["magnet", "attract", "pull", "metal", "magnetic", "force"],
+    categories: ["Design"],
+  },
+  {
+    name: "Maximize",
+    path: getIconPath("maximize.svg"),
+    searchTerms: ["maximize", "expand", "fullscreen", "view", "screen", "window"],
+    categories: ["Design"],
+  },
+  {
+    name: "Minimize",
+    path: getIconPath("minimize.svg"),
+    searchTerms: ["minimize", "shrink", "reduce", "view", "screen", "window"],
+    categories: ["Design"],
+  },
+  {
+    name: "Origami",
+    path: getIconPath("origami.svg"),
+    searchTerms: ["origami", "fold", "paper", "art", "craft", "design"],
+    categories: ["Design"],
+  },
+  {
+    name: "Paint Bucket",
+    path: getIconPath("paint-bucket.svg"),
+    searchTerms: ["paint bucket", "paint", "color", "fill", "draw", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Paint Roller",
+    path: getIconPath("paint-roller.svg"),
+    searchTerms: ["paint roller", "paint", "color", "fill", "draw", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Paintbrush Vertical",
+    path: getIconPath("paintbrush-vertical.svg"),
+    searchTerms: ["paintbrush vertical", "paint", "color", "fill", "draw", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Paintbrush",
+    path: getIconPath("paintbrush.svg"),
+    searchTerms: ["paintbrush", "paint", "color", "fill", "draw", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Palette",
+    path: getIconPath("palette.svg"),
+    searchTerms: ["palette", "color", "paint", "draw", "tool", "art"],
+    categories: ["Design"],
+  },
+  {
+    name: "Paperclip",
+    path: getIconPath("paperclip.svg"),
+    searchTerms: ["paperclip", "clip", "attach", "hold", "fasten", "link"],
+    categories: ["Design"],
+  },
+  {
+    name: "Pen Line",
+    path: getIconPath("pen-line.svg"),
+    searchTerms: ["pen line", "draw", "create", "design", "sketch", "outline"],
+    categories: ["Design"],
+  },
+  {
+    name: "Pen",
+    path: getIconPath("pen.svg"),
+    searchTerms: ["pen", "draw", "write", "sketch", "outline", "edit"],
+    categories: ["Design"],
+  },
+  {
+    name: "Pencil Line",
+    path: getIconPath("pencil-line.svg"),
+    searchTerms: ["pencil line", "draw", "create", "design", "sketch", "outline"],
+    categories: ["Design"],
+  },
+  {
+    name: "Pencil Ruler",
+    path: getIconPath("pencil-ruler.svg"),
+    searchTerms: ["pencil ruler", "draw", "create", "design", "sketch", "outline"],
+    categories: ["Design"],
+  },
+  {
+    name: "Pipette",
+    path: getIconPath("pipette.svg"),
+    searchTerms: ["pipette", "color", "pick", "select", "choose", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Radius",
+    path: getIconPath("radius.svg"),
+    searchTerms: ["radius", "circle", "round", "shape", "3d", "dimension"],
+    categories: ["Design"],
+  },
+  {
+    name: "Ratio",
+    path: getIconPath("ratio.svg"),
+    searchTerms: ["ratio", "proportion", "scale", "size", "dimension", "measure"],
+    categories: ["Design"],
+  },
+  {
+    name: "Rotate 3D",
+    path: getIconPath("rotate-3d.svg"),
+    searchTerms: ["rotate 3d", "rotate", "spin", "turn", "3d", "dimension"],
+    categories: ["Design"],
+  },
+  {
+    name: "Ruler",
+    path: getIconPath("ruler.svg"),
+    searchTerms: ["ruler", "measure", "scale", "size", "dimension", "length"],
+    categories: ["Design"],
+  },
+  {
+    name: "Scissors",
+    path: getIconPath("scissors.svg"),
+    searchTerms: ["scissors", "cut", "snip", "clip", "tool", "sharp"],
+    categories: ["Design"],
+  },
+  {
+    name: "Slice",
+    path: getIconPath("slice.svg"),
+    searchTerms: ["slice", "cut", "divide", "split", "section", "part"],
+    categories: ["Design"],
+  },
+  {
+    name: "Spray Can",
+    path: getIconPath("spray-can.svg"),
+    searchTerms: ["spray can", "paint", "color", "fill", "draw", "tool"],
+    categories: ["Design"],
+  },
+  {
+    name: "Torus",
+    path: getIconPath("torus.svg"),
+    searchTerms: ["torus", "round", "shape", "3d", "dimension", "doughnut"],
+    categories: ["Design"],
+  },
+  {
+    name: "Zoom In",
+    path: getIconPath("zoom-in.svg"),
+    searchTerms: ["zoom in", "magnify", "enlarge", "view", "screen", "window"],
+    categories: ["Design"],
+  },
+  {
+    name: "Zoom Out",
+    path: getIconPath("zoom-out.svg"),
+    searchTerms: ["zoom out", "minify", "reduce", "view", "screen", "window"],
+    categories: ["Design"],
+  },
 ];
