@@ -12,6 +12,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo/Logo";
 
 type Tab = {
   id: string;
@@ -109,7 +110,7 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
       {/* Desktop Sidebar */}
       <div className="hidden w-64 border-r md:block bg-card">
         <div className="flex items-center justify-between p-4 border-b">
-          <span className="text-lg font-semibold">Quirk Icons</span>
+          <Logo />
           <ThemeToggle />
         </div>
         <NavContent />
@@ -127,7 +128,7 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
             >
               <Menu className="w-5 h-5" />
             </Button>
-            <span className="text-lg font-semibold">Quirk Icons</span>
+            <Logo />
           </div>
           <ThemeToggle />
         </div>
@@ -136,7 +137,7 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetContent side="left" className="w-64 p-0">
             <div className="flex items-center justify-between p-4 border-b">
-              <span className="text-lg font-semibold">Quirk Icons</span>
+              <Logo />
               <Button
                 variant="ghost"
                 size="icon"

@@ -1,14 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Package, Mail } from "lucide-react";
+import { Logo } from "@/components/logo/Logo";
 
 export const About = () => {
   return (
     <div className="max-w-4xl p-6 mx-auto">
       <Card className="transition-all duration-300 bg-white shadow-lg hover:shadow-xl">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold text-gray-900">
-            Welcome to Quirk's Icon Library
+        <CardHeader className="space-y-6">
+          <div className="flex justify-center pt-4">
+            <div className="flex justify-center pt-4">
+              <Logo className="w-auto h-16 md:h-24" />
+            </div>
+          </div>
+          <CardTitle className="text-3xl font-bold text-center text-gray-900">
+            Welcome to Our Icon Library
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
