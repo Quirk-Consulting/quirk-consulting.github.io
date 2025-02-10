@@ -280,12 +280,27 @@ const IconPreview = () => {
             ))}
           </div>
         </div>
+
+        {/* New Request Section */}
+        <div className="flex flex-col items-center justify-center py-8 mt-8 border-t">
+          <p className="mb-4 text-muted-foreground">
+            Can't find what you're looking for?
+          </p>
+          <Button asChild variant="default">
+            <a
+              href="https://github.com/quirk-consulting/quirk-consulting.github.io/issues/new?labels=enhancement&type=feature"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Raise a request
+            </a>
+          </Button>
+        </div>
       </div>
 
       <Sheet
         open={isSheetOpen}
         onOpenChange={(open) => {
-          // If trying to close (open becoming false) and clicked on filtered-icon-trigger, prevent closing
           if (
             !open &&
             (event?.target as Element)?.closest(".filtered-icon-trigger")
@@ -304,7 +319,10 @@ const IconPreview = () => {
           <div className="top-0 pt-2 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
-              {selectedVariant === "medium" ? "" : selectedVariant.charAt(0).toUpperCase() + selectedVariant.slice(1)}{" "}
+              {selectedVariant === "medium"
+                ? ""
+                : selectedVariant.charAt(0).toUpperCase() +
+                  selectedVariant.slice(1)}{" "}
               {selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)}
             </SheetTitle>
           </div>
