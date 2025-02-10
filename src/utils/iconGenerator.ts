@@ -15,7 +15,11 @@ export const loadSvgContent = async (path: string): Promise<string> => {
 export const extractPathsFromSvg = (svgContent: string): string => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(svgContent, "image/svg+xml");
-  const paths = Array.from(doc.querySelectorAll("path, polyline, circle, rect, polygon, line, ellipse, text"));
+  const paths = Array.from(
+    doc.querySelectorAll(
+      "path, polyline, circle, rect, polygon, line, ellipse, text"
+    )
+  );
   return paths.map((path) => path.outerHTML).join("");
 };
 
