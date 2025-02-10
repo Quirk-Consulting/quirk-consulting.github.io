@@ -1,10 +1,4 @@
 // src/lib/iconTypes.ts
-export type IconType = {
-  name: string;
-  path: string;
-  searchTerms: string[];
-  categories: string[];
-};
 
 // Utility function to get the correct path
 const getIconPath = (iconName: string) => {
@@ -58,6 +52,14 @@ export const categoryNames = [
   "Weather",
   "Writing & Editing",
 ];
+
+//IconType categories based on the categoryNames array
+export type IconType = {
+  name: string;
+  path: string;
+  searchTerms: string[];
+  categories: string[];
+};
 
 export const iconTypes: IconType[] = [
   /* Accessibility */
@@ -2464,7 +2466,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Antenna",
     path: getIconPath("antenna.svg"),
-    searchTerms: ["antenna", "signal", "radio", "broadcast", "transmit", "wave"],
+    searchTerms: [
+      "antenna",
+      "signal",
+      "radio",
+      "broadcast",
+      "transmit",
+      "wave",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2476,7 +2485,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Audio Waveform",
     path: getIconPath("audio-waveform.svg"),
-    searchTerms: ["audio waveform", "sound", "music", "wave", "volume", "listen"],
+    searchTerms: [
+      "audio waveform",
+      "sound",
+      "music",
+      "wave",
+      "volume",
+      "listen",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2488,19 +2504,40 @@ export const iconTypes: IconType[] = [
   {
     name: "Cassette Tape",
     path: getIconPath("cassette-tape.svg"),
-    searchTerms: ["cassette tape", "audio", "music", "record", "play", "listen"],
+    searchTerms: [
+      "cassette tape",
+      "audio",
+      "music",
+      "record",
+      "play",
+      "listen",
+    ],
     categories: ["Communication"],
   },
   {
     name: "CCTV",
     path: getIconPath("cctv.svg"),
-    searchTerms: ["cctv", "camera", "security", "surveillance", "monitor", "watch"],
+    searchTerms: [
+      "cctv",
+      "camera",
+      "security",
+      "surveillance",
+      "monitor",
+      "watch",
+    ],
     categories: ["Communication"],
   },
   {
     name: "Ethernet Port",
     path: getIconPath("ethernet-port.svg"),
-    searchTerms: ["ethernet port", "network", "internet", "connection", "plug", "socket"],
+    searchTerms: [
+      "ethernet port",
+      "network",
+      "internet",
+      "connection",
+      "plug",
+      "socket",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2518,7 +2555,14 @@ export const iconTypes: IconType[] = [
   {
     name: "NFC",
     path: getIconPath("nfc.svg"),
-    searchTerms: ["nfc", "near field communication", "wireless", "contactless", "tag", "smart"],
+    searchTerms: [
+      "nfc",
+      "near field communication",
+      "wireless",
+      "contactless",
+      "tag",
+      "smart",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2530,7 +2574,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Projector",
     path: getIconPath("projector.svg"),
-    searchTerms: ["projector", "screen", "display", "show", "presentation", "movie"],
+    searchTerms: [
+      "projector",
+      "screen",
+      "display",
+      "show",
+      "presentation",
+      "movie",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2542,7 +2593,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Send Horizontal",
     path: getIconPath("send-horizontal.svg"),
-    searchTerms: ["send horizontal", "send", "arrow", "direction", "point", "transfer"],
+    searchTerms: [
+      "send horizontal",
+      "send",
+      "arrow",
+      "direction",
+      "point",
+      "transfer",
+    ],
     categories: ["Communication"],
   },
   {
@@ -2591,13 +2649,27 @@ export const iconTypes: IconType[] = [
   {
     name: "Battery Charging",
     path: getIconPath("battery-charging.svg"),
-    searchTerms: ["battery charging", "battery", "power", "charge", "electric", "energy"],
+    searchTerms: [
+      "battery charging",
+      "battery",
+      "power",
+      "charge",
+      "electric",
+      "energy",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Bluetooth",
     path: getIconPath("bluetooth.svg"),
-    searchTerms: ["bluetooth", "wireless", "connection", "device", "transfer", "connect"],
+    searchTerms: [
+      "bluetooth",
+      "wireless",
+      "connection",
+      "device",
+      "transfer",
+      "connect",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2627,19 +2699,39 @@ export const iconTypes: IconType[] = [
   {
     name: "Router",
     path: getIconPath("router.svg"),
-    searchTerms: ["router", "internet", "connection", "network", "wifi", "wireless"],
+    searchTerms: [
+      "router",
+      "internet",
+      "connection",
+      "network",
+      "wifi",
+      "wireless",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Satellite Dish",
     path: getIconPath("satellite-dish.svg"),
-    searchTerms: ["satellite dish", "dish", "signal", "broadcast", "transmit", "receive"],
+    searchTerms: [
+      "satellite dish",
+      "dish",
+      "signal",
+      "broadcast",
+      "transmit",
+      "receive",
+    ],
     categories: ["Connectivity"],
   },
   {
     name: "Satellite",
     path: getIconPath("satellite.svg"),
-    searchTerms: ["satellite", "signal, broadcast", "transmit", "receive", "space"],
+    searchTerms: [
+      "satellite",
+      "signal, broadcast",
+      "transmit",
+      "receive",
+      "space",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2651,7 +2743,14 @@ export const iconTypes: IconType[] = [
   {
     name: "Wifi",
     path: getIconPath("wifi.svg"),
-    searchTerms: ["wifi", "wireless", "internet", "connection", "network", "signal"],
+    searchTerms: [
+      "wifi",
+      "wireless",
+      "internet",
+      "connection",
+      "network",
+      "signal",
+    ],
     categories: ["Connectivity"],
   },
   {
@@ -2659,5 +2758,98 @@ export const iconTypes: IconType[] = [
     path: getIconPath("zap.svg"),
     searchTerms: ["zap", "electric", "energy", "power", "charge", "lightning"],
     categories: ["Connectivity"],
-  }
+  },
+  /* Cursors */
+  {
+    name: "Cirle Plus",
+    path: getIconPath("circle-plus.svg"),
+    searchTerms: ["circle plus", "add", "create", "new", "more", "increase"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Lasso",
+    path: getIconPath("lasso.svg"),
+    searchTerms: ["lasso", "select", "choose", "pick", "highlight", "outline"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Loader Pinwheel",
+    path: getIconPath("loader-pinwheel.svg"),
+    searchTerms: [
+      "loader pinwheel",
+      "loading",
+      "spinner",
+      "wait",
+      "progress",
+      "circle",
+    ],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Loader",
+    path: getIconPath("loader.svg"),
+    searchTerms: ["loader", "loading", "spinner", "wait", "progress", "circle"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pen Tool",
+    path: getIconPath("pen-tool.svg"),
+    searchTerms: ["pen tool", "draw", "create", "design", "sketch", "outline"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pencil",
+    path: getIconPath("pencil.svg"),
+    searchTerms: ["pencil", "draw", "write", "sketch", "outline", "edit"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Plus",
+    path: getIconPath("plus.svg"),
+    searchTerms: ["plus", "add", "create", "new", "more", "increase"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Pointer",
+    path: getIconPath("pointer.svg"),
+    searchTerms: ["pointer", "cursor", "click", "select", "point", "choose"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Sparkles",
+    path: getIconPath("sparkles.svg"),
+    searchTerms: ["sparkles", "shine", "glow", "twinkle", "light", "bright"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Stamp",
+    path: getIconPath("stamp.svg"),
+    searchTerms: ["stamp", "seal", "approve", "confirm", "validate", "mark"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Text Cursor",
+    path: getIconPath("text-cursor.svg"),
+    searchTerms: ["text cursor", "type", "write", "edit", "select", "click"],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Wand Sparkles",
+    path: getIconPath("wand-sparkles.svg"),
+    searchTerms: [
+      "wand sparkles",
+      "magic",
+      "sparkle",
+      "shine",
+      "glow",
+      "twinkle",
+    ],
+    categories: ["Cursors"],
+  },
+  {
+    name: "Wand",
+    path: getIconPath("wand.svg"),
+    searchTerms: ["wand", "magic", "sparkle", "shine", "glow", "twinkle"],
+    categories: ["Cursors"],
+  },
 ];
