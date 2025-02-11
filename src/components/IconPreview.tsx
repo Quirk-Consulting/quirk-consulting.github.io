@@ -233,7 +233,7 @@ const IconPreview = () => {
 
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
-      <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Icons</h1>
+      <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Issue Type Icons</h1>
       <div className="flex flex-col flex-grow">
         <div className="relative mb-4">
           <Search
