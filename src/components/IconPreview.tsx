@@ -231,6 +231,12 @@ const IconPreview = () => {
     setIsSheetOpen(true);
   };
 
+  const totalFilteredIcons = categorizedFilteredIcons.reduce(
+    (total, { icons }) => total + icons.length,
+    0
+  );
+  
+
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
       <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Issue Type Icons</h1>
@@ -242,7 +248,7 @@ const IconPreview = () => {
           />
           <Input
             type="text"
-            placeholder="Search icons..."
+            placeholder={`Search ${totalFilteredIcons} icons...`}
             className="pl-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
