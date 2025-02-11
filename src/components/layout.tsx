@@ -25,7 +25,7 @@ const tabs: Tab[] = [
   {
     id: "jira-icons",
     icon: <Package className="w-4 h-4" />,
-    label: "Jira Icons",
+    label: "Issue Type Icons",
   },
   {
     id: "project-icons",
