@@ -18,21 +18,33 @@ import {
   extractPathsFromSvg,
 } from "../utils/iconGenerator";
 import { iconTypes, type IconType } from "../lib/iconTypes";
+import type { CategoryResults } from '../App';
 
 interface IconPathState {
   path: string | null;
   loading: boolean;
 }
 
-const IconPreview = () => {
+interface IconPreviewProps {
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+  categorizedResults: CategoryResults[];
+}
+
+
+const IconPreview = ({
+  searchQuery,
+  onSearchChange,
+  categorizedResults,
+}: IconPreviewProps) => {
   const [selectedHue, setSelectedHue] = useState<ColorHue>("blue");
   const [selectedVariant, setSelectedVariant] = useState<Variant>("medium");
   const [selectedIcon, setSelectedIcon] = useState<IconType>(iconTypes[0]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [iconPaths, setIconPaths] = useState<Record<string, IconPathState>>({});
   const [intersectionObserver, setIntersectionObserver] =
     useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+
 
   // Set up intersection observer on mount
   useEffect(() => {
@@ -235,11 +247,12 @@ const IconPreview = () => {
     (total, { icons }) => total + icons.length,
     0
   );
-  
 
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
-      <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Issue Type Icons</h1>
+      <h1 className="mb-6 text-xl font-bold md:text-2xl">
+        Jira Work Type Icons
+      </h1>
       <div className="flex flex-col flex-grow">
         <div className="relative mb-4">
           <Search
@@ -251,16 +264,22 @@ const IconPreview = () => {
             placeholder={`Search ${totalFilteredIcons} icons...`}
             className="pl-10"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
 
         <div className="flex-grow overflow-y-auto">
           <div className="space-y-6 md:space-y-8">
-            {categorizedFilteredIcons.map(({ category, icons }) => (
-              <div key={category} className="space-y-3 md:space-y-4">
+            {categorizedResults.map(({ category, icons }) => (
+              <div
+                key={category}
+                className="space-y-3 md:space-y-4"
+                id={`category-${category
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]/g, "-")}`}
+              >
                 <h2 className="text-base font-semibold md:text-lg text-muted-foreground">
-                  {category}
+                  {category} ({icons.length})
                 </h2>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-12 md:gap-4">
                   {icons.map((icon) => (

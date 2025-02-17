@@ -51,7 +51,7 @@ export const categoryNames = [
   "Travel & Places",
   "Weather",
   "Writing & Editing",
-];
+].sort();
 
 //IconType categories based on the categoryNames array
 export type IconType = {
@@ -5209,12 +5209,12 @@ export const iconTypes: IconType[] = [
     searchTerms: ["zap off", "zap", "off", "electric", "energy", "disable"],
     categories: ["Devices"],
   },
-  /* Emojis */
+  /* Emoji */
   {
     name: "Angry",
     path: getIconPath("angry.svg"),
     searchTerms: ["angry", "mad", "upset", "emotion", "face", "smiley"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Annoyed",
@@ -5227,7 +5227,7 @@ export const iconTypes: IconType[] = [
       "face",
       "smiley",
     ],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Biceps Flexed",
@@ -5240,7 +5240,7 @@ export const iconTypes: IconType[] = [
       "muscle",
       "arm",
     ],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Hand Helping",
@@ -5253,19 +5253,19 @@ export const iconTypes: IconType[] = [
       "assist",
       "aid",
     ],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Hand Metal",
     path: getIconPath("hand-metal.svg"),
     searchTerms: ["hand metal", "hand", "metal", "rock", "gesture", "sign"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Heart Crack",
     path: getIconPath("heart-crack.svg"),
     searchTerms: ["heart crack", "heart", "crack", "broken", "love", "emotion"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Heart Handshake",
@@ -5278,31 +5278,31 @@ export const iconTypes: IconType[] = [
       "emotion",
       "deal",
     ],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Heart",
     path: getIconPath("heart.svg"),
     searchTerms: ["heart", "love", "emotion", "like", "favorite", "valentine"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Laugh",
     path: getIconPath("laugh.svg"),
     searchTerms: ["laugh", "happy", "funny", "haha", "emotion", "face"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Leafy Green",
     path: getIconPath("leafy-green.svg"),
     searchTerms: ["leafy green", "leafy", "green", "plant", "nature", "food"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Meh",
     path: getIconPath("meh.svg"),
     searchTerms: ["meh", "indifferent", "emotion", "face", "smiley", "neutral"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Party Popper",
@@ -5315,25 +5315,25 @@ export const iconTypes: IconType[] = [
       "fun",
       "event",
     ],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Ribbon",
     path: getIconPath("ribbon.svg"),
     searchTerms: ["ribbon", "bow", "decoration", "prize", "award", "celebrate"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Salad",
     path: getIconPath("salad.svg"),
     searchTerms: ["salad", "food", "healthy", "green", "lettuce", "vegetable"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   {
     name: "Smile Plus",
     path: getIconPath("smile-plus.svg"),
     searchTerms: ["smile plus", "smile", "plus", "happy", "emotion", "face"],
-    categories: ["Emojis"],
+    categories: ["Emoji"],
   },
   /* Gaming */
   {

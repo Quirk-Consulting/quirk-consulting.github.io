@@ -7,12 +7,15 @@ import {
   X,
   BugIcon,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo/Logo";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { categoryNames } from "../lib/iconTypes";
 
 type Tab = {
   id: string;
@@ -25,7 +28,7 @@ const tabs: Tab[] = [
   {
     id: "jira-icons",
     icon: <Package className="w-4 h-4" />,
-    label: "Issue Type Icons",
+    label: "Work Type Icons",
   },
   {
     id: "project-icons",
@@ -59,10 +62,66 @@ type LayoutProps = {
   children: React.ReactNode;
   activeTab: string;
   onTabChange: (tabId: string) => void;
+  categoryCounts: Record<string, number>;
+  isSearching: boolean;
 };
 
-export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
+export function Layout({
+  children,
+  activeTab,
+  onTabChange,
+  categoryCounts,
+  isSearching,
+}: LayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCategorySidebarOpen, setIsCategorySidebarOpen] = useState(true);
+  const [categoryListHeight, setCategoryListHeight] = useState<number>(0);
+
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const categoryHeaderRef = useRef<HTMLDivElement>(null);
+
+  const handleCategoryClick = (category: string) => {
+    const element = document.getElementById(
+      `category-${category.toLowerCase().replace(/[^a-z0-9]/g, "-")}`
+    );
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const CategorySidebar = () => (
+    <ScrollArea className="flex-1 px-2 py-4">
+      <div className="space-y-1">
+        {categoryNames.map((category) => {
+          const count = categoryCounts[category] || 0;
+
+          return (
+            <button
+              key={category}
+              onClick={() => handleCategoryClick(category)}
+              className={`
+                flex items-center justify-between w-full px-3 py-2 text-sm transition-colors rounded-md
+                ${
+                  count > 0
+                    ? isSearching
+                      ? "font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                    : "text-muted-foreground/50 hover:bg-accent/50"
+                }
+              `}
+            >
+              <span className="truncate">{category}</span>
+              <span className="ml-auto text-xs tabular-nums text-muted-foreground">
+                {count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </ScrollArea>
+  );
 
   const NavContent = () => (
     <nav className="p-2">
@@ -105,15 +164,115 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
     </nav>
   );
 
+  useEffect(() => {
+    const updateHeight = () => {
+      if (
+        sidebarRef.current &&
+        headerRef.current &&
+        navRef.current &&
+        categoryHeaderRef.current
+      ) {
+        const sidebarHeight = sidebarRef.current.clientHeight;
+        const headerHeight = headerRef.current.clientHeight;
+        const navHeight = navRef.current.clientHeight;
+        const categoryHeaderHeight = categoryHeaderRef.current.clientHeight;
+
+        const availableHeight =
+          sidebarHeight - headerHeight - navHeight - categoryHeaderHeight;
+        setCategoryListHeight(availableHeight);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [isCategorySidebarOpen]);
+
   return (
     <div className="flex h-screen bg-background">
       {/* Desktop Sidebar */}
-      <div className="hidden w-64 border-r md:block bg-card">
-        <div className="flex items-center justify-between p-4 border-b">
-          <Logo />
-          <ThemeToggle />
+      <div
+        ref={sidebarRef}
+        className="hidden w-64 h-screen border-r md:flex md:flex-col bg-card"
+      >
+        {/* Fixed sections */}
+        <div ref={headerRef} className="flex-none p-4 border-b">
+          <div className="flex items-center justify-between">
+            <Logo />
+            <ThemeToggle />
+          </div>
         </div>
-        <NavContent />
+        <div ref={navRef} className="flex-none">
+          <NavContent />
+        </div>
+
+        {/* Category Sidebar for Jira Icons */}
+        {activeTab === "jira-icons" && (
+          <div className="flex flex-col flex-1 min-h-0 border-t">
+            <div
+              ref={categoryHeaderRef}
+              className="flex items-center justify-between flex-none p-2"
+            >
+              <h3 className="text-sm font-medium">Categories</h3>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsCategorySidebarOpen(!isCategorySidebarOpen)}
+              >
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isCategorySidebarOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
+            </div>
+            {isCategorySidebarOpen && (
+              <div className="flex-1 overflow-hidden">
+                <ScrollArea
+                  className="h-full"
+                  style={{
+                    height: categoryListHeight
+                      ? `${categoryListHeight}px`
+                      : undefined,
+                  }}
+                >
+                  <div className="px-2 py-4 space-y-1">
+                    {categoryNames.map((category) => {
+                      const count = categoryCounts[category] || 0;
+                      return (
+                        <button
+                          key={category}
+                          onClick={() => handleCategoryClick(category)}
+                          className={`flex font-semibold items-center justify-between w-full px-3 py-1 text-sm transition-colors rounded-md
+                            ${
+                              count > 0
+                                ? isSearching
+                                  ? "font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                : "text-muted-foreground/50 hover:bg-accent/50"
+                            }
+                          `}
+                        >
+                          <span className="truncate">{category}</span>
+                          <span
+                            className={`ml-auto text-xs tabular-nums ${
+                              count > 0
+                                ? "text-muted-foreground"
+                                : "text-muted-foreground/50"
+                            }`}
+                          >
+                            {count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </ScrollArea>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Mobile Header and Content */}
@@ -147,6 +306,27 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
               </Button>
             </div>
             <NavContent />
+            {activeTab === "jira-icons" && (
+              <div className="flex flex-col border-t">
+                <div className="flex items-center justify-between p-2">
+                  <h3 className="text-sm font-medium">Categories</h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() =>
+                      setIsCategorySidebarOpen(!isCategorySidebarOpen)
+                    }
+                  >
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        isCategorySidebarOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Button>
+                </div>
+                {isCategorySidebarOpen && <CategorySidebar />}
+              </div>
+            )}
           </SheetContent>
         </Sheet>
 

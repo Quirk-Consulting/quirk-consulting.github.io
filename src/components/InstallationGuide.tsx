@@ -55,7 +55,7 @@ export function InstallationGuide() {
               <TabsContent value="cloud" className="space-y-8">
                 <div className="space-y-4">
                   <section className="space-y-4">
-                    <h2 className="text-xl font-semibold">Issue Type Icons</h2>
+                    <h2 className="text-xl font-semibold">Work Type Icons</h2>
                     <div className="space-y-4 leading-relaxed text-muted-foreground">
                       <ol className="ml-6 space-y-3 list-decimal">
                         <li>Navigate to your Jira Cloud instance settings</li>
