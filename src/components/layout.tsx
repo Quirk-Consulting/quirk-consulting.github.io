@@ -7,12 +7,15 @@ import {
   X,
   BugIcon,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { useState } from "react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo/Logo";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { categoryNames } from "../lib/iconTypes";
 
 type Tab = {
   id: string;
@@ -59,10 +62,50 @@ type LayoutProps = {
   children: React.ReactNode;
   activeTab: string;
   onTabChange: (tabId: string) => void;
+  categoryCounts?: Record<string, number>;
 };
 
-export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
+export function Layout({
+  children,
+  activeTab,
+  onTabChange,
+  categoryCounts = {},
+}: LayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCategorySidebarOpen, setIsCategorySidebarOpen] = useState(true);
+
+  const handleCategoryClick = (category: string) => {
+    const element = document.getElementById(
+      `category-${category.toLowerCase().replace(/[^a-z0-9]/g, "-")}`
+    );
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const CategorySidebar = () => (
+    <ScrollArea className="flex-1 px-2 py-4">
+      <div className="space-y-1">
+        {categoryNames.map((category) => {
+          const count = categoryCounts[category] || 0;
+          if (count === 0) return null;
+
+          return (
+            <button
+              key={category}
+              onClick={() => handleCategoryClick(category)}
+              className="flex items-center justify-between w-full px-3 py-2 text-sm transition-colors rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+            >
+              <span className="truncate">{category}</span>
+              <span className="ml-auto text-xs tabular-nums text-muted-foreground">
+                {count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </ScrollArea>
+  );
 
   const NavContent = () => (
     <nav className="p-2">
@@ -114,6 +157,27 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
           <ThemeToggle />
         </div>
         <NavContent />
+
+        {/* Category Sidebar for Jira Icons */}
+        {activeTab === "jira-icons" && (
+          <div className="flex flex-col border-t">
+            <div className="flex items-center justify-between p-2">
+              <h3 className="text-sm font-medium">Categories</h3>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsCategorySidebarOpen(!isCategorySidebarOpen)}
+              >
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isCategorySidebarOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
+            </div>
+            {isCategorySidebarOpen && <CategorySidebar />}
+          </div>
+        )}
       </div>
 
       {/* Mobile Header and Content */}
@@ -147,6 +211,27 @@ export function Layout({ children, activeTab, onTabChange }: LayoutProps) {
               </Button>
             </div>
             <NavContent />
+            {activeTab === "jira-icons" && (
+              <div className="flex flex-col border-t">
+                <div className="flex items-center justify-between p-2">
+                  <h3 className="text-sm font-medium">Categories</h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() =>
+                      setIsCategorySidebarOpen(!isCategorySidebarOpen)
+                    }
+                  >
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        isCategorySidebarOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Button>
+                </div>
+                {isCategorySidebarOpen && <CategorySidebar />}
+              </div>
+            )}
           </SheetContent>
         </Sheet>
 

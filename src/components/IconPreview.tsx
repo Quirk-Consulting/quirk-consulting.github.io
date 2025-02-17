@@ -235,11 +235,12 @@ const IconPreview = () => {
     (total, { icons }) => total + icons.length,
     0
   );
-  
 
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
-      <h1 className="mb-6 text-xl font-bold md:text-2xl">Jira Issue Type Icons</h1>
+      <h1 className="mb-6 text-xl font-bold md:text-2xl">
+        Jira Issue Type Icons
+      </h1>
       <div className="flex flex-col flex-grow">
         <div className="relative mb-4">
           <Search
@@ -258,7 +259,13 @@ const IconPreview = () => {
         <div className="flex-grow overflow-y-auto">
           <div className="space-y-6 md:space-y-8">
             {categorizedFilteredIcons.map(({ category, icons }) => (
-              <div key={category} className="space-y-3 md:space-y-4">
+              <div
+                key={category}
+                className="space-y-3 md:space-y-4"
+                id={`category-${category
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]/g, "-")}`}
+              >
                 <h2 className="text-base font-semibold md:text-lg text-muted-foreground">
                   {category}
                 </h2>

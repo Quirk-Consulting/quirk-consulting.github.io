@@ -6,10 +6,25 @@ import { ProjectIcons } from "./components/project-icons";
 import { InstallationGuide } from "./components/InstallationGuide";
 import { License } from "./components/license";
 import { About } from "./components/about";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { iconTypes } from "./lib/iconTypes";
 
 function App() {
   const [activeTab, setActiveTab] = useState("jira-icons");
+  const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>(
+    {}
+  );
+
+  useEffect(() => {
+    // Calculate category counts
+    const counts: Record<string, number> = {};
+    iconTypes.forEach((icon) => {
+      icon.categories.forEach((category) => {
+        counts[category] = (counts[category] || 0) + 1;
+      });
+    });
+    setCategoryCounts(counts);
+  }, []);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -30,7 +45,11 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="jira-icons-theme">
-      <Layout activeTab={activeTab} onTabChange={setActiveTab}>
+      <Layout
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        categoryCounts={categoryCounts}
+      >
         {renderContent()}
       </Layout>
     </ThemeProvider>
