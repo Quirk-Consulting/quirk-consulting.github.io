@@ -4986,14 +4986,7 @@ export const iconTypes: IconType[] = [
   {
     name: "Scan Barcode",
     path: getIconPath("scan-barcode.svg"),
-    searchTerms: [
-      "scan barcode",
-      "scan",
-      "barcode",
-      "reader",
-      "code",
-      "data",
-    ],
+    searchTerms: ["scan barcode", "scan", "barcode", "reader", "code", "data"],
     categories: ["Devices"],
   },
   {
@@ -5011,14 +5004,7 @@ export const iconTypes: IconType[] = [
   {
     name: "Scan QR Code",
     path: getIconPath("scan-qr-code.svg"),
-    searchTerms: [
-      "scan qr code",
-      "scan",
-      "qr",
-      "code",
-      "reader",
-      "data",
-    ],
+    searchTerms: ["scan qr code", "scan", "qr", "code", "reader", "data"],
     categories: ["Devices"],
   },
   {
@@ -5207,7 +5193,14 @@ export const iconTypes: IconType[] = [
   {
     name: "WiFi Off",
     path: getIconPath("wifi-off.svg"),
-    searchTerms: ["wifi off", "wifi", "off", "internet", "connection", "disable"],
+    searchTerms: [
+      "wifi off",
+      "wifi",
+      "off",
+      "internet",
+      "connection",
+      "disable",
+    ],
     categories: ["Devices"],
   },
   {
@@ -5215,7 +5208,7 @@ export const iconTypes: IconType[] = [
     path: getIconPath("zap-off.svg"),
     searchTerms: ["zap off", "zap", "off", "electric", "energy", "disable"],
     categories: ["Devices"],
-  }
+  },
   /* Gaming */
   {
     name: "Rollercoaster",
