@@ -18,7 +18,7 @@ import {
   extractPathsFromSvg,
 } from "../utils/iconGenerator";
 import { iconTypes, type IconType } from "../lib/iconTypes";
-import type { CategoryResults } from '../App';
+import type { CategoryResults } from "../App";
 
 interface IconPathState {
   path: string | null;
@@ -30,7 +30,6 @@ interface IconPreviewProps {
   onSearchChange: (query: string) => void;
   categorizedResults: CategoryResults[];
 }
-
 
 const IconPreview = ({
   searchQuery,
@@ -44,7 +43,6 @@ const IconPreview = ({
   const [intersectionObserver, setIntersectionObserver] =
     useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-
 
   // Set up intersection observer on mount
   useEffect(() => {
@@ -217,7 +215,14 @@ const IconPreview = ({
     const pathContent = iconState?.path || "";
 
     if (format === "svg") {
-      const svgString = generateSVGString(pathContent, fgColor, bgColor);
+      const svgString = generateSVGString(
+        pathContent,
+        fgColor,
+        bgColor,
+        undefined,
+        undefined,
+        true
+      );
       const blob = new Blob([svgString], { type: "image/svg+xml" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -226,7 +231,14 @@ const IconPreview = ({
       a.click();
       URL.revokeObjectURL(url);
     } else {
-      const svgString = generateSVGString(pathContent, fgColor, bgColor);
+      const svgString = generateSVGString(
+        pathContent,
+        fgColor,
+        bgColor,
+        undefined,
+        undefined,
+        true
+      );
       const pngBlob = await generatePNG(svgString);
       const url = URL.createObjectURL(pngBlob);
       const a = document.createElement("a");
@@ -341,7 +353,7 @@ const IconPreview = ({
           className="max-h-[90dvh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="top-0 pt-2 mb-4 bg-background">
+          <div className="top-0 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
               {selectedVariant === "medium"
@@ -421,18 +433,18 @@ const IconPreview = ({
                 {/* Desktop: Buttons in column */}
                 <div className="flex flex-col gap-2">
                   <Button
-                    onClick={() => handleDownload("svg")}
-                    variant="default"
-                    className="w-32"
-                  >
-                    Download SVG
-                  </Button>
-                  <Button
                     onClick={() => handleDownload("png")}
                     variant="default"
                     className="w-32"
                   >
                     Download PNG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    className="w-32"
+                  >
+                    Download SVG
                   </Button>
                 </div>
               </div>
@@ -453,20 +465,20 @@ const IconPreview = ({
                 {/* Mobile: Buttons in row */}
                 <div className="flex flex-row gap-2">
                   <Button
-                    onClick={() => handleDownload("svg")}
-                    variant="default"
-                    size="sm"
-                    className="w-32"
-                  >
-                    Download SVG
-                  </Button>
-                  <Button
                     onClick={() => handleDownload("png")}
                     variant="secondary"
                     size="sm"
                     className="w-32"
                   >
                     Download PNG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    size="sm"
+                    className="w-32"
+                  >
+                    Download SVG
                   </Button>
                 </div>
               </div>
