@@ -1,4 +1,3 @@
-// src/utils/iconGenerator.ts
 import { toPng } from "html-to-image";
 
 export const loadSvgContent = async (path: string): Promise<string> => {
@@ -28,11 +27,13 @@ export const generateSVGString = (
   fgColor: string,
   bgColor: string,
   size: number = 24,
-  padding: number = 4
+  padding: number = 4,
+  isDownload: boolean = false
 ): string => {
   const iconSize = size - padding * 2;
   const transform = `translate(${padding}, ${padding})`;
-  const radius = size * 0.25; // 25% of size for border radius
+  // Use different radius based on whether this is for download (10%) or preview (25%)
+  const radius = isDownload ? size * 0.1 : size * 0.25;
 
   // If using currentColor, we don't need to explicitly set fill/stroke colors
   const colorAttributes =
