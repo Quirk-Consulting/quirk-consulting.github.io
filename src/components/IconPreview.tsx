@@ -1,6 +1,6 @@
 // src/components/IconPreview.tsx
 import React, { useState, useEffect } from "react";
-import { Search } from "lucide-react";
+import { Search, Shuffle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,10 @@ interface IconPreviewProps {
   categorizedResults: CategoryResults[];
 }
 
+const getRandomElement = <T,>(array: T[]): T => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
 const IconPreview = ({
   searchQuery,
   onSearchChange,
@@ -43,6 +47,26 @@ const IconPreview = ({
   const [intersectionObserver, setIntersectionObserver] =
     useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  const handleRandomSelection = () => {
+    const randomIcon = getRandomElement(iconTypes);
+    const randomHue = getRandomElement(
+      Object.keys(backgroundColors)
+    ) as ColorHue;
+    const randomVariant = getRandomElement([
+      "dark",
+      "medium",
+      "light",
+    ]) as Variant;
+
+    // Load the icon content immediately
+    loadIcon(randomIcon.name, true).then(() => {
+      setSelectedIcon(randomIcon);
+      setSelectedHue(randomHue);
+      setSelectedVariant(randomVariant);
+      setIsSheetOpen(true);
+    });
+  };
 
   // Set up intersection observer on mount
   useEffect(() => {
@@ -65,14 +89,32 @@ const IconPreview = ({
     return () => observer.disconnect();
   }, []);
 
-  // Modified load function to handle single icon
-  const loadIcon = async (iconName: string) => {
-    // Skip if already loaded or loading
-    if (iconPaths[iconName]?.path || iconPaths[iconName]?.loading) return;
+  // ensure selected icon is loaded
+  useEffect(() => {
+    if (selectedIcon) {
+      loadIcon(selectedIcon.name, true);
+    }
+  }, [selectedIcon]);
 
+  // Modified load function to handle single icon
+  const loadIcon = async (iconName: string, priority: boolean = false) => {
+    // For priority loads, don't show loading state if we already have a path
+    if (priority && iconPaths[iconName]?.path) return;
+
+    // For non-priority loads, skip if already loaded or loading
+    if (
+      !priority &&
+      (iconPaths[iconName]?.path || iconPaths[iconName]?.loading)
+    )
+      return;
+
+    // For priority loads, keep existing path while loading
     setIconPaths((prev) => ({
       ...prev,
-      [iconName]: { path: null, loading: true },
+      [iconName]: {
+        path: priority ? prev[iconName]?.path || null : null,
+        loading: true,
+      },
     }));
 
     const icon = iconTypes.find((i) => i.name === iconName);
@@ -90,7 +132,10 @@ const IconPreview = ({
       console.error(`Failed to load icon: ${iconName}`, error);
       setIconPaths((prev) => ({
         ...prev,
-        [iconName]: { path: null, loading: false },
+        [iconName]: {
+          path: priority ? prev[iconName]?.path || null : null,
+          loading: false,
+        },
       }));
     }
   };
@@ -250,9 +295,11 @@ const IconPreview = ({
   };
 
   const handleIconSelect = (icon: IconType) => {
-    setSelectedIcon(icon);
-    console.log(isSheetOpen);
-    setIsSheetOpen(true);
+    // Load the icon content immediately
+    loadIcon(icon.name, true).then(() => {
+      setSelectedIcon(icon);
+      setIsSheetOpen(true);
+    });
   };
 
   const totalFilteredIcons = categorizedFilteredIcons.reduce(
@@ -266,18 +313,32 @@ const IconPreview = ({
         Jira Work Type Icons
       </h1>
       <div className="flex flex-col flex-grow">
-        <div className="relative mb-4">
-          <Search
-            className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2"
-            size={20}
-          />
-          <Input
-            type="text"
-            placeholder={`Search ${totalFilteredIcons} icons...`}
-            className="pl-10"
-            value={searchQuery}
-            onChange={(e) => onSearchChange(e.target.value)}
-          />
+        {/* Sticky search container */}
+        <div className="sticky top-0 z-10 bg-background">
+          <div className="flex gap-2">
+            <div className="relative flex-grow">
+              <Search
+                className="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2"
+                size={20}
+              />
+              <Input
+                type="text"
+                placeholder={`Search ${totalFilteredIcons} icons...`}
+                className="pl-10"
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+              />
+            </div>
+            <Button
+              variant="outline"
+              size="icon"
+              className="filtered-icon-trigger"
+              onClick={handleRandomSelection}
+              title="Select random icon and colour"
+            >
+              <Shuffle className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
 
         <div className="flex-grow overflow-y-auto">
