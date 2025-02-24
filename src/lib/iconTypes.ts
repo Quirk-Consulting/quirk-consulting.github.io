@@ -3290,7 +3290,12 @@ export const iconTypes: IconType[] = [
     name: "Binoculars",
     path: getIconPath("binoculars.svg"),
     searchTerms: ["binoculars", "search", "find", "look", "spy", "watch"],
-    categories: ["Coding & Development"],
+    categories: [
+      "Coding & Development",
+      "Nature & Sustainability",
+      "Photography",
+      "Travel",
+    ],
   },
   {
     name: "Book Open Text",
@@ -6916,7 +6921,7 @@ export const iconTypes: IconType[] = [
       "burn",
       "heat",
     ],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Nature & Sustainability"],
   },
   {
     name: "Flame",
@@ -7008,7 +7013,7 @@ export const iconTypes: IconType[] = [
     name: "Shovel",
     path: getIconPath("shovel.svg"),
     searchTerms: ["shovel", "tool", "dig", "soil", "sand", "earth"],
-    categories: ["Gaming", "Tools"],
+    categories: ["Gaming", "Tools", "Nature & Sustainability"],
   },
   {
     name: "Skull",
@@ -8699,4 +8704,91 @@ export const iconTypes: IconType[] = [
     searchTerms: ["venus", "medical", "health"],
     categories: ["Medical"],
   },
+  /* Nature & Sustainability */
+  {
+    name: "Caravan",
+    path: getIconPath("caravan.svg"),
+    searchTerms: ["caravan", "nature", "sustainability", "travel", "camping"],
+    categories: ["Nature & Sustainability", "Transportation", "Travel"],
+  },
+  {
+    name: "Flower 2",
+    path: getIconPath("flower-2.svg"),
+    searchTerms: ["flower 2", "flower", "nature", "sustainability", "plant"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Leaf",
+    path: getIconPath("leaf.svg"),
+    searchTerms: ["leaf", "nature", "sustainability", "plant", "tree"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Mountain Snow",
+    path: getIconPath("mountain-snow.svg"),
+    searchTerms: [
+      "mountain snow",
+      "mountain",
+      "snow",
+      "nature",
+      "sustainability",
+    ],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Shrub",
+    path: getIconPath("shrub.svg"),
+    searchTerms: ["shrub", "nature", "sustainability", "plant", "tree"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Tent Tree",
+    path: getIconPath("tent-tree.svg"),
+    searchTerms: [
+      "tent tree",
+      "tent",
+      "tree",
+      "nature",
+      "sustainability",
+      "camping",
+    ],
+    categories: ["Nature & Sustainability", "Travel"],
+  },
+  {
+    name: "Tent",
+    path: getIconPath("tent.svg"),
+    searchTerms: ["tent", "nature", "sustainability", "camping", "travel"],
+    categories: ["Nature & Sustainability", "Travel"],
+  },
+  {
+    name: "Tree Deciduous",
+    path: getIconPath("tree-deciduous.svg"),
+    searchTerms: [
+      "tree deciduous",
+      "tree",
+      "deciduous",
+      "nature",
+      "sustainability",
+      "plant",
+    ],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Tree Palm",
+    path: getIconPath("tree-palm.svg"),
+    searchTerms: [ "tree palm", "tree", "palm", "nature", "sustainability", "plant"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Tree Pine",
+    path: getIconPath("tree-pine.svg"),
+    searchTerms: ["tree pine", "tree", "pine", "nature", "sustainability", "plant"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Trees",
+    path: getIconPath("trees.svg"),
+    searchTerms: ["trees", "nature", "sustainability", "plant", "forest"],
+    categories: ["Nature & Sustainability"],
+  }
 ];
