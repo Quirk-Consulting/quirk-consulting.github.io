@@ -859,7 +859,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security", "Notifications"],
   },
   {
     name: "Shield Ban",
@@ -1187,25 +1187,25 @@ export const iconTypes: IconType[] = [
     name: "Arrow Big Down",
     path: getIconPath("arrow-big-down.svg"),
     searchTerms: ["arrow big down", "arrow", "down", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Big Left",
     path: getIconPath("arrow-big-left.svg"),
     searchTerms: ["arrow big left", "arrow", "left", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Big Right",
     path: getIconPath("arrow-big-right.svg"),
     searchTerms: ["arrow big right", "arrow", "right", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Big Up",
     path: getIconPath("arrow-big-up.svg"),
     searchTerms: ["arrow big up", "arrow", "up", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Down Left",
@@ -1218,7 +1218,7 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Down Right",
@@ -1231,7 +1231,7 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Down Up",
@@ -1256,7 +1256,7 @@ export const iconTypes: IconType[] = [
     name: "Arrow Down",
     path: getIconPath("arrow-down.svg"),
     searchTerms: ["arrow down", "arrow", "down", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Left Right",
@@ -1275,7 +1275,7 @@ export const iconTypes: IconType[] = [
     name: "Arrow Left",
     path: getIconPath("arrow-left.svg"),
     searchTerms: ["arrow left", "arrow", "left", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Right-Left",
@@ -1294,7 +1294,7 @@ export const iconTypes: IconType[] = [
     name: "Arrow Right",
     path: getIconPath("arrow-right.svg"),
     searchTerms: ["arrow right", "arrow", "right", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Arrow Up A-Z",
@@ -1331,7 +1331,7 @@ export const iconTypes: IconType[] = [
     name: "Arrow Up",
     path: getIconPath("arrow-up.svg"),
     searchTerms: ["arrow up", "arrow", "up", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Calendar Sync",
@@ -1350,13 +1350,13 @@ export const iconTypes: IconType[] = [
     name: "Chevron Down",
     path: getIconPath("chevron-down.svg"),
     searchTerms: ["chevron down", "arrow", "down", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Chevron Left",
     path: getIconPath("chevron-left.svg"),
     searchTerms: ["chevron left", "arrow", "left", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Chevron Right",
@@ -1450,13 +1450,13 @@ export const iconTypes: IconType[] = [
     name: "Circle Arrow Down",
     path: getIconPath("circle-arrow-down.svg"),
     searchTerms: ["circle arrow down", "arrow", "down", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Left",
     path: getIconPath("circle-arrow-left.svg"),
     searchTerms: ["circle arrow left", "arrow", "left", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Out Down Left",
@@ -1469,7 +1469,7 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Out Down Right",
@@ -1482,7 +1482,7 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Out Up Left",
@@ -1495,7 +1495,7 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Out Up Right",
@@ -1508,31 +1508,31 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Right",
     path: getIconPath("circle-arrow-right.svg"),
     searchTerms: ["circle arrow right", "arrow", "right", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Arrow Up",
     path: getIconPath("circle-arrow-up.svg"),
     searchTerms: ["circle arrow up", "arrow", "up", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Chevron Down",
     path: getIconPath("circle-chevron-down.svg"),
     searchTerms: ["circle chevron down", "arrow", "down", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Chevron Left",
     path: getIconPath("circle-chevron-left.svg"),
     searchTerms: ["circle chevron left", "arrow", "left", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Chevron Right",
@@ -1544,13 +1544,13 @@ export const iconTypes: IconType[] = [
       "direction",
       "point",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Circle Chevron Up",
     path: getIconPath("circle-chevron-up.svg"),
     searchTerms: ["circle chevron up", "arrow", "up", "direction", "point"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Navigation"],
   },
   {
     name: "Clipboard Copy",
@@ -4230,7 +4230,7 @@ export const iconTypes: IconType[] = [
       "notification",
       "message",
     ],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Notifications", "Shapes"],
   },
   {
     name: "Unplug",
@@ -4282,7 +4282,7 @@ export const iconTypes: IconType[] = [
     name: "Alarm Clock Check",
     path: getIconPath("alarm-clock-check.svg"),
     searchTerms: ["alarm clock check", "alarm", "clock", "time", "check", "ok"],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications", "Time & Calendar"],
   },
   {
     name: "Alarm Clock Minus",
@@ -4295,7 +4295,7 @@ export const iconTypes: IconType[] = [
       "minus",
       "remove",
     ],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications", "Time & Calendar"],
   },
   {
     name: "Alarm Clock Off",
@@ -4308,19 +4308,19 @@ export const iconTypes: IconType[] = [
       "off",
       "disable",
     ],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications", "Time & Calendar"],
   },
   {
     name: "Alarm Clock Plus",
     path: getIconPath("alarm-clock-plus.svg"),
     searchTerms: ["alarm clock plus", "alarm", "clock", "time", "plus", "add"],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications", "Time & Calendar"],
   },
   {
     name: "Alarm Clock",
     path: getIconPath("alarm-clock.svg"),
     searchTerms: ["alarm clock", "alarm", "clock", "time", "alert", "ring"],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications", "Time & Calendar"],
   },
   {
     name: "Alarm Smoke",
@@ -4640,7 +4640,7 @@ export const iconTypes: IconType[] = [
       "ok",
       "computer",
     ],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications"],
   },
   {
     name: "Laptop Minimal",
@@ -5159,7 +5159,7 @@ export const iconTypes: IconType[] = [
     name: "Vibrate Off",
     path: getIconPath("vibrate-off.svg"),
     searchTerms: ["vibrate off", "vibrate", "off", "silent", "disable", "ring"],
-    categories: ["Devices"],
+    categories: ["Devices", "Notifications"],
   },
   {
     name: "Vibrate",
@@ -5335,7 +5335,7 @@ export const iconTypes: IconType[] = [
     name: "Smile Plus",
     path: getIconPath("smile-plus.svg"),
     searchTerms: ["smile plus", "smile", "plus", "happy", "emotion", "face"],
-    categories: ["Emoji"],
+    categories: ["Emoji", "Notifications", "Communication"],
   },
   /* Files & Folders */
   {
@@ -5673,7 +5673,7 @@ export const iconTypes: IconType[] = [
     name: "File Warning",
     path: getIconPath("file-warning.svg"),
     searchTerms: ["file warning", "file", "warning", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Notifications"],
   },
   {
     name: "File X 2",
@@ -6989,6 +6989,19 @@ export const iconTypes: IconType[] = [
     path: getIconPath("pickaxe.svg"),
     searchTerms: ["pickaxe", "tool", "mine", "dig", "rock", "stone"],
     categories: ["Gaming", "Tools"],
+  },
+  {
+    name: "Rollercoaster 2",
+    path: getIconPath("rollercoaster-2.svg"),
+    searchTerms: [
+      "rollercoaster 2",
+      "ride",
+      "amusement",
+      "park",
+      "fun",
+      "thrill",
+    ],
+    categories: ["Gaming"],
   },
   {
     name: "Rollercoaster",
@@ -8373,7 +8386,7 @@ export const iconTypes: IconType[] = [
     name: "Copy X",
     path: getIconPath("copy-x.svg"),
     searchTerms: ["copy x", "copy", "x", "math", "duplicate", "remove"],
-    categories: ["Math"],
+    categories: ["Math", "Notifications"],
   },
   {
     name: "Divide",
@@ -8411,7 +8424,7 @@ export const iconTypes: IconType[] = [
     name: "Octagon X",
     path: getIconPath("octagon-x.svg"),
     searchTerms: ["octagon x", "octagon", "x", "math", "shape", "remove"],
-    categories: ["Math"],
+    categories: ["Math", "Notifications"],
   },
   {
     name: "Pyramid",
@@ -8509,7 +8522,7 @@ export const iconTypes: IconType[] = [
     name: "Square X",
     path: getIconPath("square-x.svg"),
     searchTerms: ["square x", "square", "x", "math", "split", "cut"],
-    categories: ["Math"],
+    categories: ["Math", "Notifications"],
   },
   {
     name: "Tangent",
@@ -8533,7 +8546,7 @@ export const iconTypes: IconType[] = [
     name: "X",
     path: getIconPath("x.svg"),
     searchTerms: ["x", "math", "remove", "delete", "cancel", "close"],
-    categories: ["Math"],
+    categories: ["Math", "Notifications"],
   },
   /* Medical */
   {
@@ -8776,13 +8789,27 @@ export const iconTypes: IconType[] = [
   {
     name: "Tree Palm",
     path: getIconPath("tree-palm.svg"),
-    searchTerms: [ "tree palm", "tree", "palm", "nature", "sustainability", "plant"],
+    searchTerms: [
+      "tree palm",
+      "tree",
+      "palm",
+      "nature",
+      "sustainability",
+      "plant",
+    ],
     categories: ["Nature & Sustainability"],
   },
   {
     name: "Tree Pine",
     path: getIconPath("tree-pine.svg"),
-    searchTerms: ["tree pine", "tree", "pine", "nature", "sustainability", "plant"],
+    searchTerms: [
+      "tree pine",
+      "tree",
+      "pine",
+      "nature",
+      "sustainability",
+      "plant",
+    ],
     categories: ["Nature & Sustainability"],
   },
   {
@@ -8790,5 +8817,135 @@ export const iconTypes: IconType[] = [
     path: getIconPath("trees.svg"),
     searchTerms: ["trees", "nature", "sustainability", "plant", "forest"],
     categories: ["Nature & Sustainability"],
-  }
+  },
+  /* Notifications */
+  {
+    name: "Bell Dot",
+    path: getIconPath("bell-dot.svg"),
+    searchTerms: ["bell dot", "bell", "dot", "notification", "alert", "ring"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Check Check",
+    path: getIconPath("check-check.svg"),
+    searchTerms: ["check check", "check", "check", "notification", "alert"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Check",
+    path: getIconPath("check.svg"),
+    searchTerms: ["check", "notification", "alert", "success", "done"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Circle Alert",
+    path: getIconPath("circle-alert.svg"),
+    searchTerms: ["circle alert", "circle", "alert", "notification", "warning"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Circle Check Big",
+    path: getIconPath("circle-check-big.svg"),
+    searchTerms: ["circle check big", "circle", "check", "big", "notification"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Circle Check",
+    path: getIconPath("circle-check.svg"),
+    searchTerms: ["circle check", "circle", "check", "notification", "success"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Circle Help",
+    path: getIconPath("circle-help.svg"),
+    searchTerms: ["circle help", "circle", "help", "notification", "question"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Copy Check",
+    path: getIconPath("copy-check.svg"),
+    searchTerms: ["copy check", "copy", "check", "notification", "alert"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Info",
+    path: getIconPath("info.svg"),
+    searchTerms: ["info", "notification", "alert", "information", "help"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Megaphone",
+    path: getIconPath("megaphone.svg"),
+    searchTerms: ["megaphone", "notification", "alert", "announcement", "loud"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Message Circle Warning",
+    path: getIconPath("message-circle-warning.svg"),
+    searchTerms: [
+      "message circle warning",
+      "message",
+      "circle",
+      "warning",
+      "notification",
+      "alert",
+      "chat",
+      "talk",
+    ],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Message Square Dot",
+    path: getIconPath("message-square-dot.svg"),
+    searchTerms: [
+      "message square dot",
+      "message",
+      "square",
+      "dot",
+      "notification",
+      "alert",
+      "chat",
+      "talk",
+    ],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Message Square Warning",
+    path: getIconPath("message-square-warning.svg"),
+    searchTerms: [
+      "message square warning",
+      "message",
+      "square",
+      "warning",
+      "notification",
+      "alert",
+      "chat",
+      "talk",
+    ],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Octagon Alert",
+    path: getIconPath("octagon-alert.svg"),
+    searchTerms: [
+      "octagon alert",
+      "octagon",
+      "alert",
+      "notification",
+      "warning",
+    ],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Square Check Big",
+    path: getIconPath("square-check-big.svg"),
+    searchTerms: ["square check big", "square", "check", "big", "notification"],
+    categories: ["Notifications"],
+  },
+  {
+    name: "Square Check",
+    path: getIconPath("square-check.svg"),
+    searchTerms: ["square check", "square", "check", "notification", "success"],
+    categories: ["Notifications"],
+  },
 ];
