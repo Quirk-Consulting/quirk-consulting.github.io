@@ -95,13 +95,13 @@ export const iconTypes: IconType[] = [
     name: "Eye",
     path: getIconPath("eye.svg"),
     searchTerms: ["eye", "vision", "look", "see", "sight", "watch"],
-    categories: ["Accessibility"],
+    categories: ["Accessibility", "Photography", "Design", "Security"],
   },
   {
     name: "Eye Closed",
     path: getIconPath("eye-closed.svg"),
     searchTerms: ["eye closed", "sleep", "rest", "nap", "blink", "shut"],
-    categories: ["Accessibility"],
+    categories: ["Accessibility", "Photography", "Design", "Security"],
   },
   {
     name: "Eye Off",
@@ -114,7 +114,7 @@ export const iconTypes: IconType[] = [
       "loss",
       "invisible",
     ],
-    categories: ["Accessibility"],
+    categories: ["Accessibility", "Photography", "Design", "Security"],
   },
   {
     name: "Glasses",
@@ -159,7 +159,7 @@ export const iconTypes: IconType[] = [
       "security",
       "scan",
     ],
-    categories: ["Accessibility"],
+    categories: ["Accessibility", "Photography", "Security", "Devices"],
   },
   {
     name: "Speech",
@@ -2015,13 +2015,13 @@ export const iconTypes: IconType[] = [
     name: "Rotate CCW",
     path: getIconPath("rotate-ccw.svg"),
     searchTerms: ["rotate ccw", "arrow", "repeat", "update", "reload", "sync"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Photography"],
   },
   {
     name: "Rotate CW",
     path: getIconPath("rotate-cw.svg"),
     searchTerms: ["rotate cw", "arrow", "repeat", "update", "reload", "sync"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Photography"],
   },
   {
     name: "Shuffle",
@@ -2496,7 +2496,7 @@ export const iconTypes: IconType[] = [
     name: "Camera",
     path: getIconPath("camera.svg"),
     searchTerms: ["camera", "photo", "picture", "capture", "record", "shoot"],
-    categories: ["Communication"],
+    categories: ["Communication", "Photography", "Devices"],
   },
   {
     name: "Cassette Tape",
@@ -2522,7 +2522,7 @@ export const iconTypes: IconType[] = [
       "monitor",
       "watch",
     ],
-    categories: ["Communication"],
+    categories: ["Communication", "Security", "Devices", "Photography"],
   },
   {
     name: "Ethernet Port",
@@ -2566,7 +2566,7 @@ export const iconTypes: IconType[] = [
     name: "Presentation",
     path: getIconPath("presentation.svg"),
     searchTerms: ["presentation", "slide", "talk", "show", "lecture", "speak"],
-    categories: ["Communication"],
+    categories: ["Communication", "Photography", "Devices"],
   },
   {
     name: "Projector",
@@ -2579,7 +2579,7 @@ export const iconTypes: IconType[] = [
       "presentation",
       "movie",
     ],
-    categories: ["Communication"],
+    categories: ["Communication", "Photography", "Devices"],
   },
   {
     name: "Radar",
@@ -2610,19 +2610,19 @@ export const iconTypes: IconType[] = [
     name: "TV",
     path: getIconPath("tv.svg"),
     searchTerms: ["tv", "television", "screen", "watch", "show", "movie"],
-    categories: ["Communication"],
+    categories: ["Communication", "Devices"],
   },
   {
     name: "Video",
     path: getIconPath("video.svg"),
     searchTerms: ["video", "camera", "record", "movie", "film", "watch"],
-    categories: ["Communication"],
+    categories: ["Communication", "Devices", "Photography"],
   },
   {
     name: "Video Tape",
     path: getIconPath("videotape.svg"),
     searchTerms: ["video tape", "audio", "music", "record", "play", "listen"],
-    categories: ["Communication"],
+    categories: ["Communication", "Photography"],
   },
   {
     name: "Volume 1",
@@ -2754,7 +2754,7 @@ export const iconTypes: IconType[] = [
     name: "Zap",
     path: getIconPath("zap.svg"),
     searchTerms: ["zap", "electric", "energy", "power", "charge", "lightning"],
-    categories: ["Connectivity", "Gaming"],
+    categories: ["Connectivity", "Gaming", "Photography", "Weather"],
   },
   /* Cursors */
   {
@@ -2880,7 +2880,7 @@ export const iconTypes: IconType[] = [
     name: "Blend",
     path: getIconPath("blend.svg"),
     searchTerms: ["blend", "mix", "combine", "merge", "unite", "connect"],
-    categories: ["Design"],
+    categories: ["Design", "Photography"],
   },
   {
     name: "Book Type",
@@ -2949,13 +2949,13 @@ export const iconTypes: IconType[] = [
     name: "Contrast",
     path: getIconPath("contrast.svg"),
     searchTerms: ["contrast", "brightness", "light", "dark", "shade", "color"],
-    categories: ["Design"],
+    categories: ["Design", "Photography"],
   },
   {
     name: "Crop",
     path: getIconPath("crop.svg"),
     searchTerms: ["crop", "cut", "edit", "resize", "adjust", "design"],
-    categories: ["Design"],
+    categories: ["Design", "Photography"],
   },
   {
     name: "Cylinder",
@@ -2979,7 +2979,13 @@ export const iconTypes: IconType[] = [
     name: "Eclipse",
     path: getIconPath("eclipse.svg"),
     searchTerms: ["eclipse", "circle", "round", "shape", "3d", "dimension"],
-    categories: ["Design"],
+    categories: [
+      "Design",
+      "Nature & Sustainability",
+      "Shapes",
+      "Math",
+      "Photography",
+    ],
   },
   {
     name: "File Axis 3D",
@@ -2991,7 +2997,7 @@ export const iconTypes: IconType[] = [
     name: "Frame",
     path: getIconPath("frame.svg"),
     searchTerms: ["frame", "border", "outline", "edge", "picture", "photo"],
-    categories: ["Design"],
+    categories: ["Design", "Photography"],
   },
   {
     name: "Fullscreen",
@@ -3074,7 +3080,7 @@ export const iconTypes: IconType[] = [
       "arrange",
       "order",
     ],
-    categories: ["Design", "Layout"],
+    categories: ["Design", "Layout", "Photography"],
   },
   {
     name: "Layout Panel Left",
@@ -3148,7 +3154,7 @@ export const iconTypes: IconType[] = [
     name: "Palette",
     path: getIconPath("palette.svg"),
     searchTerms: ["palette", "color", "paint", "draw", "tool", "art"],
-    categories: ["Design"],
+    categories: ["Design", "Photography"],
   },
   {
     name: "Paperclip",
@@ -3877,13 +3883,13 @@ export const iconTypes: IconType[] = [
     name: "Library Big",
     path: getIconPath("library-big.svg"),
     searchTerms: ["library big", "library", "book", "read", "learn", "study"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Photography"],
   },
   {
     name: "Library",
     path: getIconPath("library.svg"),
     searchTerms: ["library", "book", "read", "learn", "study", "knowledge"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Photography"],
   },
   {
     name: "Network",
@@ -4485,13 +4491,13 @@ export const iconTypes: IconType[] = [
       "delete",
       "subtract",
     ],
-    categories: ["Devices"],
+    categories: ["Devices", "Photography"],
   },
   {
     name: "Diamond Plus",
     path: getIconPath("diamond-plus.svg"),
     searchTerms: ["diamond plus", "diamond", "plus", "add", "create", "insert"],
-    categories: ["Devices"],
+    categories: ["Devices", "Photography"],
   },
   {
     name: "Disc 2",
@@ -4540,13 +4546,13 @@ export const iconTypes: IconType[] = [
       "dark",
       "disable",
     ],
-    categories: ["Devices"],
+    categories: ["Devices", "Photography"],
   },
   {
     name: "Flashlight",
     path: getIconPath("flashlight.svg"),
     searchTerms: ["flashlight", "light", "dark", "bright", "torch", "lamp"],
-    categories: ["Devices"],
+    categories: ["Devices", "Photography"],
   },
   {
     name: "Gamepad 2",
@@ -5367,7 +5373,7 @@ export const iconTypes: IconType[] = [
     name: "Book Image",
     path: getIconPath("book-image.svg"),
     searchTerms: ["book image", "book", "image", "photo", "picture", "album"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography", "Travel"],
   },
   {
     name: "Braces",
@@ -5882,37 +5888,37 @@ export const iconTypes: IconType[] = [
     name: "Image Down",
     path: getIconPath("image-down.svg"),
     searchTerms: ["image down", "image", "down", "photo", "picture", "arrow"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image Minus",
     path: getIconPath("image-minus.svg"),
     searchTerms: ["image minus", "image", "minus", "photo", "picture", "arrow"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image Off",
     path: getIconPath("image-off.svg"),
     searchTerms: ["image off", "image", "off", "photo", "picture", "disable"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image Play",
     path: getIconPath("image-play.svg"),
     searchTerms: ["image play", "image", "play", "photo", "picture", "arrow"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image Plus",
     path: getIconPath("image-plus.svg"),
     searchTerms: ["image plus", "image", "plus", "photo", "picture", "arrow"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image Up",
     path: getIconPath("image-up.svg"),
     searchTerms: ["image up", "image", "up", "photo", "picture", "arrow"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Image",
@@ -5925,7 +5931,7 @@ export const iconTypes: IconType[] = [
       "album",
       "photography",
     ],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "Images",
@@ -5938,7 +5944,7 @@ export const iconTypes: IconType[] = [
       "album",
       "photography",
     ],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Photography"],
   },
   {
     name: "List Tree",
@@ -6805,7 +6811,7 @@ export const iconTypes: IconType[] = [
     name: "Backpack",
     path: getIconPath("backpack.svg"),
     searchTerms: ["backpack", "bag", "travel", "school", "carry", "pack"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Photography", "Travel"],
   },
   {
     name: "Beaker",
@@ -7779,7 +7785,7 @@ export const iconTypes: IconType[] = [
       "design",
       "grid",
     ],
-    categories: ["Layout"],
+    categories: ["Layout", "Photography", "Design"],
   },
   {
     name: "Gallery Thumbnails",
@@ -7792,7 +7798,7 @@ export const iconTypes: IconType[] = [
       "design",
       "grid",
     ],
-    categories: ["Layout"],
+    categories: ["Layout", "Photography", "Design"],
   },
   {
     name: "Gallery Vertical",
@@ -7811,7 +7817,7 @@ export const iconTypes: IconType[] = [
     name: "Grab",
     path: getIconPath("grab.svg"),
     searchTerms: ["grab", "move", "drag", "layout", "design", "position"],
-    categories: ["Layout"],
+    categories: ["Layout", "Photography", "Design"],
   },
   {
     name: "Grid 2x2 Check",
@@ -8135,7 +8141,7 @@ export const iconTypes: IconType[] = [
       "design",
       "refresh",
     ],
-    categories: ["Layout"],
+    categories: ["Layout", "Photography"],
   },
   {
     name: "Rotate CW Square",
@@ -8149,7 +8155,7 @@ export const iconTypes: IconType[] = [
       "design",
       "refresh",
     ],
-    categories: ["Layout"],
+    categories: ["Layout", "Photography"],
   },
   {
     name: "Rows 2",
@@ -8947,5 +8953,84 @@ export const iconTypes: IconType[] = [
     path: getIconPath("square-check.svg"),
     searchTerms: ["square check", "square", "check", "notification", "success"],
     categories: ["Notifications"],
+  },
+  /* Photography */
+  {
+    name: "Album",
+    path: getIconPath("album.svg"),
+    searchTerms: ["album", "photography", "photo", "picture", "gallery"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Aperture",
+    path: getIconPath("aperture.svg"),
+    searchTerms: ["aperture", "photography", "camera", "lens", "focus"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Crosshair",
+    path: getIconPath("crosshair.svg"),
+    searchTerms: ["crosshair", "photography", "camera", "focus", "target"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Film",
+    path: getIconPath("film.svg"),
+    searchTerms: ["film", "photography", "movie", "video", "cinema"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Flip Horizontal 2",
+    path: getIconPath("flip-horizontal-2.svg"),
+    searchTerms: ["flip horizontal 2", "flip", "horizontal", "photography"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Flip Vertical 2",
+    path: getIconPath("flip-vertical-2.svg"),
+    searchTerms: ["flip vertical 2", "flip", "vertical", "photography"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Flip Vertical",
+    path: getIconPath("flip-vertical.svg"),
+    searchTerms: ["flip vertical", "flip", "vertical", "photography"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Focus",
+    path: getIconPath("focus.svg"),
+    searchTerms: ["focus", "photography", "camera", "lens", "target"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Lightbulb",
+    path: getIconPath("lightbulb.svg"),
+    searchTerms: ["lightbulb", "photography", "idea", "solution", "innovation"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Scan Search",
+    path: getIconPath("scan-search.svg"),
+    searchTerms: ["scan search", "scan", "search", "photography", "camera"],
+    categories: ["Photography"],
+  },
+  {
+    name: "Square Library",
+    path: getIconPath("square-library.svg"),
+    searchTerms: [
+      "square library",
+      "square",
+      "library",
+      "photography",
+      "photo",
+    ],
+    categories: ["Photography"],
+  },
+  {
+    name: "View",
+    path: getIconPath("view.svg"),
+    searchTerms: ["view", "photography", "camera", "focus", "look"],
+    categories: ["Photography"],
   },
 ];
