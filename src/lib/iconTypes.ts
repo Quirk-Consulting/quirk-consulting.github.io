@@ -404,7 +404,7 @@ export const iconTypes: IconType[] = [
     name: "Worm",
     path: getIconPath("worm.svg"),
     searchTerms: ["worm", "animal", "invertebrate", "slimy", "crawl", "earth"],
-    categories: ["Animals"],
+    categories: ["Animals", "Security"],
   },
   /* Accounts & Access */
   {
@@ -695,7 +695,7 @@ export const iconTypes: IconType[] = [
     name: "Handshake",
     path: getIconPath("handshake.svg"),
     searchTerms: ["handshake", "deal", "agreement", "partnership", "greeting"],
-    categories: ["Accounts & Access", "Finance"],
+    categories: ["Accounts & Access", "Finance", "Communication", "Security"],
   },
   {
     name: "Id Card",
@@ -708,7 +708,7 @@ export const iconTypes: IconType[] = [
       "credential",
       "badge",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Inbox",
@@ -727,7 +727,7 @@ export const iconTypes: IconType[] = [
     name: "Key",
     path: getIconPath("key.svg"),
     searchTerms: ["key", "lock", "unlock", "password", "access", "secure"],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Key Square",
@@ -740,7 +740,7 @@ export const iconTypes: IconType[] = [
       "access",
       "secure",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Link",
@@ -873,7 +873,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Check",
@@ -886,7 +886,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Off",
@@ -899,7 +899,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Plus",
@@ -925,13 +925,13 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield X",
     path: getIconPath("shield-x.svg"),
     searchTerms: ["shield x", "protect", "security", "defend", "safe", "guard"],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Slack",
@@ -1169,7 +1169,7 @@ export const iconTypes: IconType[] = [
       "directions",
       "travel",
     ],
-    categories: ["Accounts & Access", "Navigation"],
+    categories: ["Accounts & Access", "Navigation", "Security"],
   },
   {
     name: "Webhook",
@@ -2523,7 +2523,13 @@ export const iconTypes: IconType[] = [
       "monitor",
       "watch",
     ],
-    categories: ["Communication", "Security", "Devices", "Photography"],
+    categories: [
+      "Communication",
+      "Security",
+      "Devices",
+      "Photography",
+      "Security",
+    ],
   },
   {
     name: "Ethernet Port",
@@ -2586,7 +2592,7 @@ export const iconTypes: IconType[] = [
     name: "Radar",
     path: getIconPath("radar.svg"),
     searchTerms: ["radar", "signal", "wave", "detect", "scan", "monitor"],
-    categories: ["Communication"],
+    categories: ["Communication", "Navigation", "Security"],
   },
   {
     name: "Send Horizontal",
@@ -3530,7 +3536,7 @@ export const iconTypes: IconType[] = [
     name: "Earth Lock",
     path: getIconPath("earth-lock.svg"),
     searchTerms: ["earth lock", "earth", "globe", "world", "secure", "protect"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Security"],
   },
   {
     name: "Ellipsis",
@@ -4580,7 +4586,7 @@ export const iconTypes: IconType[] = [
     name: "Globe Lock",
     path: getIconPath("globe-lock.svg"),
     searchTerms: ["globe lock", "globe", "lock", "world", "secure", "protect"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "HDMI Port",
@@ -4998,7 +5004,7 @@ export const iconTypes: IconType[] = [
     name: "Scan Face",
     path: getIconPath("scan-face.svg"),
     searchTerms: ["scan face", "scan", "face", "reader", "code", "data"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "Scan Line",
@@ -5010,7 +5016,7 @@ export const iconTypes: IconType[] = [
     name: "Scan QR Code",
     path: getIconPath("scan-qr-code.svg"),
     searchTerms: ["scan qr code", "scan", "qr", "code", "reader", "data"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "Scan Text",
@@ -5289,7 +5295,7 @@ export const iconTypes: IconType[] = [
       "emotion",
       "deal",
     ],
-    categories: ["Emoji"],
+    categories: ["Emoji", "Communication", "Finance", "Security"],
   },
   {
     name: "Heart",
@@ -5530,25 +5536,25 @@ export const iconTypes: IconType[] = [
     name: "File Key",
     path: getIconPath("file-key.svg"),
     searchTerms: ["file key", "file", "key", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Key 2",
     path: getIconPath("file-key-2.svg"),
     searchTerms: ["file key 2", "file", "key", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Lock 2",
     path: getIconPath("file-lock-2.svg"),
     searchTerms: ["file lock 2", "file", "lock", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Lock",
     path: getIconPath("file-lock.svg"),
     searchTerms: ["file lock", "file", "lock", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Minus",
@@ -5761,13 +5767,13 @@ export const iconTypes: IconType[] = [
     name: "Folder Key",
     path: getIconPath("folder-key.svg"),
     searchTerms: ["folder key", "folder", "key", "data", "store", "save"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "Folder Lock",
     path: getIconPath("folder-lock.svg"),
     searchTerms: ["folder lock", "folder", "lock", "data", "store", "save"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "Folder Minus",
@@ -7162,13 +7168,13 @@ export const iconTypes: IconType[] = [
     name: "Door Closed",
     path: getIconPath("door-closed.svg"),
     searchTerms: ["door closed", "door", "closed", "entry", "exit", "home"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   {
     name: "Door Open",
     path: getIconPath("door-open.svg"),
     searchTerms: ["door open", "door", "open", "entry", "exit", "home"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   {
     name: "Fan",
@@ -7292,7 +7298,7 @@ export const iconTypes: IconType[] = [
     name: "Vault",
     path: getIconPath("vault.svg"),
     searchTerms: ["vault", "safe", "secure", "lock", "protect", "money"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   /* Layout */
   {
@@ -7750,7 +7756,7 @@ export const iconTypes: IconType[] = [
     name: "Columns 4",
     path: getIconPath("columns-4.svg"),
     searchTerms: ["columns 4", "columns", "4", "layout", "design", "split"],
-    categories: ["Layout"],
+    categories: ["Layout", "Security"],
   },
   {
     name: "Ellipsis Vertical",
@@ -8764,6 +8770,18 @@ export const iconTypes: IconType[] = [
     categories: ["Nature & Sustainability"],
   },
   {
+    name: "Sun",
+    path: getIconPath("sun.svg"),
+    searchTerms: ["sun", "nature", "sustainability", "light", "day"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Snowflake",
+    path: getIconPath("snowflake.svg"),
+    searchTerms: ["snowflake", "nature", "sustainability", "winter", "cold"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
     name: "Tent Tree",
     path: getIconPath("tent-tree.svg"),
     searchTerms: [
@@ -9090,5 +9108,72 @@ export const iconTypes: IconType[] = [
     path: getIconPath("test-tubes.svg"),
     searchTerms: ["test tubes", "test", "tubes", "science", "chemistry"],
     categories: ["Science"],
+  },
+  /* Security */
+  {
+    name: "Book Key`",
+    path: getIconPath("book-key.svg"),
+    searchTerms: ["book key", "book", "key", "security", "password"],
+    categories: ["Security"],
+  },
+  {
+    name: "Book Lock",
+    path: getIconPath("book-lock.svg"),
+    searchTerms: ["book lock", "book", "lock", "security", "password"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Keyhole Open",
+    path: getIconPath("lock-keyhole-open.svg"),
+    searchTerms: ["lock keyhole open", "lock", "keyhole", "open", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Keyhole",
+    path: getIconPath("lock-keyhole.svg"),
+    searchTerms: ["lock keyhole", "lock", "keyhole", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Open",
+    path: getIconPath("lock-open.svg"),
+    searchTerms: ["lock open", "lock", "open", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock",
+    path: getIconPath("lock.svg"),
+    searchTerms: ["lock", "security", "password", "protect", "safe"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Ellipsis",
+    path: getIconPath("shield-ellipsis.svg"),
+    searchTerms: [
+      "shield ellipsis",
+      "shield",
+      "ellipsis",
+      "security",
+      "protect",
+    ],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Half",
+    path: getIconPath("shield-half.svg"),
+    searchTerms: ["shield half", "shield", "half", "security", "protect"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Minus",
+    path: getIconPath("shield-minus.svg"),
+    searchTerms: ["shield minus", "shield", "minus", "security", "protect"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield User",
+    path: getIconPath("shield-user.svg"),
+    searchTerms: ["shield user", "shield", "user", "security", "protect"],
+    categories: ["Security"],
   },
 ];
