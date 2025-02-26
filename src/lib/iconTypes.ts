@@ -37,6 +37,7 @@ export const categoryNames = [
   "Notifications",
   "Numbers",
   "Photography",
+  "Science",
   "Security",
   "Shapes",
   "Shopping",
@@ -417,7 +418,7 @@ export const iconTypes: IconType[] = [
       "steps",
       "bpm",
     ],
-    categories: ["Accounts & Access", "Medical"],
+    categories: ["Accounts & Access", "Medical", "Science"],
   },
   {
     name: "@ Sign",
@@ -2729,7 +2730,7 @@ export const iconTypes: IconType[] = [
       "receive",
       "space",
     ],
-    categories: ["Connectivity"],
+    categories: ["Connectivity", "Science"],
   },
   {
     name: "Smartphone",
@@ -2982,6 +2983,7 @@ export const iconTypes: IconType[] = [
     categories: [
       "Design",
       "Nature & Sustainability",
+      "Science",
       "Shapes",
       "Math",
       "Photography",
@@ -3204,7 +3206,7 @@ export const iconTypes: IconType[] = [
     name: "Pipette",
     path: getIconPath("pipette.svg"),
     searchTerms: ["pipette", "color", "pick", "select", "choose", "tool"],
-    categories: ["Design"],
+    categories: ["Design", "Science"],
   },
   {
     name: "Radius",
@@ -3300,6 +3302,7 @@ export const iconTypes: IconType[] = [
       "Coding & Development",
       "Nature & Sustainability",
       "Photography",
+      "Science",
       "Travel",
     ],
   },
@@ -3370,13 +3373,13 @@ export const iconTypes: IconType[] = [
     name: "Brain Circuit",
     path: getIconPath("brain-circuit.svg"),
     searchTerms: ["brain circuit", "brain", "mind", "thought", "idea", "think"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Brain Cog",
     path: getIconPath("brain-cog.svg"),
     searchTerms: ["brain cog", "brain", "mind", "thought", "idea", "think"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Bug Off",
@@ -3420,7 +3423,7 @@ export const iconTypes: IconType[] = [
       "chip",
       "tech",
     ],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Cloud Alert",
@@ -3901,7 +3904,7 @@ export const iconTypes: IconType[] = [
     name: "Omega",
     path: getIconPath("omega.svg"),
     searchTerms: ["omega", "symbol", "sign", "character", "letter"],
-    categories: ["Coding & Development", "Math", "Text"],
+    categories: ["Coding & Development", "Math", "Text", "Science"],
   },
   {
     name: "Option",
@@ -4192,7 +4195,7 @@ export const iconTypes: IconType[] = [
     name: "Telescope",
     path: getIconPath("telescope.svg"),
     searchTerms: ["telescope", "search", "find", "look", "spy", "watch"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science", "Tools"],
   },
   {
     name: "Terminal",
@@ -6824,7 +6827,7 @@ export const iconTypes: IconType[] = [
       "experiment",
       "test",
     ],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Bone",
@@ -6946,13 +6949,13 @@ export const iconTypes: IconType[] = [
       "lab",
       "test",
     ],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Flask Round",
     path: getIconPath("flask-round.svg"),
     searchTerms: ["flask round", "flask", "round", "science", "lab", "test"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Flower",
@@ -8442,7 +8445,7 @@ export const iconTypes: IconType[] = [
     name: "Sigma",
     path: getIconPath("sigma.svg"),
     searchTerms: ["sigma", "math", "sum", "total", "operation", "add"],
-    categories: ["Math", "Text"],
+    categories: ["Math", "Text", "Science"],
   },
   {
     name: "Slash",
@@ -8571,7 +8574,7 @@ export const iconTypes: IconType[] = [
     name: "Brain",
     path: getIconPath("brain.svg"),
     searchTerms: ["brain", "medical", "health", "mind", "neurology"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Briefcase Medical",
@@ -8655,7 +8658,7 @@ export const iconTypes: IconType[] = [
     name: "Microscope",
     path: getIconPath("microscope.svg"),
     searchTerms: ["microscope", "medical", "health", "science", "laboratory"],
-    categories: ["Medical", "Tools"],
+    categories: ["Medical", "Tools", "Science"],
   },
   {
     name: "Non-Binary",
@@ -8691,19 +8694,19 @@ export const iconTypes: IconType[] = [
     name: "Square Activity",
     path: getIconPath("square-activity.svg"),
     searchTerms: ["square activity", "square", "activity", "medical", "health"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Stethoscope",
     path: getIconPath("stethoscope.svg"),
     searchTerms: ["stethoscope", "medical", "health", "doctor", "nurse"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Syringe",
     path: getIconPath("syringe.svg"),
     searchTerms: ["syringe", "medical", "health", "needle", "injection"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Tablets",
@@ -9032,5 +9035,60 @@ export const iconTypes: IconType[] = [
     path: getIconPath("view.svg"),
     searchTerms: ["view", "photography", "camera", "focus", "look"],
     categories: ["Photography"],
+  },
+  /* Science */
+  {
+    name: "Atom",
+    path: getIconPath("atom.svg"),
+    searchTerms: ["atom", "science", "chemistry", "physics", "molecule"],
+    categories: ["Science"],
+  },
+  {
+    name: "Biohazard",
+    path: getIconPath("biohazard.svg"),
+    searchTerms: ["biohazard", "science", "danger", "warning", "toxic"],
+    categories: ["Science"],
+  },
+  {
+    name: "Circle Gauge",
+    path: getIconPath("circle-gauge.svg"),
+    searchTerms: ["circle gauge", "circle", "gauge", "science", "meter"],
+    categories: ["Science"],
+  },
+  {
+    name: "Gauge",
+    path: getIconPath("gauge.svg"),
+    searchTerms: ["gauge", "science", "meter", "measure", "indicator"],
+    categories: ["Science"],
+  },
+  {
+    name: "Orbit",
+    path: getIconPath("orbit.svg"),
+    searchTerms: ["orbit", "science", "space", "planet", "astronomy"],
+    categories: ["Science"],
+  },
+  {
+    name: "Radiation",
+    path: getIconPath("radiation.svg"),
+    searchTerms: ["radiation", "science", "danger", "warning", "toxic"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tube Diagonal",
+    path: getIconPath("test-tube-diagonal.svg"),
+    searchTerms: ["test tube diagonal", "test", "tube", "diagonal", "science"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tube",
+    path: getIconPath("test-tube.svg"),
+    searchTerms: ["test tube", "test", "tube", "science", "chemistry"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tubes",
+    path: getIconPath("test-tubes.svg"),
+    searchTerms: ["test tubes", "test", "tubes", "science", "chemistry"],
+    categories: ["Science"],
   },
 ];
