@@ -37,6 +37,7 @@ export const categoryNames = [
   "Notifications",
   "Numbers",
   "Photography",
+  "Science",
   "Security",
   "Shapes",
   "Shopping",
@@ -403,7 +404,7 @@ export const iconTypes: IconType[] = [
     name: "Worm",
     path: getIconPath("worm.svg"),
     searchTerms: ["worm", "animal", "invertebrate", "slimy", "crawl", "earth"],
-    categories: ["Animals"],
+    categories: ["Animals", "Security"],
   },
   /* Accounts & Access */
   {
@@ -417,7 +418,7 @@ export const iconTypes: IconType[] = [
       "steps",
       "bpm",
     ],
-    categories: ["Accounts & Access", "Medical"],
+    categories: ["Accounts & Access", "Medical", "Science"],
   },
   {
     name: "@ Sign",
@@ -694,7 +695,7 @@ export const iconTypes: IconType[] = [
     name: "Handshake",
     path: getIconPath("handshake.svg"),
     searchTerms: ["handshake", "deal", "agreement", "partnership", "greeting"],
-    categories: ["Accounts & Access", "Finance"],
+    categories: ["Accounts & Access", "Finance", "Communication", "Security"],
   },
   {
     name: "Id Card",
@@ -707,7 +708,7 @@ export const iconTypes: IconType[] = [
       "credential",
       "badge",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Inbox",
@@ -726,7 +727,7 @@ export const iconTypes: IconType[] = [
     name: "Key",
     path: getIconPath("key.svg"),
     searchTerms: ["key", "lock", "unlock", "password", "access", "secure"],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Key Square",
@@ -739,7 +740,7 @@ export const iconTypes: IconType[] = [
       "access",
       "secure",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Link",
@@ -872,7 +873,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Check",
@@ -885,7 +886,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Off",
@@ -898,7 +899,7 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield Plus",
@@ -924,13 +925,13 @@ export const iconTypes: IconType[] = [
       "safe",
       "guard",
     ],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Shield X",
     path: getIconPath("shield-x.svg"),
     searchTerms: ["shield x", "protect", "security", "defend", "safe", "guard"],
-    categories: ["Accounts & Access"],
+    categories: ["Accounts & Access", "Security"],
   },
   {
     name: "Slack",
@@ -1168,7 +1169,7 @@ export const iconTypes: IconType[] = [
       "directions",
       "travel",
     ],
-    categories: ["Accounts & Access", "Navigation"],
+    categories: ["Accounts & Access", "Navigation", "Security"],
   },
   {
     name: "Webhook",
@@ -2522,7 +2523,13 @@ export const iconTypes: IconType[] = [
       "monitor",
       "watch",
     ],
-    categories: ["Communication", "Security", "Devices", "Photography"],
+    categories: [
+      "Communication",
+      "Security",
+      "Devices",
+      "Photography",
+      "Security",
+    ],
   },
   {
     name: "Ethernet Port",
@@ -2585,7 +2592,7 @@ export const iconTypes: IconType[] = [
     name: "Radar",
     path: getIconPath("radar.svg"),
     searchTerms: ["radar", "signal", "wave", "detect", "scan", "monitor"],
-    categories: ["Communication"],
+    categories: ["Communication", "Navigation", "Security"],
   },
   {
     name: "Send Horizontal",
@@ -2729,7 +2736,7 @@ export const iconTypes: IconType[] = [
       "receive",
       "space",
     ],
-    categories: ["Connectivity"],
+    categories: ["Connectivity", "Science"],
   },
   {
     name: "Smartphone",
@@ -2982,6 +2989,7 @@ export const iconTypes: IconType[] = [
     categories: [
       "Design",
       "Nature & Sustainability",
+      "Science",
       "Shapes",
       "Math",
       "Photography",
@@ -3204,7 +3212,7 @@ export const iconTypes: IconType[] = [
     name: "Pipette",
     path: getIconPath("pipette.svg"),
     searchTerms: ["pipette", "color", "pick", "select", "choose", "tool"],
-    categories: ["Design"],
+    categories: ["Design", "Science"],
   },
   {
     name: "Radius",
@@ -3300,6 +3308,7 @@ export const iconTypes: IconType[] = [
       "Coding & Development",
       "Nature & Sustainability",
       "Photography",
+      "Science",
       "Travel",
     ],
   },
@@ -3370,13 +3379,13 @@ export const iconTypes: IconType[] = [
     name: "Brain Circuit",
     path: getIconPath("brain-circuit.svg"),
     searchTerms: ["brain circuit", "brain", "mind", "thought", "idea", "think"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Brain Cog",
     path: getIconPath("brain-cog.svg"),
     searchTerms: ["brain cog", "brain", "mind", "thought", "idea", "think"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Bug Off",
@@ -3420,7 +3429,7 @@ export const iconTypes: IconType[] = [
       "chip",
       "tech",
     ],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science"],
   },
   {
     name: "Cloud Alert",
@@ -3527,7 +3536,7 @@ export const iconTypes: IconType[] = [
     name: "Earth Lock",
     path: getIconPath("earth-lock.svg"),
     searchTerms: ["earth lock", "earth", "globe", "world", "secure", "protect"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Security"],
   },
   {
     name: "Ellipsis",
@@ -3901,7 +3910,7 @@ export const iconTypes: IconType[] = [
     name: "Omega",
     path: getIconPath("omega.svg"),
     searchTerms: ["omega", "symbol", "sign", "character", "letter"],
-    categories: ["Coding & Development", "Math", "Text"],
+    categories: ["Coding & Development", "Math", "Text", "Science"],
   },
   {
     name: "Option",
@@ -4192,7 +4201,7 @@ export const iconTypes: IconType[] = [
     name: "Telescope",
     path: getIconPath("telescope.svg"),
     searchTerms: ["telescope", "search", "find", "look", "spy", "watch"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Science", "Tools"],
   },
   {
     name: "Terminal",
@@ -4577,7 +4586,7 @@ export const iconTypes: IconType[] = [
     name: "Globe Lock",
     path: getIconPath("globe-lock.svg"),
     searchTerms: ["globe lock", "globe", "lock", "world", "secure", "protect"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "HDMI Port",
@@ -4995,7 +5004,7 @@ export const iconTypes: IconType[] = [
     name: "Scan Face",
     path: getIconPath("scan-face.svg"),
     searchTerms: ["scan face", "scan", "face", "reader", "code", "data"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "Scan Line",
@@ -5007,7 +5016,7 @@ export const iconTypes: IconType[] = [
     name: "Scan QR Code",
     path: getIconPath("scan-qr-code.svg"),
     searchTerms: ["scan qr code", "scan", "qr", "code", "reader", "data"],
-    categories: ["Devices"],
+    categories: ["Devices", "Security"],
   },
   {
     name: "Scan Text",
@@ -5286,7 +5295,7 @@ export const iconTypes: IconType[] = [
       "emotion",
       "deal",
     ],
-    categories: ["Emoji"],
+    categories: ["Emoji", "Communication", "Finance", "Security"],
   },
   {
     name: "Heart",
@@ -5527,25 +5536,25 @@ export const iconTypes: IconType[] = [
     name: "File Key",
     path: getIconPath("file-key.svg"),
     searchTerms: ["file key", "file", "key", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Key 2",
     path: getIconPath("file-key-2.svg"),
     searchTerms: ["file key 2", "file", "key", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Lock 2",
     path: getIconPath("file-lock-2.svg"),
     searchTerms: ["file lock 2", "file", "lock", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Lock",
     path: getIconPath("file-lock.svg"),
     searchTerms: ["file lock", "file", "lock", "folder", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "File Minus",
@@ -5758,13 +5767,13 @@ export const iconTypes: IconType[] = [
     name: "Folder Key",
     path: getIconPath("folder-key.svg"),
     searchTerms: ["folder key", "folder", "key", "data", "store", "save"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "Folder Lock",
     path: getIconPath("folder-lock.svg"),
     searchTerms: ["folder lock", "folder", "lock", "data", "store", "save"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Security"],
   },
   {
     name: "Folder Minus",
@@ -6824,7 +6833,7 @@ export const iconTypes: IconType[] = [
       "experiment",
       "test",
     ],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Bone",
@@ -6946,13 +6955,13 @@ export const iconTypes: IconType[] = [
       "lab",
       "test",
     ],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Flask Round",
     path: getIconPath("flask-round.svg"),
     searchTerms: ["flask round", "flask", "round", "science", "lab", "test"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Science"],
   },
   {
     name: "Flower",
@@ -7159,13 +7168,13 @@ export const iconTypes: IconType[] = [
     name: "Door Closed",
     path: getIconPath("door-closed.svg"),
     searchTerms: ["door closed", "door", "closed", "entry", "exit", "home"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   {
     name: "Door Open",
     path: getIconPath("door-open.svg"),
     searchTerms: ["door open", "door", "open", "entry", "exit", "home"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   {
     name: "Fan",
@@ -7289,7 +7298,7 @@ export const iconTypes: IconType[] = [
     name: "Vault",
     path: getIconPath("vault.svg"),
     searchTerms: ["vault", "safe", "secure", "lock", "protect", "money"],
-    categories: ["Home"],
+    categories: ["Home", "Security"],
   },
   /* Layout */
   {
@@ -7747,7 +7756,7 @@ export const iconTypes: IconType[] = [
     name: "Columns 4",
     path: getIconPath("columns-4.svg"),
     searchTerms: ["columns 4", "columns", "4", "layout", "design", "split"],
-    categories: ["Layout"],
+    categories: ["Layout", "Security"],
   },
   {
     name: "Ellipsis Vertical",
@@ -8442,7 +8451,7 @@ export const iconTypes: IconType[] = [
     name: "Sigma",
     path: getIconPath("sigma.svg"),
     searchTerms: ["sigma", "math", "sum", "total", "operation", "add"],
-    categories: ["Math", "Text"],
+    categories: ["Math", "Text", "Science"],
   },
   {
     name: "Slash",
@@ -8571,7 +8580,7 @@ export const iconTypes: IconType[] = [
     name: "Brain",
     path: getIconPath("brain.svg"),
     searchTerms: ["brain", "medical", "health", "mind", "neurology"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Briefcase Medical",
@@ -8655,7 +8664,7 @@ export const iconTypes: IconType[] = [
     name: "Microscope",
     path: getIconPath("microscope.svg"),
     searchTerms: ["microscope", "medical", "health", "science", "laboratory"],
-    categories: ["Medical", "Tools"],
+    categories: ["Medical", "Tools", "Science"],
   },
   {
     name: "Non-Binary",
@@ -8691,19 +8700,19 @@ export const iconTypes: IconType[] = [
     name: "Square Activity",
     path: getIconPath("square-activity.svg"),
     searchTerms: ["square activity", "square", "activity", "medical", "health"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Stethoscope",
     path: getIconPath("stethoscope.svg"),
     searchTerms: ["stethoscope", "medical", "health", "doctor", "nurse"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Syringe",
     path: getIconPath("syringe.svg"),
     searchTerms: ["syringe", "medical", "health", "needle", "injection"],
-    categories: ["Medical"],
+    categories: ["Medical", "Science"],
   },
   {
     name: "Tablets",
@@ -8758,6 +8767,18 @@ export const iconTypes: IconType[] = [
     name: "Shrub",
     path: getIconPath("shrub.svg"),
     searchTerms: ["shrub", "nature", "sustainability", "plant", "tree"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Sun",
+    path: getIconPath("sun.svg"),
+    searchTerms: ["sun", "nature", "sustainability", "light", "day"],
+    categories: ["Nature & Sustainability"],
+  },
+  {
+    name: "Snowflake",
+    path: getIconPath("snowflake.svg"),
+    searchTerms: ["snowflake", "nature", "sustainability", "winter", "cold"],
     categories: ["Nature & Sustainability"],
   },
   {
@@ -9032,5 +9053,127 @@ export const iconTypes: IconType[] = [
     path: getIconPath("view.svg"),
     searchTerms: ["view", "photography", "camera", "focus", "look"],
     categories: ["Photography"],
+  },
+  /* Science */
+  {
+    name: "Atom",
+    path: getIconPath("atom.svg"),
+    searchTerms: ["atom", "science", "chemistry", "physics", "molecule"],
+    categories: ["Science"],
+  },
+  {
+    name: "Biohazard",
+    path: getIconPath("biohazard.svg"),
+    searchTerms: ["biohazard", "science", "danger", "warning", "toxic"],
+    categories: ["Science"],
+  },
+  {
+    name: "Circle Gauge",
+    path: getIconPath("circle-gauge.svg"),
+    searchTerms: ["circle gauge", "circle", "gauge", "science", "meter"],
+    categories: ["Science"],
+  },
+  {
+    name: "Gauge",
+    path: getIconPath("gauge.svg"),
+    searchTerms: ["gauge", "science", "meter", "measure", "indicator"],
+    categories: ["Science"],
+  },
+  {
+    name: "Orbit",
+    path: getIconPath("orbit.svg"),
+    searchTerms: ["orbit", "science", "space", "planet", "astronomy"],
+    categories: ["Science"],
+  },
+  {
+    name: "Radiation",
+    path: getIconPath("radiation.svg"),
+    searchTerms: ["radiation", "science", "danger", "warning", "toxic"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tube Diagonal",
+    path: getIconPath("test-tube-diagonal.svg"),
+    searchTerms: ["test tube diagonal", "test", "tube", "diagonal", "science"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tube",
+    path: getIconPath("test-tube.svg"),
+    searchTerms: ["test tube", "test", "tube", "science", "chemistry"],
+    categories: ["Science"],
+  },
+  {
+    name: "Test Tubes",
+    path: getIconPath("test-tubes.svg"),
+    searchTerms: ["test tubes", "test", "tubes", "science", "chemistry"],
+    categories: ["Science"],
+  },
+  /* Security */
+  {
+    name: "Book Key`",
+    path: getIconPath("book-key.svg"),
+    searchTerms: ["book key", "book", "key", "security", "password"],
+    categories: ["Security"],
+  },
+  {
+    name: "Book Lock",
+    path: getIconPath("book-lock.svg"),
+    searchTerms: ["book lock", "book", "lock", "security", "password"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Keyhole Open",
+    path: getIconPath("lock-keyhole-open.svg"),
+    searchTerms: ["lock keyhole open", "lock", "keyhole", "open", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Keyhole",
+    path: getIconPath("lock-keyhole.svg"),
+    searchTerms: ["lock keyhole", "lock", "keyhole", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock Open",
+    path: getIconPath("lock-open.svg"),
+    searchTerms: ["lock open", "lock", "open", "security"],
+    categories: ["Security"],
+  },
+  {
+    name: "Lock",
+    path: getIconPath("lock.svg"),
+    searchTerms: ["lock", "security", "password", "protect", "safe"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Ellipsis",
+    path: getIconPath("shield-ellipsis.svg"),
+    searchTerms: [
+      "shield ellipsis",
+      "shield",
+      "ellipsis",
+      "security",
+      "protect",
+    ],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Half",
+    path: getIconPath("shield-half.svg"),
+    searchTerms: ["shield half", "shield", "half", "security", "protect"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield Minus",
+    path: getIconPath("shield-minus.svg"),
+    searchTerms: ["shield minus", "shield", "minus", "security", "protect"],
+    categories: ["Security"],
+  },
+  {
+    name: "Shield User",
+    path: getIconPath("shield-user.svg"),
+    searchTerms: ["shield user", "shield", "user", "security", "protect"],
+    categories: ["Security"],
   },
 ];

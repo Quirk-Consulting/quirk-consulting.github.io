@@ -124,6 +124,8 @@ const categoryDescriptions: {
   Photography:
     "Visual asset management and image editing icons for Jira creative workflows. Streamline digital content production and media library organisation for marketing teams.",
 
+  Science:
+    "Scientific research and laboratory icons for Jira data analysis workflows. Represent experimental procedures, research methodologies, and scientific discoveries.",
   Security:
     "Data protection and cybersecurity icons for Jira compliance tracking. Visualise security protocols, threat levels, and protective measures in risk management frameworks.",
 
