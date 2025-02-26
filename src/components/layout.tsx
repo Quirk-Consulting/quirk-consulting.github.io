@@ -1,3 +1,4 @@
+// Updated Layout.tsx to support category selection
 import {
   Dock,
   InfoIcon,
@@ -64,6 +65,8 @@ type LayoutProps = {
   onTabChange: (tabId: string) => void;
   categoryCounts: Record<string, number>;
   isSearching: boolean;
+  selectedCategory: string | null;
+  onCategorySelect: (category: string) => void;
 };
 
 export function Layout({
@@ -72,6 +75,8 @@ export function Layout({
   onTabChange,
   categoryCounts,
   isSearching,
+  selectedCategory,
+  onCategorySelect,
 }: LayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCategorySidebarOpen, setIsCategorySidebarOpen] = useState(true);
@@ -83,6 +88,10 @@ export function Layout({
   const categoryHeaderRef = useRef<HTMLDivElement>(null);
 
   const handleCategoryClick = (category: string) => {
+    // Update the selected category
+    onCategorySelect(category);
+
+    // Scroll to the category
     const element = document.getElementById(
       `category-${category.toLowerCase().replace(/[^a-z0-9]/g, "-")}`
     );
@@ -96,6 +105,7 @@ export function Layout({
       <div className="space-y-1">
         {categoryNames.map((category) => {
           const count = categoryCounts[category] || 0;
+          const isSelected = selectedCategory === category;
 
           return (
             <button
@@ -104,7 +114,9 @@ export function Layout({
               className={`
                 flex items-center justify-between w-full px-3 py-2 text-sm transition-colors rounded-md
                 ${
-                  count > 0
+                  isSelected
+                    ? "bg-primary/10 text-primary font-medium"
+                    : count > 0
                     ? isSearching
                       ? "font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
@@ -164,6 +176,54 @@ export function Layout({
     </nav>
   );
 
+  // Update the Desktop sidebar version
+  const DesktopCategorySidebar = () => (
+    <div className="flex-1 overflow-hidden">
+      <ScrollArea
+        className="h-full"
+        style={{
+          height: categoryListHeight ? `${categoryListHeight}px` : undefined,
+        }}
+      >
+        <div className="px-2 py-4 space-y-1">
+          {categoryNames.map((category) => {
+            const count = categoryCounts[category] || 0;
+            const isSelected = selectedCategory === category;
+
+            return (
+              <button
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+                className={`flex items-center justify-between w-full px-3 py-1 text-sm transition-colors rounded-md
+                  ${
+                    isSelected
+                      ? "bg-primary/10 text-primary font-medium"
+                      : count > 0
+                      ? isSearching
+                        ? "font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                      : "text-muted-foreground/50 hover:bg-accent/50"
+                  }
+                `}
+              >
+                <span className="truncate">{category}</span>
+                <span
+                  className={`ml-auto text-xs tabular-nums ${
+                    count > 0
+                      ? "text-muted-foreground"
+                      : "text-muted-foreground/50"
+                  }`}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </ScrollArea>
+    </div>
+  );
+
   useEffect(() => {
     const updateHeight = () => {
       if (
@@ -189,12 +249,15 @@ export function Layout({
     return () => window.removeEventListener("resize", updateHeight);
   }, [isCategorySidebarOpen]);
 
+  // SEO enhancement: Add appropriate ARIA roles and landmarks
   return (
     <div className="flex h-screen bg-background">
       {/* Desktop Sidebar */}
       <div
         ref={sidebarRef}
         className="hidden w-64 h-screen border-r md:flex md:flex-col bg-card"
+        role="navigation"
+        aria-label="Main Navigation"
       >
         {/* Fixed sections */}
         <div ref={headerRef} className="flex-none p-4 border-b">
@@ -219,58 +282,22 @@ export function Layout({
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsCategorySidebarOpen(!isCategorySidebarOpen)}
+                aria-expanded={isCategorySidebarOpen}
+                aria-controls="category-sidebar"
               >
                 <ChevronDown
                   className={`w-4 h-4 transition-transform ${
                     isCategorySidebarOpen ? "rotate-180" : ""
                   }`}
                 />
+                <span className="sr-only">
+                  {isCategorySidebarOpen
+                    ? "Collapse categories"
+                    : "Expand categories"}
+                </span>
               </Button>
             </div>
-            {isCategorySidebarOpen && (
-              <div className="flex-1 overflow-hidden">
-                <ScrollArea
-                  className="h-full"
-                  style={{
-                    height: categoryListHeight
-                      ? `${categoryListHeight}px`
-                      : undefined,
-                  }}
-                >
-                  <div className="px-2 py-4 space-y-1">
-                    {categoryNames.map((category) => {
-                      const count = categoryCounts[category] || 0;
-                      return (
-                        <button
-                          key={category}
-                          onClick={() => handleCategoryClick(category)}
-                          className={`flex font-semibold items-center justify-between w-full px-3 py-1 text-sm transition-colors rounded-md
-                            ${
-                              count > 0
-                                ? isSearching
-                                  ? "font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
-                                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                                : "text-muted-foreground/50 hover:bg-accent/50"
-                            }
-                          `}
-                        >
-                          <span className="truncate">{category}</span>
-                          <span
-                            className={`ml-auto text-xs tabular-nums ${
-                              count > 0
-                                ? "text-muted-foreground"
-                                : "text-muted-foreground/50"
-                            }`}
-                          >
-                            {count}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </ScrollArea>
-              </div>
-            )}
+            {isCategorySidebarOpen && <DesktopCategorySidebar />}
           </div>
         )}
       </div>
@@ -278,19 +305,20 @@ export function Layout({
       {/* Mobile Header and Content */}
       <div className="flex flex-col w-full">
         {/* Mobile Header */}
-        <div className="flex items-center justify-between p-4 border-b md:hidden bg-card">
+        <header className="flex items-center justify-between p-4 border-b md:hidden bg-card">
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open main menu"
             >
               <Menu className="w-5 h-5" />
             </Button>
             <Logo />
           </div>
           <ThemeToggle />
-        </div>
+        </header>
 
         {/* Mobile Menu Sheet */}
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -301,6 +329,7 @@ export function Layout({
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
               </Button>
@@ -316,12 +345,19 @@ export function Layout({
                     onClick={() =>
                       setIsCategorySidebarOpen(!isCategorySidebarOpen)
                     }
+                    aria-expanded={isCategorySidebarOpen}
+                    aria-controls="mobile-category-sidebar"
                   >
                     <ChevronDown
                       className={`w-4 h-4 transition-transform ${
                         isCategorySidebarOpen ? "rotate-180" : ""
                       }`}
                     />
+                    <span className="sr-only">
+                      {isCategorySidebarOpen
+                        ? "Collapse categories"
+                        : "Expand categories"}
+                    </span>
                   </Button>
                 </div>
                 {isCategorySidebarOpen && <CategorySidebar />}
@@ -331,7 +367,9 @@ export function Layout({
         </Sheet>
 
         {/* Main content */}
-        <div className="flex-1 mb-6 overflow-auto">{children}</div>
+        <main className="flex-1 mb-6 overflow-auto" role="main">
+          {children}
+        </main>
       </div>
     </div>
   );
