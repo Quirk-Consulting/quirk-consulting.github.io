@@ -3868,7 +3868,7 @@ export const iconTypes: IconType[] = [
     name: "Hexagon",
     path: getIconPath("hexagon.svg"),
     searchTerms: ["hexagon", "shape", "polygon", "six", "side", "dimension"],
-    categories: ["Coding & Development"],
+    categories: ["Coding & Development", "Shapes"],
   },
   {
     name: "Kanban",
@@ -6090,7 +6090,7 @@ export const iconTypes: IconType[] = [
     name: "Ungroup",
     path: getIconPath("ungroup.svg"),
     searchTerms: ["ungroup", "separate", "split", "divide", "data", "store"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Shapes"],
   },
   /* Finance */
   {
@@ -6851,7 +6851,7 @@ export const iconTypes: IconType[] = [
     name: "Club",
     path: getIconPath("club.svg"),
     searchTerms: ["club", "card", "poker", "suit", "game", "play"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Shapes"],
   },
   {
     name: "Coins",
@@ -6869,7 +6869,7 @@ export const iconTypes: IconType[] = [
     name: "Diamond",
     path: getIconPath("diamond.svg"),
     searchTerms: ["diamond", "gem", "jewel", "stone", "precious", "sparkle"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Shapes"],
   },
   {
     name: "Dice 1",
@@ -7053,7 +7053,7 @@ export const iconTypes: IconType[] = [
     name: "Spade",
     path: getIconPath("spade.svg"),
     searchTerms: ["spade", "cards", "poker", "suit", "game", "play"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Shapes"],
   },
   {
     name: "Sprout",
@@ -8371,13 +8371,13 @@ export const iconTypes: IconType[] = [
       "split",
       "cut",
     ],
-    categories: ["Math"],
+    categories: ["Math", "Shapes"],
   },
   {
     name: "Cone",
     path: getIconPath("cone.svg"),
     searchTerms: ["cone", "shape", "geometry", "math", "3d", "solid"],
-    categories: ["Math"],
+    categories: ["Math", "Shapes"],
   },
   {
     name: "Copy Minus",
@@ -8610,7 +8610,7 @@ export const iconTypes: IconType[] = [
     name: "Circle Small",
     path: getIconPath("circle-small.svg"),
     searchTerms: ["circle small", "circle", "small", "medical", "health"],
-    categories: ["Medical"],
+    categories: ["Medical", "Shapes"],
   },
   {
     name: "Clipboard Minus",
@@ -8961,7 +8961,7 @@ export const iconTypes: IconType[] = [
       "notification",
       "warning",
     ],
-    categories: ["Notifications"],
+    categories: ["Notifications", "Shapes"],
   },
   {
     name: "Square Check Big",
@@ -9175,5 +9175,120 @@ export const iconTypes: IconType[] = [
     path: getIconPath("shield-user.svg"),
     searchTerms: ["shield user", "shield", "user", "security", "protect"],
     categories: ["Security"],
+  },
+  /* Shapes */
+  {
+    name: "Badge",
+    path: getIconPath("badge.svg"),
+    searchTerms: ["badge", "shapes", "circle", "star", "medal"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Blocks",
+    path: getIconPath("blocks.svg"),
+    searchTerms: ["blocks", "shapes", "square", "rectangle", "cube"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Circle Dashed",
+    path: getIconPath("circle-dashed.svg"),
+    searchTerms: ["circle dashed", "circle", "dashed", "shapes", "round"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Circle Dot Dashed",
+    path: getIconPath("circle-dot-dashed.svg"),
+    searchTerms: ["circle dot dashed", "circle", "dot", "dashed", "shapes"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Circle Dot",
+    path: getIconPath("circle-dot.svg"),
+    searchTerms: ["circle dot", "circle", "dot", "shapes", "round"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Circle Off",
+    path: getIconPath("circle-off.svg"),
+    searchTerms: ["circle off", "circle", "off", "shapes", "round"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Circle",
+    path: getIconPath("circle.svg"),
+    searchTerms: ["circle", "shapes", "round", "ellipse", "oval"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Cross",
+    path: getIconPath("cross.svg"),
+    searchTerms: ["cross", "shapes", "plus", "add", "math"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Dot",
+    path: getIconPath("dot.svg"),
+    searchTerms: ["dot", "shapes", "circle", "point", "spot"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Octagon Pause",
+    path: getIconPath("octagon-pause.svg"),
+    searchTerms: ["octagon pause", "octagon", "pause", "shapes", "stop"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Octagon",
+    path: getIconPath("octagon.svg"),
+    searchTerms: ["octagon", "shapes", "stop", "eight", "sides"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Pentagon",
+    path: getIconPath("pentagon.svg"),
+    searchTerms: ["pentagon", "shapes", "five", "sides"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Rectangle Horizontal",
+    path: getIconPath("rectangle-horizontal.svg"),
+    searchTerms: ["rectangle horizontal", "rectangle", "horizontal", "shapes"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Rectangle Vertical",
+    path: getIconPath("rectangle-vertical.svg"),
+    searchTerms: ["rectangle vertical", "rectangle", "vertical", "shapes"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Sparkle",
+    path: getIconPath("sparkle.svg"),
+    searchTerms: ["sparkle", "shapes", "star", "shine", "glow"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Square",
+    path: getIconPath("square.svg"),
+    searchTerms: ["square", "shapes", "four", "sides", "rectangle"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Squircle",
+    path: getIconPath("squircle.svg"),
+    searchTerms: ["squircle", "shapes", "square", "circle", "round"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Triangle Dashed",
+    path: getIconPath("triangle-dashed.svg"),
+    searchTerms: ["triangle dashed", "triangle", "dashed", "shapes"],
+    categories: ["Shapes"],
+  },
+  {
+    name: "Triangle",
+    path: getIconPath("triangle.svg"),
+    searchTerms: ["triangle", "shapes", "three", "sides"],
+    categories: ["Shapes"],
   },
 ];
