@@ -430,7 +430,7 @@ export const iconTypes: IconType[] = [
     name: "Award",
     path: getIconPath("award.svg"),
     searchTerms: ["award", "trophy", "prize", "medal", "achievement", "winner"],
-    categories: ["Accounts & Access", "Gaming"],
+    categories: ["Accounts & Access", "Gaming", "Sports"],
   },
   {
     name: "Ban",
@@ -1345,7 +1345,7 @@ export const iconTypes: IconType[] = [
       "update",
       "repeat",
     ],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Time & Calendar"],
   },
   {
     name: "Chevron Down",
@@ -1791,7 +1791,7 @@ export const iconTypes: IconType[] = [
     name: "History",
     path: getIconPath("history.svg"),
     searchTerms: ["history", "arrow", "back", "forward", "time", "record"],
-    categories: ["Arrows"],
+    categories: ["Arrows", "Time & Calendar"],
   },
   {
     name: "Import",
@@ -2197,7 +2197,7 @@ export const iconTypes: IconType[] = [
     name: "Dam",
     path: getIconPath("dam.svg"),
     searchTerms: ["dam", "water", "river", "lake", "reservoir", "flood"],
-    categories: ["Buildings"],
+    categories: ["Buildings", "Nature & Sustainability"],
   },
   {
     name: "Factory",
@@ -5419,7 +5419,7 @@ export const iconTypes: IconType[] = [
     name: "Calendar Fold",
     path: getIconPath("calendar-fold.svg"),
     searchTerms: ["calendar fold", "calendar", "fold", "date", "event", "time"],
-    categories: ["Files & Folders"],
+    categories: ["Files & Folders", "Time & Calendar"],
   },
   {
     name: "Dock",
@@ -6775,7 +6775,7 @@ export const iconTypes: IconType[] = [
       "field",
       "harvest",
     ],
-    categories: ["Food & Drink", "Transportation"],
+    categories: ["Food & Drink", "Transportation", "Nature & Sustainability"],
   },
   {
     name: "Utensils Crossed",
@@ -6990,13 +6990,13 @@ export const iconTypes: IconType[] = [
     name: "Hourglass",
     path: getIconPath("hourglass.svg"),
     searchTerms: ["hourglass", "time", "clock", "sand", "countdown", "measure"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Time & Calendar"],
   },
   {
     name: "Medal",
     path: getIconPath("medal.svg"),
     searchTerms: ["medal", "award", "prize", "trophy", "win", "achievement"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Sports"],
   },
   {
     name: "Mountain",
@@ -7118,7 +7118,7 @@ export const iconTypes: IconType[] = [
     name: "Trophy",
     path: getIconPath("trophy.svg"),
     searchTerms: ["trophy", "award", "prize", "win", "achievement", "cup"],
-    categories: ["Gaming"],
+    categories: ["Gaming", "Sports"],
   },
   {
     name: "Volleyball",
@@ -9076,13 +9076,13 @@ export const iconTypes: IconType[] = [
     name: "Circle Gauge",
     path: getIconPath("circle-gauge.svg"),
     searchTerms: ["circle gauge", "circle", "gauge", "science", "meter"],
-    categories: ["Science"],
+    categories: ["Science", "Sports", "Transportation"],
   },
   {
     name: "Gauge",
     path: getIconPath("gauge.svg"),
     searchTerms: ["gauge", "science", "meter", "measure", "indicator"],
-    categories: ["Science"],
+    categories: ["Science", "Sports", "Transportation"],
   },
   {
     name: "Orbit",
@@ -9717,5 +9717,12 @@ export const iconTypes: IconType[] = [
       "discount",
     ],
     categories: ["Social & Messaging"],
+  },
+  /* Sports */
+  {
+    name: "Dumbbell",
+    path: getIconPath("dumbbell.svg"),
+    searchTerms: ["dumbbell", "sports", "fitness", "exercise", "weight"],
+    categories: ["Sports"],
   },
 ];
