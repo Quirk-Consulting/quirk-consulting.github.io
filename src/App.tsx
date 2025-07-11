@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import { Layout } from "./components/layout";
 import IconPreview from "./components/IconPreview";
 import { iconTypes } from "./lib/iconTypes";
+import InstallationGuide from "./components/InstallationGuide";
+import License from "./components/license";
+import About from "./components/about";
+import ProjectIcons from "./components/project-icons";
 
 export type CategoryResults = {
   category: string;
@@ -96,49 +100,22 @@ function App() {
         )}
         {activeTab === "project-icons" && (
           <div className="p-8">
-            <h1 className="text-2xl font-bold">Project Icons</h1>
-            <p className="mt-4 text-muted-foreground">Coming soon...</p>
+            <ProjectIcons />
           </div>
         )}
         {activeTab === "installation" && (
           <div className="p-8">
-            <h1 className="text-2xl font-bold">Installation Guide</h1>
-            <p className="mt-4 text-muted-foreground">
-              Documentation on how to use these icons in your Jira instance.
-            </p>
-            {/* Additional installation content here */}
+            <InstallationGuide />
           </div>
         )}
         {activeTab === "license" && (
           <div className="p-8">
-            <h1 className="text-2xl font-bold">License</h1>
-            <p className="mt-4 text-muted-foreground">
-              These icons are available under the MIT License.
-            </p>
-            {/* Additional license content here */}
+            <License />
           </div>
         )}
         {activeTab === "about" && (
           <div className="p-8">
-            <h1 className="text-2xl font-bold">About Quirk Consulting</h1>
-            <p className="mt-4 text-muted-foreground">
-              Quirk is a modern work management and enterprise tooling
-              specialist helping organisations turn chaos into clarity.
-            </p>
-            <p className="mt-2 text-muted-foreground">
-              Our mantra is "if you can see it, you can solve it."
-            </p>
-            <div className="mt-6">
-              <a
-                href="https://www.quirk.com.au"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                Visit our website
-              </a>
-            </div>
-            {/* Additional about content here */}
+            <About />
           </div>
         )}
       </Layout>
