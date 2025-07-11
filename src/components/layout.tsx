@@ -6,7 +6,6 @@ import {
   Package,
   Menu,
   X,
-  BugIcon,
   BookOpen,
   ChevronDown,
 } from "lucide-react";
