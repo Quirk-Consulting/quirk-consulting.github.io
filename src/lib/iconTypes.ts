@@ -4,7 +4,7 @@
 const getIconPath = (iconName: string) => {
   // For GitHub Pages, we need to include the repo name in production
   const basePath = "";
-  return `${basePath}/icons/${iconName}`;
+  return `${basePath}/icons/worktype/${iconName}`;
 };
 
 // Category Names
@@ -2528,7 +2528,6 @@ export const iconTypes: IconType[] = [
       "Security",
       "Devices",
       "Photography",
-      "Security",
     ],
   },
   {

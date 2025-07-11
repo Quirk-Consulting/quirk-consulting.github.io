@@ -98,11 +98,7 @@ function App() {
             setSelectedCategory={setSelectedCategory}
           />
         )}
-        {activeTab === "project-icons" && (
-          <div className="p-8">
-            <ProjectIcons />
-          </div>
-        )}
+        {activeTab === "project-icons" && <ProjectIcons />}
         {activeTab === "installation" && (
           <div className="p-8">
             <InstallationGuide />
