@@ -39,7 +39,7 @@ const tabs: Tab[] = [
   {
     id: "installation",
     icon: <BookOpen className="w-4 h-4" />,
-    label: "Installation Guide",
+    label: "How To Use Guide",
   },
   {
     id: "license",
@@ -50,12 +50,6 @@ const tabs: Tab[] = [
     id: "about",
     icon: <InfoIcon className="w-4 h-4" />,
     label: "About Quirk",
-  },
-  {
-    id: "issues",
-    icon: <BugIcon className="w-4 h-4" />,
-    label: "Report Issue",
-    href: "https://github.com/quirk-consulting/quirk-consulting.github.io/issues",
   },
 ];
 
