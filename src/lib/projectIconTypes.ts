@@ -10,7 +10,9 @@ const getProjectIconPath = (iconName: string) => {
 // Project Icon Category Names
 export const projectCategoryNames = [
   "Abstract Shapes",
-  "Glass Icons"
+  "Glass Icons",
+  "Identicons",
+  "Rings"
 ].sort();
 
 // Project Icon Type definition
@@ -424,5 +426,207 @@ export const projectIconTypes: ProjectIconType[] = [
       "golden yellow glass letter"
     ],
     categories: ["Glass Icons"],
+  },
+
+  /* Identicons */
+  {
+    name: "Teal Pixel Pattern A",
+    path: getProjectIconPath("identicon-1752284230009.svg"),
+    searchTerms: [
+      "teal", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "aqua", "turquoise", "mint", "modern",
+      "teal pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Blue Grey Pixel Pattern B",
+    path: getProjectIconPath("identicon-1752284232258.svg"),
+    searchTerms: [
+      "blue", "grey", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "slate", "corporate", "professional",
+      "blue grey pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Yellow Pixel Pattern C",
+    path: getProjectIconPath("identicon-1752284234290.svg"),
+    searchTerms: [
+      "yellow", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "golden", "bright", "vibrant", "sunshine",
+      "yellow pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Green Pixel Pattern D",
+    path: getProjectIconPath("identicon-1752284237807.svg"),
+    searchTerms: [
+      "green", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "forest", "nature", "fresh", "eco",
+      "green pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Brown Pixel Pattern E",
+    path: getProjectIconPath("identicon-1752284240374.svg"),
+    searchTerms: [
+      "brown", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "chocolate", "coffee", "earth", "warm",
+      "brown pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Yellow Pixel Pattern F",
+    path: getProjectIconPath("identicon-1752284243208.svg"),
+    searchTerms: [
+      "yellow", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "golden", "bright", "vibrant", "horizontal",
+      "yellow pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Light Green Pixel Pattern G",
+    path: getProjectIconPath("identicon-1752284245729.svg"),
+    searchTerms: [
+      "light", "green", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "lime", "spring", "fresh", "mint",
+      "light green pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Blue Pixel Pattern H",
+    path: getProjectIconPath("identicon-1752284250230.svg"),
+    searchTerms: [
+      "blue", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "royal", "navy", "electric", "vibrant",
+      "blue pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Purple Pixel Pattern I",
+    path: getProjectIconPath("identicon-1752284253729.svg"),
+    searchTerms: [
+      "purple", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "violet", "indigo", "royal", "deep",
+      "purple pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Lime Green Pixel Pattern J",
+    path: getProjectIconPath("identicon-1752284256833.svg"),
+    searchTerms: [
+      "lime", "green", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "chartreuse", "electric", "bright",
+      "lime green pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Orange Pixel Pattern K",
+    path: getProjectIconPath("identicon-1752284261958.svg"),
+    searchTerms: [
+      "orange", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "tangerine", "warm", "vibrant", "citrus",
+      "orange pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Red Pixel Pattern L",
+    path: getProjectIconPath("identicon-1752284265760.svg"),
+    searchTerms: [
+      "red", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "crimson", "scarlet", "bold", "vibrant",
+      "red pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Dark Green Pixel Pattern M",
+    path: getProjectIconPath("identicon-1752284268780.svg"),
+    searchTerms: [
+      "dark", "green", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "forest", "deep", "rich", "emerald",
+      "dark green pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Pink Pixel Pattern N",
+    path: getProjectIconPath("identicon-1752284272182.svg"),
+    searchTerms: [
+      "pink", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "magenta", "rose", "vibrant", "bright",
+      "pink pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Orange Red Pixel Pattern O",
+    path: getProjectIconPath("identicon-1752284277638.svg"),
+    searchTerms: [
+      "orange", "red", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "coral", "warm", "vibrant", "fire",
+      "orange red pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Cyan Pixel Pattern P",
+    path: getProjectIconPath("identicon-1752284280526.svg"),
+    searchTerms: [
+      "cyan", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "aqua", "turquoise", "electric", "bright",
+      "cyan pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Amber Pixel Pattern Q",
+    path: getProjectIconPath("identicon-1752284282974.svg"),
+    searchTerms: [
+      "amber", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "yellow", "orange", "golden", "warm",
+      "amber pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Deep Purple Pixel Pattern R",
+    path: getProjectIconPath("identicon-1752284286510.svg"),
+    searchTerms: [
+      "deep", "purple", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "violet", "indigo", "royal", "rich",
+      "deep purple pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Navy Blue Pixel Pattern S",
+    path: getProjectIconPath("identicon-1752284291011.svg"),
+    searchTerms: [
+      "navy", "blue", "pixel", "pattern", "identicon", "geometric", "symmetric",
+      "blocky", "8bit", "retro", "gaming", "digital", "dark", "professional", "corporate",
+      "navy blue pixel pattern"
+    ],
+    categories: ["Identicons"],
+  },
+  {
+    name: "Coral Pixel Pattern T",
+    path: getProjectIconPath("identicon-1752284294427.svg"),
+    searchTerms: [
+      "coral", "pixel", "pattern", "identicon", "geometric", "symmetric", "blocky",
+      "8bit", "retro", "gaming", "digital", "pink", "orange", "salmon", "warm",
+      "coral pixel pattern"
+    ],
+    categories: ["Identicons"],
   },
 ];
