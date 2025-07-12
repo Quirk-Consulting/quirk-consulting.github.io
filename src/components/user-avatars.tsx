@@ -43,6 +43,12 @@ const userCategoryDescriptions: {
     "Gender-neutral collection of adventurer-style user avatars designed for inclusive team environments. These professional avatar options provide diverse representation while maintaining consistency across Jira user profiles.",
   "Avataaars Avatars":
     "Modern flat-design user avatars featuring clean, contemporary styling perfect for professional team environments. These Sketch App-inspired avatar icons provide friendly, approachable visual identity options for Jira user profiles.",
+  "Avataaars Neutral Avatars":
+    "Gender-neutral flat-design user avatars combining modern aesthetics with inclusive representation. These contemporary avatar icons offer professional styling while supporting diverse team environments and Jira user identification.",
+  "Big Ears Avatars":
+    "Playful collection of character-style user avatars featuring distinctive large ears and expressive facial features. These engaging avatar icons are perfect for creative teams and add personality to Jira user profiles while maintaining professional appeal.",
+  "Big Ears Neutral Avatars":
+    "Gender-neutral collection of character-style user avatars featuring distinctive large ears and expressive facial features. These inclusive avatar icons provide diverse representation while adding personality to Jira user profiles and supporting modern team environments.",
 };
 
 export function UserAvatars() {
