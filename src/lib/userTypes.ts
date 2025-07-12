@@ -20,7 +20,10 @@ export const userCategoryNames = [
   "Bottts Neutral Avatars",
   "Croodles Neutral Avatars",
   "Fun Emoji Avatars",
-  "Lorelei Neutral Avatars"
+  "Lorelei Neutral Avatars",
+  "Pixel Art Avatars",
+  "Pixel Art Neutral Avatars",
+  "Thumbs Avatars"
 ].sort();
 
 // User Avatar Type definition
@@ -2454,5 +2457,611 @@ export const userIconTypes: UserIconType[] = [
       "lorelei neutral avatar 20"
     ],
     categories: ["Lorelei Neutral Avatars"],
+  },
+
+  /* Pixel Art Avatars */
+  {
+    name: "Pixel Art Avatar 1",
+    path: getUserIconPath("pixelArt-1752355367827.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 1"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 2",
+    path: getUserIconPath("pixelArt-1752355370545.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 2"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 3",
+    path: getUserIconPath("pixelArt-1752355374780.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 3"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 4",
+    path: getUserIconPath("pixelArt-1752355377083.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 4"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 5",
+    path: getUserIconPath("pixelArt-1752355380393.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 5"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 6",
+    path: getUserIconPath("pixelArt-1752355384137.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 6"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 7",
+    path: getUserIconPath("pixelArt-1752355388496.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 7"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 8",
+    path: getUserIconPath("pixelArt-1752355392436.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 8"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 9",
+    path: getUserIconPath("pixelArt-1752355395780.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 9"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 10",
+    path: getUserIconPath("pixelArt-1752355401709.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 10"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 11",
+    path: getUserIconPath("pixelArt-1752355405170.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 11"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 12",
+    path: getUserIconPath("pixelArt-1752355410417.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 12"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 13",
+    path: getUserIconPath("pixelArt-1752355415629.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 13"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 14",
+    path: getUserIconPath("pixelArt-1752355418859.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 14"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 15",
+    path: getUserIconPath("pixelArt-1752355426497.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 15"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 16",
+    path: getUserIconPath("pixelArt-1752355434251.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 16"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 17",
+    path: getUserIconPath("pixelArt-1752355440176.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 17"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 18",
+    path: getUserIconPath("pixelArt-1752355446931.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 18"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 19",
+    path: getUserIconPath("pixelArt-1752355454308.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 19"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+  {
+    name: "Pixel Art Avatar 20",
+    path: getUserIconPath("pixelArt-1752355470306.svg"),
+    searchTerms: [
+      "pixel art", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art avatar 20"
+    ],
+    categories: ["Pixel Art Avatars"],
+  },
+
+  /* Pixel Art Neutral Avatars */
+  {
+    name: "Pixel Art Neutral Avatar 1",
+    path: getUserIconPath("pixelArtNeutral-1752356851312.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 1"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 2",
+    path: getUserIconPath("pixelArtNeutral-1752356853632.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 2"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 3",
+    path: getUserIconPath("pixelArtNeutral-1752356855490.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 3"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 4",
+    path: getUserIconPath("pixelArtNeutral-1752356857284.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 4"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 5",
+    path: getUserIconPath("pixelArtNeutral-1752356859902.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 5"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 6",
+    path: getUserIconPath("pixelArtNeutral-1752356864342.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 6"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 7",
+    path: getUserIconPath("pixelArtNeutral-1752356868635.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 7"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 8",
+    path: getUserIconPath("pixelArtNeutral-1752356870953.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 8"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 9",
+    path: getUserIconPath("pixelArtNeutral-1752356873639.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 9"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 10",
+    path: getUserIconPath("pixelArtNeutral-1752356877200.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 10"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 11",
+    path: getUserIconPath("pixelArtNeutral-1752356880297.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 11"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 12",
+    path: getUserIconPath("pixelArtNeutral-1752356882339.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 12"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 13",
+    path: getUserIconPath("pixelArtNeutral-1752357002111.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 13"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 14",
+    path: getUserIconPath("pixelArtNeutral-1752357004792.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 14"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 15",
+    path: getUserIconPath("pixelArtNeutral-1752357011502.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 15"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 16",
+    path: getUserIconPath("pixelArtNeutral-1752357017945.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 16"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 17",
+    path: getUserIconPath("pixelArtNeutral-1752357021291.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 17"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 18",
+    path: getUserIconPath("pixelArtNeutral-1752357023730.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 18"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 19",
+    path: getUserIconPath("pixelArtNeutral-1752357027562.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 19"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+  {
+    name: "Pixel Art Neutral Avatar 20",
+    path: getUserIconPath("pixelArtNeutral-1752357033630.svg"),
+    searchTerms: [
+      "pixel art", "neutral", "pixel", "retro", "8-bit", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "gaming",
+      "pixel art neutral avatar 20"
+    ],
+    categories: ["Pixel Art Neutral Avatars"],
+  },
+
+  /* Thumbs Avatars */
+  {
+    name: "Thumbs Avatar 1",
+    path: getUserIconPath("thumbs-1752358148106.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 1"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 2",
+    path: getUserIconPath("thumbs-1752358150892.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 2"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 3",
+    path: getUserIconPath("thumbs-1752358153296.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 3"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 4",
+    path: getUserIconPath("thumbs-1752358158692.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 4"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 5",
+    path: getUserIconPath("thumbs-1752358161937.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 5"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 6",
+    path: getUserIconPath("thumbs-1752358167370.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 6"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 7",
+    path: getUserIconPath("thumbs-1752358170017.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 7"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 8",
+    path: getUserIconPath("thumbs-1752358173070.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 8"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 9",
+    path: getUserIconPath("thumbs-1752358175352.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 9"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 10",
+    path: getUserIconPath("thumbs-1752358178651.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 10"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 11",
+    path: getUserIconPath("thumbs-1752358181146.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 11"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 12",
+    path: getUserIconPath("thumbs-1752358184799.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 12"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 13",
+    path: getUserIconPath("thumbs-1752358188267.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 13"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 14",
+    path: getUserIconPath("thumbs-1752358190706.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 14"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 15",
+    path: getUserIconPath("thumbs-1752358193436.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 15"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 16",
+    path: getUserIconPath("thumbs-1752358196526.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 16"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 17",
+    path: getUserIconPath("thumbs-1752358199244.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 17"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 18",
+    path: getUserIconPath("thumbs-1752358201849.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 18"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 19",
+    path: getUserIconPath("thumbs-1752358204748.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 19"
+    ],
+    categories: ["Thumbs Avatars"],
+  },
+  {
+    name: "Thumbs Avatar 20",
+    path: getUserIconPath("thumbs-1752358207367.svg"),
+    searchTerms: [
+      "thumbs", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "thumb",
+      "thumbs avatar 20"
+    ],
+    categories: ["Thumbs Avatars"],
   },
 ];

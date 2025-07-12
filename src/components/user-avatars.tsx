@@ -61,6 +61,12 @@ const userCategoryDescriptions: {
     "Expressive collection of emoji-style user avatars featuring vibrant, fun expressions and emotions. These playful avatar icons bring energy and personality to Jira user profiles, perfect for creating an engaging and cheerful team atmosphere.",
   "Lorelei Neutral Avatars":
     "Gender-neutral collection of elegant user avatars featuring sophisticated and modern designs. These refined avatar icons provide inclusive representation while maintaining a professional aesthetic, perfect for contemporary team environments and diverse workplace settings.",
+  "Pixel Art Avatars":
+    "Retro-style collection of pixel art user avatars featuring nostalgic 8-bit gaming aesthetics. These distinctive pixelated avatar icons bring a fun, creative touch to Jira user profiles, perfect for gaming and technology teams who appreciate classic digital art and retro design elements.",
+  "Pixel Art Neutral Avatars":
+    "Gender-neutral collection of retro-style pixel art user avatars featuring nostalgic 8-bit gaming aesthetics. These inclusive pixelated avatar icons provide diverse representation while bringing a fun, creative touch to Jira user profiles, perfect for gaming and technology teams who appreciate classic digital art and inclusive design.",
+  "Thumbs Avatars":
+    "Distinctive collection of thumbs-style user avatars featuring unique hand and thumb-based designs. These creative avatar icons bring a playful and memorable touch to Jira user profiles, perfect for teams who want something different and eye-catching while maintaining professional appeal.",
 };
 
 export function UserAvatars() {

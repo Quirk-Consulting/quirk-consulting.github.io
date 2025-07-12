@@ -129,13 +129,13 @@ export const License = () => {
                     </a>.
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Our user avatars collection includes 240 unique avatar icons across multiple styles: 
+                    Our user avatars collection includes 300 unique avatar icons across multiple styles: 
                     40 Adventurer-style avatars (20 standard and 20 gender-neutral variants), 
                     40 Avataaars-style avatars (20 standard and 20 gender-neutral variants), 
                     40 Big Ears-style avatars (20 standard and 20 gender-neutral variants), 
                     20 Big Smile-style avatars, 40 Bottts-style robot avatars (20 standard and 
                     20 gender-neutral variants), 20 Croodles Neutral-style doodle avatars, 
-                    20 Fun Emoji-style avatars, and 20 Lorelei Neutral-style avatars, all perfect 
+                    20 Fun Emoji-style avatars, 20 Lorelei Neutral-style avatars, 40 Pixel Art-style avatars (20 standard and 20 gender-neutral variants), and 20 Thumbs-style avatars, all perfect 
                     for Jira user profiles and team member identification. These professional avatar icons 
                     bring personality and inclusive visual identity to modern work management platforms 
                     while maintaining proper attribution requirements.
@@ -596,6 +596,114 @@ export const License = () => {
                 </div>
 
                 <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Pixel Art Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    <a 
+                      href="/styles/pixel-art/" 
+                      className="text-primary hover:underline"
+                    >
+                      Pixel Art
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.dicebear.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      DiceBear
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/publicdomain/zero/1.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC0 1.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Pixel Art-style avatars featuring 
+                    retro-style designs with nostalgic 8-bit gaming aesthetics. 
+                    These distinctive pixelated avatar icons bring a fun, creative touch to 
+                    Jira user profiles, perfect for gaming and technology teams who appreciate 
+                    classic digital art and retro design elements while maintaining visual consistency.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Pixel Art Neutral Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    <a 
+                      href="/styles/pixel-art-neutral/" 
+                      className="text-primary hover:underline"
+                    >
+                      Pixel Art Neutral
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.dicebear.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      DiceBear
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/publicdomain/zero/1.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC0 1.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Pixel Art Neutral-style avatars featuring 
+                    gender-neutral retro-style designs with nostalgic 8-bit gaming aesthetics. 
+                    These inclusive pixelated avatar icons provide diverse representation while bringing 
+                    a fun, creative touch to Jira user profiles, perfect for gaming and technology teams 
+                    who appreciate classic digital art and inclusive design with visual consistency.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Thumbs Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    <a 
+                      href="/styles/thumbs/" 
+                      className="text-primary hover:underline"
+                    >
+                      Thumbs
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.dicebear.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      DiceBear
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/publicdomain/zero/1.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC0 1.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Thumbs-style avatars featuring 
+                    distinctive hand and thumb-based designs with unique visual aesthetics. 
+                    These creative avatar icons bring a playful and memorable touch to 
+                    Jira user profiles, perfect for teams who want something different and 
+                    eye-catching while maintaining professional appeal and visual consistency.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
                   <h3 className="text-lg font-semibold">DiceBear Icons</h3>
                   <p className="leading-relaxed text-muted-foreground">
                     <a 
@@ -664,16 +772,6 @@ export const License = () => {
                     software for any purpose with or without fee is hereby
                     granted, provided that the above copyright notice and this
                     permission notice appear in all copies.
-                  </p>
-                  <p className="leading-relaxed text-muted-foreground">
-                    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
-                    WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
-                    WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
-                    THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
-                    CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-                    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-                    CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-                    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
                   </p>
                 </div>
               </div>

@@ -32,14 +32,14 @@ const tabs: Tab[] = [
     label: "Work Type Icons",
   },
   {
-    id: "project-icons",
-    icon: <Dock className="w-4 h-4" />,
-    label: "Project Icons",
-  },
-  {
     id: "user-avatars",
     icon: <Users className="w-4 h-4" />,
     label: "User Avatars",
+  },
+  {
+    id: "project-icons",
+    icon: <Dock className="w-4 h-4" />,
+    label: "Project Icons",
   },
   {
     id: "installation",
