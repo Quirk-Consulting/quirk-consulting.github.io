@@ -39,6 +39,10 @@ const userCategoryDescriptions: {
 } = {
   "Adventurer Avatars":
     "Diverse collection of adventurer-style user avatars perfect for Jira user profiles and team member identification. These professional avatar icons bring personality and visual identity to modern work management platforms.",
+  "Adventurer Neutral Avatars":
+    "Gender-neutral collection of adventurer-style user avatars designed for inclusive team environments. These professional avatar options provide diverse representation while maintaining consistency across Jira user profiles.",
+  "Avataaars Avatars":
+    "Modern flat-design user avatars featuring clean, contemporary styling perfect for professional team environments. These Sketch App-inspired avatar icons provide friendly, approachable visual identity options for Jira user profiles.",
 };
 
 export function UserAvatars() {
@@ -52,6 +56,26 @@ export function UserAvatars() {
     useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [categorizedResults, setCategorizedResults] = useState<UserCategoryResults[]>([]);
+
+  // Natural numeric sort function for avatar names
+  const naturalSort = (a: UserIconType, b: UserIconType) => {
+    // Extract the number from the avatar name (e.g., "Adventurer Avatar 10" -> 10)
+    const getNumber = (name: string) => {
+      const match = name.match(/(\d+)$/);
+      return match ? parseInt(match[1], 10) : 0;
+    };
+    
+    // If both icons are from the same base category, sort by number
+    const aBase = a.name.replace(/ \d+$/, '');
+    const bBase = b.name.replace(/ \d+$/, '');
+    
+    if (aBase === bBase) {
+      return getNumber(a.name) - getNumber(b.name);
+    }
+    
+    // Otherwise, sort alphabetically
+    return a.name.localeCompare(b.name);
+  };
 
   // Process icon categories and search results
   useEffect(() => {
@@ -83,7 +107,7 @@ export function UserAvatars() {
     const categorized = Array.from(groupedByCategory.entries())
       .map(([category, icons]) => ({
         category,
-        icons: icons.sort((a, b) => a.name.localeCompare(b.name)),
+        icons: icons.sort(naturalSort),
       }))
       .sort((a, b) => a.category.localeCompare(b.category));
 

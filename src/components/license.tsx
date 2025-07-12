@@ -53,6 +53,139 @@ export const License = () => {
               </h2>
               <div className="space-y-6">
                 <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Adventurer Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="https://www.dicebear.com/styles/adventurer/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Adventurer
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/1184595184137881796" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Adventurer
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.instagram.com/lischi_art/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Lisa Wischofsky
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="https://www.dicebear.com/styles/adventurer-neutral/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Adventurer Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/1184595184137881796" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Adventurer Neutral
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.instagram.com/lischi_art/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Lisa Wischofsky
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 60 unique avatar icons across multiple styles: 
+                    40 Adventurer-style avatars (20 standard and 20 gender-neutral variants) and 
+                    20 Avataaars-style avatars, all perfect for Jira user profiles and team member 
+                    identification. These professional avatar icons bring personality and inclusive 
+                    visual identity to modern work management platforms while maintaining proper 
+                    attribution requirements.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Avataaars Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="https://www.dicebear.com/styles/avataaars/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Avataaars
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://avataaars.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Avataaars
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://twitter.com/pablostanley" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Pablo Stanley
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://avataaars.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Free for personal and commercial use
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Avataaars-style avatars featuring 
+                    modern flat-design and clean, contemporary styling. These Sketch App-inspired 
+                    avatar icons provide friendly, approachable visual identity options perfect 
+                    for professional team environments and Jira user profiles.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
                   <h3 className="text-lg font-semibold">DiceBear Icons</h3>
                   <p className="leading-relaxed text-muted-foreground">
                     <a 
