@@ -57,6 +57,10 @@ const userCategoryDescriptions: {
     "Gender-neutral collection of robot-style user avatars featuring modern, tech-inspired designs. These inclusive avatar icons provide diverse representation for technology teams and bring a futuristic, innovative feel to modern team environments.",
   "Croodles Neutral Avatars":
     "Gender-neutral collection of doodle-style user avatars featuring hand-drawn, sketch-like designs. These inclusive artistic avatar icons provide diverse representation while bringing a personal, human touch to Jira user profiles and supporting modern team environments.",
+  "Fun Emoji Avatars":
+    "Expressive collection of emoji-style user avatars featuring vibrant, fun expressions and emotions. These playful avatar icons bring energy and personality to Jira user profiles, perfect for creating an engaging and cheerful team atmosphere.",
+  "Lorelei Neutral Avatars":
+    "Gender-neutral collection of elegant user avatars featuring sophisticated and modern designs. These refined avatar icons provide inclusive representation while maintaining a professional aesthetic, perfect for contemporary team environments and diverse workplace settings.",
 };
 
 export function UserAvatars() {
