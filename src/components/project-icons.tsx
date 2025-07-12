@@ -301,8 +301,9 @@ export function ProjectIcons() {
     const iconState = iconStates[selectedIcon.name];
     const svgContent = iconState?.svgContent || "";
 
-    // Use 256x256 size for project icons
+    // Use 256x256 size for project icons with proportional padding
     const iconSize = 256;
+    const padding = Math.round(iconSize * 0.0625); // 6.25% padding (16px for 256px)
 
     if (format === "svg") {
       const svgString = generateProjectSVGString(
@@ -310,7 +311,7 @@ export function ProjectIcons() {
         fgColor,
         bgColor,
         iconSize,
-        undefined,
+        padding,
         true
       );
       const blob = new Blob([svgString], { type: "image/svg+xml" });
@@ -326,7 +327,7 @@ export function ProjectIcons() {
         fgColor,
         bgColor,
         iconSize,
-        undefined,
+        padding,
         true
       );
       const pngBlob = await generateProjectPNG(svgString, iconSize);
