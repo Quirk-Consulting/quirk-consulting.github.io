@@ -12,7 +12,7 @@ export type ColorHue =
   | "purple"
   | "pink"
   | "slate"
-  | "black";
+  | "blank";
 export type Variant = "dark" | "medium" | "light";
 
 export type ColorConfig = {
@@ -77,10 +77,10 @@ export const backgroundColors: ColorConfig = {
     medium: "#475569", //slate-600
     light: "#cbd5e1", //slate-300
   },
-  black: {
-    dark: "#09090b", //zinc-950
-    medium: "#52525b", //zinc-600
-    light: "#d4d4d8", //zinc-300
+  blank: {
+    dark: "none", // No background
+    medium: "none", // No background
+    light: "none", // No background
   },
 };
 
@@ -140,10 +140,10 @@ export const foregroundMappings: ColorConfig = {
     medium: "#FFFFFF",
     light: "#020617",
   },
-  black: {
-    dark: "#FFFFFF",
-    medium: "#F0F0F0",
-    light: "#000000",
+  blank: {
+    dark: "currentColor", // Use theme color
+    medium: "currentColor", // Use theme color
+    light: "currentColor", // Use theme color
   },
 };
 

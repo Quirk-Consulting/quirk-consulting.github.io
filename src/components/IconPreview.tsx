@@ -392,13 +392,17 @@ const IconPreview = ({
     return (
       <div
         className="p-2 transition-shadow rounded-lg cursor-pointer hover:shadow-lg"
-        style={{ backgroundColor: bgColor }}
+        style={{ 
+          backgroundColor: bgColor === "none" ? "transparent" : bgColor,
+          border: bgColor === "none" ? "1px solid var(--border)" : "none"
+        }}
         onClick={() => {
           setSelectedHue(hue);
-          setSelectedVariant(variant);
+          // For blank, always use medium variant; for others, use the clicked variant
+          setSelectedVariant(hue === "blank" ? "medium" : variant);
         }}
         dangerouslySetInnerHTML={{ __html: svgString }}
-        aria-label={`${selectedIcon.name} icon in ${hue} ${variant} colour variant`}
+        aria-label={`${selectedIcon.name} icon in ${hue} ${hue === "blank" ? "blank" : variant} colour variant`}
       />
     );
   };
@@ -695,11 +699,16 @@ const IconPreview = ({
           <div className="top-0 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
               {selectedIcon.name} -{" "}
-              {selectedVariant === "medium"
+              {selectedHue === "blank" 
+                ? "Blank Background"
+                : selectedVariant === "medium"
                 ? ""
                 : selectedVariant.charAt(0).toUpperCase() +
                   selectedVariant.slice(1)}{" "}
-              {selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)}
+              {selectedHue === "blank" 
+                ? ""
+                : selectedHue.charAt(0).toUpperCase() + selectedHue.slice(1)
+              }
             </SheetTitle>
             {/* SEO: Add more descriptive text about the selected icon */}
             <p className="mt-1 text-sm text-muted-foreground">
@@ -724,14 +733,21 @@ const IconPreview = ({
                       .slice(row * 6, (row + 1) * 6)
                       .map((hue) => (
                         <div key={hue} className="space-y-2">
-                          {(["dark", "medium", "light"] as const).map(
-                            (variant) => (
-                              <div
-                                key={`${hue}-${variant}`}
-                                className="flex items-center justify-center"
-                              >
-                                {renderIcon(hue as ColorHue, variant)}
-                              </div>
+                          {hue === "blank" ? (
+                            // Show only one blank option
+                            <div className="flex items-center justify-center">
+                              {renderIcon(hue as ColorHue, "medium")}
+                            </div>
+                          ) : (
+                            (["dark", "medium", "light"] as const).map(
+                              (variant) => (
+                                <div
+                                  key={`${hue}-${variant}`}
+                                  className="flex items-center justify-center"
+                                >
+                                  {renderIcon(hue as ColorHue, variant)}
+                                </div>
+                              )
                             )
                           )}
                         </div>
@@ -744,14 +760,21 @@ const IconPreview = ({
               <div className="hidden grid-cols-12 gap-2 md:grid">
                 {Object.keys(backgroundColors).map((hue) => (
                   <div key={hue} className="space-y-2">
-                    {(["dark", "medium", "light"] as const).map((variant) => (
-                      <div
-                        key={`${hue}-${variant}`}
-                        className="flex items-center justify-center"
-                      >
-                        {renderIcon(hue as ColorHue, variant)}
+                    {hue === "blank" ? (
+                      // Show only one blank option
+                      <div className="flex items-center justify-center">
+                        {renderIcon(hue as ColorHue, "medium")}
                       </div>
-                    ))}
+                    ) : (
+                      (["dark", "medium", "light"] as const).map((variant) => (
+                        <div
+                          key={`${hue}-${variant}`}
+                          className="flex items-center justify-center"
+                        >
+                          {renderIcon(hue as ColorHue, variant)}
+                        </div>
+                      ))
+                    )}
                   </div>
                 ))}
               </div>
@@ -768,8 +791,12 @@ const IconPreview = ({
                 <div
                   className="flex items-center justify-center w-40 h-40 p-4 rounded-lg shrink-0"
                   style={{
-                    backgroundColor:
-                      backgroundColors[selectedHue][selectedVariant],
+                    backgroundColor: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "transparent" 
+                      : backgroundColors[selectedHue][selectedVariant],
+                    border: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "1px solid var(--border)" 
+                      : "none"
                   }}
                 >
                   {renderSvgPreview(selectedIcon, 121, false)}
@@ -798,10 +825,14 @@ const IconPreview = ({
               <div className="flex flex-col items-center gap-4 md:hidden">
                 {/* Hero Preview */}
                 <div
-                  className="flex items-center justify-center w-32 h-32 p-4 rounded-lg shrink-0"
+                  className="flex items-center justify-center w-40 h-40 p-4 rounded-lg shrink-0"
                   style={{
-                    backgroundColor:
-                      backgroundColors[selectedHue][selectedVariant],
+                    backgroundColor: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "transparent" 
+                      : backgroundColors[selectedHue][selectedVariant],
+                    border: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "1px solid var(--border)" 
+                      : "none"
                   }}
                 >
                   {renderSvgPreview(selectedIcon, 88, false)}
