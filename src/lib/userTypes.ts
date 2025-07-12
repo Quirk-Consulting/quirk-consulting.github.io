@@ -18,7 +18,9 @@ export const userCategoryNames = [
   "Big Smile Avatars",
   "Bottts Avatars",
   "Bottts Neutral Avatars",
-  "Croodles Neutral Avatars"
+  "Croodles Neutral Avatars",
+  "Fun Emoji Avatars",
+  "Lorelei Neutral Avatars"
 ].sort();
 
 // User Avatar Type definition
@@ -2048,5 +2050,409 @@ export const userIconTypes: UserIconType[] = [
       "croodles neutral avatar 20"
     ],
     categories: ["Croodles Neutral Avatars"],
+  },
+
+  /* Fun Emoji Avatars */
+  {
+    name: "Fun Emoji Avatar 1",
+    path: getUserIconPath("funEmoji-1752316271303.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 1"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 2",
+    path: getUserIconPath("funEmoji-1752316274889.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 2"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 3",
+    path: getUserIconPath("funEmoji-1752316277279.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 3"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 4",
+    path: getUserIconPath("funEmoji-1752316280736.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 4"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 5",
+    path: getUserIconPath("funEmoji-1752316283151.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 5"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 6",
+    path: getUserIconPath("funEmoji-1752316287082.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 6"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 7",
+    path: getUserIconPath("funEmoji-1752316291542.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 7"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 8",
+    path: getUserIconPath("funEmoji-1752316293930.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 8"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 9",
+    path: getUserIconPath("funEmoji-1752316298188.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 9"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 10",
+    path: getUserIconPath("funEmoji-1752316302924.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 10"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 11",
+    path: getUserIconPath("funEmoji-1752316308995.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 11"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 12",
+    path: getUserIconPath("funEmoji-1752316314713.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 12"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 13",
+    path: getUserIconPath("funEmoji-1752316324471.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 13"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 14",
+    path: getUserIconPath("funEmoji-1752316328280.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 14"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 15",
+    path: getUserIconPath("funEmoji-1752316330436.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 15"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 16",
+    path: getUserIconPath("funEmoji-1752316337256.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 16"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 17",
+    path: getUserIconPath("funEmoji-1752316340440.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 17"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 18",
+    path: getUserIconPath("funEmoji-1752316359849.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 18"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 19",
+    path: getUserIconPath("funEmoji-1752316362707.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 19"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+  {
+    name: "Fun Emoji Avatar 20",
+    path: getUserIconPath("funEmoji-1752316367053.svg"),
+    searchTerms: [
+      "fun emoji", "emoji", "fun", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "expression", "individual", "identity", "persona", "account", "member", "smiley",
+      "fun emoji avatar 20"
+    ],
+    categories: ["Fun Emoji Avatars"],
+  },
+
+  /* Lorelei Neutral Avatars */
+  {
+    name: "Lorelei Neutral Avatar 1",
+    path: getUserIconPath("loreleiNeutral-1752319284855.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 1"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 2",
+    path: getUserIconPath("loreleiNeutral-1752319286905.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 2"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 3",
+    path: getUserIconPath("loreleiNeutral-1752319288556.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 3"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 4",
+    path: getUserIconPath("loreleiNeutral-1752319290807.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 4"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 5",
+    path: getUserIconPath("loreleiNeutral-1752319292806.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 5"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 6",
+    path: getUserIconPath("loreleiNeutral-1752319294907.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 6"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 7",
+    path: getUserIconPath("loreleiNeutral-1752319297334.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 7"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 8",
+    path: getUserIconPath("loreleiNeutral-1752319299399.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 8"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 9",
+    path: getUserIconPath("loreleiNeutral-1752319301298.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 9"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 10",
+    path: getUserIconPath("loreleiNeutral-1752319303488.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 10"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 11",
+    path: getUserIconPath("loreleiNeutral-1752319305306.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 11"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 12",
+    path: getUserIconPath("loreleiNeutral-1752319307142.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 12"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 13",
+    path: getUserIconPath("loreleiNeutral-1752319309540.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 13"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 14",
+    path: getUserIconPath("loreleiNeutral-1752319311744.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 14"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 15",
+    path: getUserIconPath("loreleiNeutral-1752319313807.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 15"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 16",
+    path: getUserIconPath("loreleiNeutral-1752319316529.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 16"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 17",
+    path: getUserIconPath("loreleiNeutral-1752319318442.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 17"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 18",
+    path: getUserIconPath("loreleiNeutral-1752319320157.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 18"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 19",
+    path: getUserIconPath("loreleiNeutral-1752319322576.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 19"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
+  },
+  {
+    name: "Lorelei Neutral Avatar 20",
+    path: getUserIconPath("loreleiNeutral-1752319324645.svg"),
+    searchTerms: [
+      "lorelei", "neutral", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member",
+      "lorelei neutral avatar 20"
+    ],
+    categories: ["Lorelei Neutral Avatars"],
   },
 ];

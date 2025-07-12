@@ -129,12 +129,13 @@ export const License = () => {
                     </a>.
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Our user avatars collection includes 200 unique avatar icons across multiple styles: 
+                    Our user avatars collection includes 240 unique avatar icons across multiple styles: 
                     40 Adventurer-style avatars (20 standard and 20 gender-neutral variants), 
                     40 Avataaars-style avatars (20 standard and 20 gender-neutral variants), 
                     40 Big Ears-style avatars (20 standard and 20 gender-neutral variants), 
                     20 Big Smile-style avatars, 40 Bottts-style robot avatars (20 standard and 
-                    20 gender-neutral variants), and 20 Croodles Neutral-style doodle avatars, all perfect 
+                    20 gender-neutral variants), 20 Croodles Neutral-style doodle avatars, 
+                    20 Fun Emoji-style avatars, and 20 Lorelei Neutral-style avatars, all perfect 
                     for Jira user profiles and team member identification. These professional avatar icons 
                     bring personality and inclusive visual identity to modern work management platforms 
                     while maintaining proper attribution requirements.
@@ -499,6 +500,98 @@ export const License = () => {
                     These inclusive artistic avatar icons provide diverse representation while bringing 
                     a personal, human touch to Jira user profiles and supporting modern team environments 
                     with authentic, hand-crafted appeal and visual consistency.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Fun Emoji Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/fun-emoji/" 
+                      className="text-primary hover:underline"
+                    >
+                      Fun Emoji
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/968125295144990435" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Fun Emoji Set
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.instagram.com/davedirect3/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Davis Uche
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Fun Emoji-style avatars featuring 
+                    expressive emoji-style designs with vibrant, fun expressions and emotions. 
+                    These playful avatar icons bring energy and personality to Jira user profiles, 
+                    perfect for creating an engaging and cheerful team atmosphere while 
+                    maintaining professional appeal and visual consistency across member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Lorelei Neutral Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/lorelei-neutral/" 
+                      className="text-primary hover:underline"
+                    >
+                      Lorelei Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/1198749693280469639" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Lorelei Neutral
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://www.instagram.com/lischi_art/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Lisa Wischofsky
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/publicdomain/zero/1.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC0 1.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Lorelei Neutral-style avatars featuring 
+                    gender-neutral elegant designs with sophisticated and modern aesthetics. 
+                    These refined avatar icons provide inclusive representation while maintaining 
+                    a professional aesthetic, perfect for contemporary team environments and 
+                    diverse workplace settings with visual consistency across member identification.
                   </p>
                 </div>
 
