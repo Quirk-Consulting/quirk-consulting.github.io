@@ -225,7 +225,7 @@ export function ProjectIcons() {
     // If we have no observer yet, return placeholder
     if (!intersectionObserver) {
       return (
-        <div className="w-9 h-9 bg-muted animate-pulse rounded-md" />
+        <div className="rounded-md w-9 h-9 bg-muted animate-pulse" />
       );
     }
 
@@ -237,7 +237,7 @@ export function ProjectIcons() {
           ref={(el) => {
             if (el) intersectionObserver.observe(el);
           }}
-          className="w-9 h-9 bg-muted animate-pulse rounded-md"
+          className="rounded-md w-9 h-9 bg-muted animate-pulse"
           aria-label={`Loading ${icon.name} project icon`}
         />
       );
@@ -265,7 +265,7 @@ export function ProjectIcons() {
     }
 
     // Fallback for failed loads
-    return <div className="w-9 h-9 bg-destructive/20 rounded-md" />;
+    return <div className="rounded-md w-9 h-9 bg-destructive/20" />;
   };
 
   const renderIcon = (hue: ColorHue, variant: Variant) => {
@@ -301,8 +301,8 @@ export function ProjectIcons() {
     const iconState = iconStates[selectedIcon.name];
     const svgContent = iconState?.svgContent || "";
 
-    // Use 24x24 size for Jira project icons
-    const iconSize = 24;
+    // Use 256x256 size for project icons
+    const iconSize = 256;
 
     if (format === "svg") {
       const svgString = generateProjectSVGString(
@@ -432,17 +432,17 @@ export function ProjectIcons() {
                 How do I use project icons in Jira?
               </summary>
               <p className="pl-4 mt-2">
-                Download the icons in PNG format (24x24 pixels) and upload them as custom project avatars 
-                in your Jira project settings. The optimal size for Jira project icons is 24x24 pixels.
+                Download the icons in PNG format (256x256 pixels) and upload them as custom project avatars 
+                in your Jira project settings. You may need to resize them to your preferred display size.
               </p>
             </details>
             <details>
               <summary className="font-medium cursor-pointer">
-                What's the recommended size for Jira project icons?
+                What size are the downloaded project icons?
               </summary>
               <p className="pl-4 mt-2">
-                Jira project icons work best at 24x24 pixels. Our PNG downloads are automatically sized 
-                for optimal display in Jira project lists and navigation.
+                Our project icons are provided in high resolution 256x256 pixels, giving you flexibility 
+                to use them at various sizes while maintaining crisp quality.
               </p>
             </details>
           </div>
@@ -493,22 +493,6 @@ export function ProjectIcons() {
             ))}
           </div>
         </div>
-
-        {/* Request Section */}
-        <div className="flex flex-col items-center justify-center py-8 mt-8 border-t">
-          <p className="mb-4 text-muted-foreground">
-            Need a custom project icon for your team?
-          </p>
-          <Button asChild variant="default">
-            <a
-              href="https://github.com/quirk-consulting/quirk-consulting.github.io/issues/new?labels=enhancement&type=feature"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Request a project icon
-            </a>
-          </Button>
-        </div>
       </div>
 
       {/* Preview Sheet */}
@@ -546,7 +530,7 @@ export function ProjectIcons() {
             </SheetTitle>
             <p className="mt-1 text-sm text-muted-foreground">
               Download this {selectedIcon.name} project icon for your Jira projects in
-              SVG or PNG format (24x24px optimised for Jira). Available in {selectedVariant} {selectedHue}{" "}
+              SVG or PNG format. Available in {selectedVariant} {selectedHue}{" "}
               colour variant.
             </p>
           </div>
@@ -616,13 +600,13 @@ export function ProjectIcons() {
             {/* Preview Section */}
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download (24x24px for Jira)
+                Preview & Download
               </h3>
               
               {/* Desktop layout */}
               <div className="hidden gap-6 md:flex">
                 <div
-                  className="flex items-center justify-center w-32 h-32 p-2 rounded-lg shrink-0"
+                  className="flex items-center justify-center w-40 h-40 p-2 rounded-lg shrink-0"
                   style={{
                     backgroundColor: backgroundColors[selectedHue][selectedVariant] === "none" 
                       ? "transparent" 
@@ -641,7 +625,7 @@ export function ProjectIcons() {
                     variant="default"
                     className="w-40"
                   >
-                    Download PNG (24px)
+                    Download PNG
                   </Button>
                   <Button
                     onClick={() => handleDownload("svg")}
@@ -676,7 +660,7 @@ export function ProjectIcons() {
                     size="sm"
                     className="w-36"
                   >
-                    PNG (24px)
+                    PNG
                   </Button>
                   <Button
                     onClick={() => handleDownload("svg")}
@@ -687,15 +671,6 @@ export function ProjectIcons() {
                     SVG
                   </Button>
                 </div>
-              </div>
-
-              {/* Jira-specific information */}
-              <div className="p-3 mt-4 rounded-lg bg-muted">
-                <h4 className="mb-1 text-sm font-medium">For Jira Projects:</h4>
-                <p className="text-xs text-muted-foreground">
-                  Use the PNG version (24x24px) for optimal display as Jira project avatars. 
-                  Upload via Project Settings → Details → Project avatar.
-                </p>
               </div>
             </div>
           </div>
