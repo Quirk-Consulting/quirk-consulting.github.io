@@ -129,12 +129,13 @@ export const License = () => {
                     </a>.
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Our user avatars collection includes 60 unique avatar icons across multiple styles: 
-                    40 Adventurer-style avatars (20 standard and 20 gender-neutral variants) and 
-                    20 Avataaars-style avatars, all perfect for Jira user profiles and team member 
-                    identification. These professional avatar icons bring personality and inclusive 
-                    visual identity to modern work management platforms while maintaining proper 
-                    attribution requirements.
+                    Our user avatars collection includes 120 unique avatar icons across multiple styles: 
+                    40 Adventurer-style avatars (20 standard and 20 gender-neutral variants), 
+                    40 Avataaars-style avatars (20 standard and 20 gender-neutral variants), and 
+                    40 Big Ears-style avatars (20 standard and 20 gender-neutral variants), all perfect 
+                    for Jira user profiles and team member identification. These professional avatar icons 
+                    bring personality and inclusive visual identity to modern work management platforms 
+                    while maintaining proper attribution requirements.
                   </p>
                 </div>
 
@@ -177,11 +178,141 @@ export const License = () => {
                       Free for personal and commercial use
                     </a>.
                   </p>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="https://www.dicebear.com/styles/avataaars-neutral/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Avataaars Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://avataaars.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Avataaars
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://twitter.com/pablostanley" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Pablo Stanley
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://avataaars.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Free for personal and commercial use
+                    </a>.
+                  </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Our user avatars collection includes 20 Avataaars-style avatars featuring 
-                    modern flat-design and clean, contemporary styling. These Sketch App-inspired 
-                    avatar icons provide friendly, approachable visual identity options perfect 
-                    for professional team environments and Jira user profiles.
+                    Our user avatars collection includes 40 Avataaars-style avatars featuring 
+                    modern flat-design and clean, contemporary styling (20 standard and 20 gender-neutral 
+                    variants). These Sketch App-inspired avatar icons provide friendly, approachable 
+                    visual identity options perfect for professional team environments and inclusive 
+                    Jira user profiles.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Big Ears Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/big-ears/" 
+                      className="text-primary hover:underline"
+                    >
+                      Big Ears
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/986078800058673824" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Face Generator
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://thevisual.team/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      The Visual Team
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Big Ears-style avatars featuring 
+                    playful character designs with distinctive large ears and expressive facial features. 
+                    These engaging avatar icons are perfect for creative teams and add personality to 
+                    Jira user profiles while maintaining professional appeal and visual consistency 
+                    across team member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Big Ears Neutral Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/big-ears-neutral/" 
+                      className="text-primary hover:underline"
+                    >
+                      Big Ears Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/986078800058673824" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Face Generator
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://thevisual.team/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      The Visual Team
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Big Ears Neutral-style avatars featuring 
+                    gender-neutral character designs with distinctive large ears and expressive facial features. 
+                    These inclusive avatar icons provide diverse representation while adding personality to 
+                    Jira user profiles and supporting modern team environments with professional appeal 
+                    and visual consistency across member identification.
                   </p>
                 </div>
 
