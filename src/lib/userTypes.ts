@@ -14,7 +14,11 @@ export const userCategoryNames = [
   "Avataaars Avatars",
   "Avataaars Neutral Avatars",
   "Big Ears Avatars",
-  "Big Ears Neutral Avatars"
+  "Big Ears Neutral Avatars",
+  "Big Smile Avatars",
+  "Bottts Avatars",
+  "Bottts Neutral Avatars",
+  "Croodles Neutral Avatars"
 ].sort();
 
 // User Avatar Type definition
@@ -1236,5 +1240,813 @@ export const userIconTypes: UserIconType[] = [
       "big ears neutral avatar 20"
     ],
     categories: ["Big Ears Neutral Avatars"],
+  },
+
+  /* Big Smile Avatars */
+  {
+    name: "Big Smile Avatar 1",
+    path: getUserIconPath("bigSmile-1752312620543.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 1"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 2",
+    path: getUserIconPath("bigSmile-1752312622934.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 2"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 3",
+    path: getUserIconPath("bigSmile-1752312624789.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 3"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 4",
+    path: getUserIconPath("bigSmile-1752312626868.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 4"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 5",
+    path: getUserIconPath("bigSmile-1752312628840.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 5"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 6",
+    path: getUserIconPath("bigSmile-1752312631070.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 6"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 7",
+    path: getUserIconPath("bigSmile-1752312632989.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 7"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 8",
+    path: getUserIconPath("bigSmile-1752312636040.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 8"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 9",
+    path: getUserIconPath("bigSmile-1752312638917.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 9"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 10",
+    path: getUserIconPath("bigSmile-1752312642532.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 10"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 11",
+    path: getUserIconPath("bigSmile-1752312644809.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 11"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 12",
+    path: getUserIconPath("bigSmile-1752312647446.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 12"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 13",
+    path: getUserIconPath("bigSmile-1752312650924.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 13"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 14",
+    path: getUserIconPath("bigSmile-1752312656447.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 14"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 15",
+    path: getUserIconPath("bigSmile-1752312658582.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 15"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 16",
+    path: getUserIconPath("bigSmile-1752312662274.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 16"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 17",
+    path: getUserIconPath("bigSmile-1752312673654.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 17"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 18",
+    path: getUserIconPath("bigSmile-1752312676480.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 18"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 19",
+    path: getUserIconPath("bigSmile-1752312679088.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 19"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+  {
+    name: "Big Smile Avatar 20",
+    path: getUserIconPath("bigSmile-1752312684655.svg"),
+    searchTerms: [
+      "big smile", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "smile",
+      "big smile avatar 20"
+    ],
+    categories: ["Big Smile Avatars"],
+  },
+
+  /* Bottts Avatars */
+  {
+    name: "Bottts Avatar 1",
+    path: getUserIconPath("bottts-1752313186524.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 1"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 2",
+    path: getUserIconPath("bottts-1752313189462.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 2"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 3",
+    path: getUserIconPath("bottts-1752313191595.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 3"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 4",
+    path: getUserIconPath("bottts-1752313194678.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 4"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 5",
+    path: getUserIconPath("bottts-1752313201015.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 5"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 6",
+    path: getUserIconPath("bottts-1752313208211.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 6"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 7",
+    path: getUserIconPath("bottts-1752313210830.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 7"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 8",
+    path: getUserIconPath("bottts-1752313213837.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 8"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 9",
+    path: getUserIconPath("bottts-1752313216974.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 9"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 10",
+    path: getUserIconPath("bottts-1752313221542.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 10"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 11",
+    path: getUserIconPath("bottts-1752313223929.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 11"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 12",
+    path: getUserIconPath("bottts-1752313226130.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 12"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 13",
+    path: getUserIconPath("bottts-1752313229331.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 13"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 14",
+    path: getUserIconPath("bottts-1752313232508.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 14"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 15",
+    path: getUserIconPath("bottts-1752313234510.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 15"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 16",
+    path: getUserIconPath("bottts-1752313236472.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 16"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 17",
+    path: getUserIconPath("bottts-1752313238737.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 17"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 18",
+    path: getUserIconPath("bottts-1752313241137.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 18"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 19",
+    path: getUserIconPath("bottts-1752313243341.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 19"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+  {
+    name: "Bottts Avatar 20",
+    path: getUserIconPath("bottts-1752313245598.svg"),
+    searchTerms: [
+      "bottts", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts avatar 20"
+    ],
+    categories: ["Bottts Avatars"],
+  },
+
+  /* Bottts Neutral Avatars */
+  {
+    name: "Bottts Neutral Avatar 1",
+    path: getUserIconPath("botttsNeutral-1752313447896.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 1"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 2",
+    path: getUserIconPath("botttsNeutral-1752313452514.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 2"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 3",
+    path: getUserIconPath("botttsNeutral-1752313455104.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 3"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 4",
+    path: getUserIconPath("botttsNeutral-1752313456920.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 4"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 5",
+    path: getUserIconPath("botttsNeutral-1752313464472.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 5"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 6",
+    path: getUserIconPath("botttsNeutral-1752313472556.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 6"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 7",
+    path: getUserIconPath("botttsNeutral-1752313475659.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 7"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 8",
+    path: getUserIconPath("botttsNeutral-1752313478577.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 8"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 9",
+    path: getUserIconPath("botttsNeutral-1752313481778.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 9"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 10",
+    path: getUserIconPath("botttsNeutral-1752313487290.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 10"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 11",
+    path: getUserIconPath("botttsNeutral-1752313491857.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 11"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 12",
+    path: getUserIconPath("botttsNeutral-1752313495103.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 12"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 13",
+    path: getUserIconPath("botttsNeutral-1752313507129.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 13"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 14",
+    path: getUserIconPath("botttsNeutral-1752313510042.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 14"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 15",
+    path: getUserIconPath("botttsNeutral-1752313517368.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 15"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 16",
+    path: getUserIconPath("botttsNeutral-1752313523373.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 16"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 17",
+    path: getUserIconPath("botttsNeutral-1752313525960.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 17"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 18",
+    path: getUserIconPath("botttsNeutral-1752313529326.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 18"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 19",
+    path: getUserIconPath("botttsNeutral-1752313531842.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 19"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+  {
+    name: "Bottts Neutral Avatar 20",
+    path: getUserIconPath("botttsNeutral-1752313534952.svg"),
+    searchTerms: [
+      "bottts", "neutral", "robot", "bot", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "android", "individual", "identity", "persona", "account", "member",
+      "bottts neutral avatar 20"
+    ],
+    categories: ["Bottts Neutral Avatars"],
+  },
+
+  /* Croodles Neutral Avatars */
+  {
+    name: "Croodles Neutral Avatar 1",
+    path: getUserIconPath("croodlesNeutral-1752314944341.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 1"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 2",
+    path: getUserIconPath("croodlesNeutral-1752314947129.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 2"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 3",
+    path: getUserIconPath("croodlesNeutral-1752314949494.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 3"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 4",
+    path: getUserIconPath("croodlesNeutral-1752314951700.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 4"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 5",
+    path: getUserIconPath("croodlesNeutral-1752314955542.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 5"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 6",
+    path: getUserIconPath("croodlesNeutral-1752314958799.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 6"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 7",
+    path: getUserIconPath("croodlesNeutral-1752314964229.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 7"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 8",
+    path: getUserIconPath("croodlesNeutral-1752314966949.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 8"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 9",
+    path: getUserIconPath("croodlesNeutral-1752314970458.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 9"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 10",
+    path: getUserIconPath("croodlesNeutral-1752314973933.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 10"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 11",
+    path: getUserIconPath("croodlesNeutral-1752314977497.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 11"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 12",
+    path: getUserIconPath("croodlesNeutral-1752314980382.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 12"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 13",
+    path: getUserIconPath("croodlesNeutral-1752314984929.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 13"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 14",
+    path: getUserIconPath("croodlesNeutral-1752314992673.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 14"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 15",
+    path: getUserIconPath("croodlesNeutral-1752314995941.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 15"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 16",
+    path: getUserIconPath("croodlesNeutral-1752314999729.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 16"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 17",
+    path: getUserIconPath("croodlesNeutral-1752315007970.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 17"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 18",
+    path: getUserIconPath("croodlesNeutral-1752315011408.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 18"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 19",
+    path: getUserIconPath("croodlesNeutral-1752315014290.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 19"
+    ],
+    categories: ["Croodles Neutral Avatars"],
+  },
+  {
+    name: "Croodles Neutral Avatar 20",
+    path: getUserIconPath("croodlesNeutral-1752315017529.svg"),
+    searchTerms: [
+      "croodles", "neutral", "doodle", "avatar", "user", "person", "profile", "character", "portrait",
+      "face", "human", "individual", "identity", "persona", "account", "member", "sketch",
+      "croodles neutral avatar 20"
+    ],
+    categories: ["Croodles Neutral Avatars"],
   },
 ];

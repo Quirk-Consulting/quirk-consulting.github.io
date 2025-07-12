@@ -129,10 +129,12 @@ export const License = () => {
                     </a>.
                   </p>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Our user avatars collection includes 120 unique avatar icons across multiple styles: 
+                    Our user avatars collection includes 200 unique avatar icons across multiple styles: 
                     40 Adventurer-style avatars (20 standard and 20 gender-neutral variants), 
-                    40 Avataaars-style avatars (20 standard and 20 gender-neutral variants), and 
-                    40 Big Ears-style avatars (20 standard and 20 gender-neutral variants), all perfect 
+                    40 Avataaars-style avatars (20 standard and 20 gender-neutral variants), 
+                    40 Big Ears-style avatars (20 standard and 20 gender-neutral variants), 
+                    20 Big Smile-style avatars, 40 Bottts-style robot avatars (20 standard and 
+                    20 gender-neutral variants), and 20 Croodles Neutral-style doodle avatars, all perfect 
                     for Jira user profiles and team member identification. These professional avatar icons 
                     bring personality and inclusive visual identity to modern work management platforms 
                     while maintaining proper attribution requirements.
@@ -313,6 +315,190 @@ export const License = () => {
                     These inclusive avatar icons provide diverse representation while adding personality to 
                     Jira user profiles and supporting modern team environments with professional appeal 
                     and visual consistency across member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Big Smile Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/big-smile/" 
+                      className="text-primary hover:underline"
+                    >
+                      Big Smile
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/881358461963645496" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Custom Avatar
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="http://www.ashleyseo.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Ashley Seo
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Big Smile-style avatars featuring 
+                    cheerful character designs with prominent smiles and positive expressions. 
+                    These uplifting avatar icons bring joy and warmth to Jira user profiles, 
+                    perfect for creating a friendly and approachable team atmosphere while 
+                    maintaining professional appeal and visual consistency across member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Bottts Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/bottts/" 
+                      className="text-primary hover:underline"
+                    >
+                      Bottts
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://bottts.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Bottts
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://twitter.com/pablostanley" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Pablo Stanley
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://bottts.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Free for personal and commercial use
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Bottts-style avatars featuring 
+                    unique robot-style designs with modern, tech-inspired aesthetics. 
+                    These distinctive avatar icons are perfect for technology teams and bring 
+                    a futuristic, innovative feel to Jira user profiles while maintaining 
+                    professional appeal and visual consistency across member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Bottts Neutral Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/bottts-neutral/" 
+                      className="text-primary hover:underline"
+                    >
+                      Bottts Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://bottts.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Bottts
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://twitter.com/pablostanley" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Pablo Stanley
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://bottts.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Free for personal and commercial use
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Bottts Neutral-style avatars featuring 
+                    gender-neutral robot-style designs with modern, tech-inspired aesthetics. 
+                    These inclusive avatar icons provide diverse representation for technology teams 
+                    and bring a futuristic, innovative feel to modern team environments while 
+                    maintaining professional appeal and visual consistency across member identification.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold">Croodles Neutral Avatars</h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    The avatar style{" "}
+                    <a 
+                      href="/styles/croodles-neutral/" 
+                      className="text-primary hover:underline"
+                    >
+                      Croodles Neutral
+                    </a>{" "}
+                    is a remix of:{" "}
+                    <a 
+                      href="https://www.figma.com/community/file/966199982810283152" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Croodles - Doodle your face
+                    </a>{" "}
+                    by{" "}
+                    <a 
+                      href="https://vjy.me/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      vijay verma
+                    </a>, licensed under{" "}
+                    <a 
+                      href="https://creativecommons.org/licenses/by/4.0/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      CC BY 4.0
+                    </a>.
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Our user avatars collection includes 20 Croodles Neutral-style avatars featuring 
+                    gender-neutral doodle-style designs with hand-drawn, sketch-like aesthetics. 
+                    These inclusive artistic avatar icons provide diverse representation while bringing 
+                    a personal, human touch to Jira user profiles and supporting modern team environments 
+                    with authentic, hand-crafted appeal and visual consistency.
                   </p>
                 </div>
 
