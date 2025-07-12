@@ -1,0 +1,117 @@
+                                variant}`}
+                                  className="flex items-center justify-center"
+                                >
+                                  {renderIcon(hue as ColorHue, variant)}
+                                </div>
+                              )
+                            )
+                          )}
+                        </div>
+                      ))}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              <div className="hidden grid-cols-12 gap-2 md:grid">
+                {Object.keys(backgroundColors).map((hue) => (
+                  <div key={hue} className="space-y-2">
+                    {hue === "blank" ? (
+                      <div className="flex items-center justify-center">
+                        {renderIcon(hue as ColorHue, "medium")}
+                      </div>
+                    ) : (
+                      (["dark", "medium", "light"] as const).map((variant) => (
+                        <div
+                          key={`${hue}-${variant}`}
+                          className="flex items-center justify-center"
+                        >
+                          {renderIcon(hue as ColorHue, variant)}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col md:justify-center">
+              <h3 className="mb-2 text-sm font-medium text-muted-foreground">
+                Preview & Download
+              </h3>
+              
+              <div className="hidden gap-6 md:flex">
+                <div
+                  className="flex items-center justify-center w-40 h-40 p-2 rounded-full shrink-0"
+                  style={{
+                    backgroundColor: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "transparent" 
+                      : backgroundColors[selectedHue][selectedVariant],
+                    border: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "1px solid var(--border)" 
+                      : "none"
+                  }}
+                >
+                  {renderSvgPreview(selectedIcon, 112, false)}
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Button
+                    onClick={() => handleDownload("png")}
+                    variant="default"
+                    className="w-40"
+                  >
+                    Download PNG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    className="w-40"
+                  >
+                    Download SVG
+                  </Button>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-4 md:hidden">
+                <div
+                  className="flex items-center justify-center w-24 h-24 p-2 rounded-full shrink-0"
+                  style={{
+                    backgroundColor: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "transparent" 
+                      : backgroundColors[selectedHue][selectedVariant],
+                    border: backgroundColors[selectedHue][selectedVariant] === "none" 
+                      ? "1px solid var(--border)" 
+                      : "none"
+                  }}
+                >
+                  {renderSvgPreview(selectedIcon, 80, false)}
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <Button
+                    onClick={() => handleDownload("png")}
+                    variant="secondary"
+                    size="sm"
+                    className="w-36"
+                  >
+                    PNG
+                  </Button>
+                  <Button
+                    onClick={() => handleDownload("svg")}
+                    variant="default"
+                    size="sm"
+                    className="w-32"
+                  >
+                    SVG
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+}
+
+export default UserAvatars;

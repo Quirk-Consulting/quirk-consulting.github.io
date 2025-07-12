@@ -8,6 +8,7 @@ import InstallationGuide from "./components/InstallationGuide";
 import License from "./components/license";
 import About from "./components/about";
 import ProjectIcons from "./components/project-icons";
+import UserAvatars from "./components/user-avatars";
 
 export type CategoryResults = {
   category: string;
@@ -99,6 +100,7 @@ function App() {
           />
         )}
         {activeTab === "project-icons" && <ProjectIcons />}
+        {activeTab === "user-avatars" && <UserAvatars />}
         {activeTab === "installation" && (
           <div className="p-8">
             <InstallationGuide />
