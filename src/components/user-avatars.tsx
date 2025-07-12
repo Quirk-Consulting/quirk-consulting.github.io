@@ -49,6 +49,14 @@ const userCategoryDescriptions: {
     "Playful collection of character-style user avatars featuring distinctive large ears and expressive facial features. These engaging avatar icons are perfect for creative teams and add personality to Jira user profiles while maintaining professional appeal.",
   "Big Ears Neutral Avatars":
     "Gender-neutral collection of character-style user avatars featuring distinctive large ears and expressive facial features. These inclusive avatar icons provide diverse representation while adding personality to Jira user profiles and supporting modern team environments.",
+  "Big Smile Avatars":
+    "Cheerful collection of character-style user avatars featuring prominent smiles and positive expressions. These uplifting avatar icons bring joy and warmth to Jira user profiles, perfect for creating a friendly and approachable team atmosphere.",
+  "Bottts Avatars":
+    "Unique collection of robot-style user avatars featuring modern, tech-inspired designs. These distinctive avatar icons are perfect for technology teams and bring a futuristic, innovative feel to Jira user profiles while maintaining professional appeal.",
+  "Bottts Neutral Avatars":
+    "Gender-neutral collection of robot-style user avatars featuring modern, tech-inspired designs. These inclusive avatar icons provide diverse representation for technology teams and bring a futuristic, innovative feel to modern team environments.",
+  "Croodles Neutral Avatars":
+    "Gender-neutral collection of doodle-style user avatars featuring hand-drawn, sketch-like designs. These inclusive artistic avatar icons provide diverse representation while bringing a personal, human touch to Jira user profiles and supporting modern team environments.",
 };
 
 export function UserAvatars() {
