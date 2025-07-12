@@ -8,6 +8,7 @@ import {
   X,
   BookOpen,
   ChevronDown,
+  Users,
 } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { useEffect, useRef, useState } from "react";
@@ -34,6 +35,11 @@ const tabs: Tab[] = [
     id: "project-icons",
     icon: <Dock className="w-4 h-4" />,
     label: "Project Icons",
+  },
+  {
+    id: "user-avatars",
+    icon: <Users className="w-4 h-4" />,
+    label: "User Avatars",
   },
   {
     id: "installation",
