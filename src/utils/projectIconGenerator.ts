@@ -14,7 +14,7 @@ export const loadProjectSvgContent = async (path: string): Promise<string> => {
 
 export const generateProjectSVGString = (
   svgContent: string,
-  fgColor: string,
+  _fgColor: string, // Prefixed with underscore to indicate intentionally unused
   bgColor: string,
   size: number = 24,
   padding: number = 2,
@@ -35,9 +35,6 @@ export const generateProjectSVGString = (
 
   // Get the inner content of the original SVG (everything except the svg tag itself)
   const innerContent = originalSvg.innerHTML;
-
-  // Calculate scale to fit the icon properly within the available space
-  const scale = iconSize / 100; // Since original viewBox is 100x100
   
   // Create a new SVG with our desired styling, clipping path, and the original content properly scaled
   return `<svg 
