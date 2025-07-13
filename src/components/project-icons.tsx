@@ -33,27 +33,23 @@ const getRandomElement = <T,>(array: T[]): T => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// Enhanced SEO-optimised description text for project icon categories
 const projectCategoryDescriptions: {
   [key: string]: string;
 } = {
-  "Abstract Compositions":
-    "Creative abstract compositions perfect for innovative and artistic Jira projects. These dynamic project icons represent creativity, innovation, and forward-thinking initiatives in modern work management.",
+  "Abstract Shapes":
+    "Creative abstract shapes perfect for innovative and artistic Jira projects. These dynamic project icons represent creativity, innovation, and forward-thinking initiatives in modern work management.",
 
-  "Geometric Patterns":
-    "Structured geometric patterns ideal for technical and systematic Jira projects. Professional project icons that convey organisation, precision, and methodical approaches to project management.",
+  "Coolshapes":
+    "Fun and vibrant abstract shapes with grainy gradients perfect for creative Jira projects. These colourful project icons bring energy and modern artistic flair to project identification whilst maintaining professional appeal.",
 
-  "Dynamic Shapes":
-    "Energetic dynamic shapes representing movement and progress in Jira project tracking. Perfect for agile teams and fast-paced development environments requiring visual momentum indicators.",
+  "Glass Icons":
+    "Modern translucent glass designs with vibrant colours for contemporary Jira projects. Professional project icons that convey innovation, clarity, and cutting-edge technology approaches.",
 
-  "Minimal Forms":
-    "Clean minimal forms for streamlined Jira project organisation. Simple yet sophisticated project icons that emphasise clarity and focus in work management systems.",
+  "Identicons":
+    "Unique symmetric pixel patterns for distinctive Jira project identification. Retro-style project icons that create memorable visual associations and improve project recognition across teams.",
 
-  "Organic Elements":
-    "Natural organic elements bringing human-centred design to Jira projects. Environmentally-inspired project icons perfect for sustainability initiatives and human-focused work streams.",
-
-  "Symbolic Icons":
-    "Meaningful symbolic representations for distinctive Jira project identification. Iconic project markers that create memorable visual associations and improve project recognition across teams.",
+  "Rings":
+    "Circular ring patterns for organised Jira project categorisation. Simple yet sophisticated project icons that emphasise continuity and completeness in work management systems.",
 };
 
 export function ProjectIcons() {
