@@ -10,6 +10,7 @@ const getProjectIconPath = (iconName: string) => {
 // Project Icon Category Names
 export const projectCategoryNames = [
   "Abstract Shapes",
+  "Coolshapes",
   "Glass Icons",
   "Identicons",
   "Rings"
