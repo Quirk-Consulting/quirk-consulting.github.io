@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
 import { trackDownload } from "@/lib/analytics";
 import { QuirkCta } from "@/components/QuirkCta";
+import { LibraryHero } from "@/components/LibraryHero";
 import {
   ColorHue,
   Variant,
@@ -412,13 +413,12 @@ export function UserAvatars() {
         />
       </Helmet>
 
-      <div className="mb-6">
-        <h1 className="text-xl font-bold md:text-2xl">Jira User Avatars</h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse and download our comprehensive collection of Jira user avatars for modern team management. 
-          Customisable SVG and PNG user profile icons optimised for Jira user identification and team visualisation.
-        </p>
-      </div>
+      <LibraryHero
+        eyebrow="Free for Jira"
+        title="Jira and Confluence user avatars"
+        intro="Friendly, consistent profile pictures for service accounts, bots, shared mailboxes and teammates who never upload a photo."
+        stats={[{ value: userIconTypes.length.toLocaleString("en-AU"), label: "avatars" },{ value: "11", label: "colours" },{ value: "SVG + PNG", label: "downloads" },{ value: "MIT", label: "licence" }]}
+      />
 
       <div className="flex flex-col flex-grow">
         <div className="sticky top-0 z-10 bg-background">
@@ -430,8 +430,8 @@ export function UserAvatars() {
               />
               <Input
                 type="text"
-                placeholder={`Search ${totalFilteredIcons} Jira user avatars...`}
-                className="pl-10"
+                placeholder={`Search ${totalFilteredIcons} avatars`}
+                className="pl-10 rounded-full h-11"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search for Jira user avatars"
@@ -624,7 +624,7 @@ export function UserAvatars() {
 
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download
+                Preview and download
               </h3>
               
               <div className="hidden gap-6 md:flex">

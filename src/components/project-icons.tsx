@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
 import { trackDownload } from "@/lib/analytics";
 import { QuirkCta } from "@/components/QuirkCta";
+import { LibraryHero } from "@/components/LibraryHero";
 import {
   ColorHue,
   Variant,
@@ -378,13 +379,12 @@ export function ProjectIcons() {
       </Helmet>
 
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-xl font-bold md:text-2xl">Jira Project Icons</h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse and download our comprehensive collection of Jira project icons for modern project management. 
-          Customisable SVG and PNG icons optimised for Jira project identification and visual organisation.
-        </p>
-      </div>
+      <LibraryHero
+        eyebrow="Free for Jira"
+        title="Jira project icons that stand out in the sidebar"
+        intro="Give every Jira space a distinct, recognisable icon. Choose a design and colour, then download and upload it in project settings."
+        stats={[{ value: projectIconTypes.length.toLocaleString("en-AU"), label: "designs" },{ value: "11", label: "colours" },{ value: "SVG + PNG", label: "downloads" },{ value: "MIT", label: "licence" }]}
+      />
 
       <div className="flex flex-col flex-grow">
         {/* Search container */}
@@ -397,8 +397,8 @@ export function ProjectIcons() {
               />
               <Input
                 type="text"
-                placeholder={`Search ${totalFilteredIcons} Jira project icons...`}
-                className="pl-10"
+                placeholder={`Search ${totalFilteredIcons} project icons`}
+                className="pl-10 rounded-full h-11"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search for Jira project icons"
@@ -600,7 +600,7 @@ export function ProjectIcons() {
             {/* Preview Section */}
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download
+                Preview and download
               </h3>
               
               {/* Desktop layout */}
