@@ -1,3 +1,4 @@
+import { quirkUrl } from "@/lib/analytics";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Cloud, Database } from "lucide-react";
@@ -455,9 +456,9 @@ export function InstallationGuide() {
                     Want to create custom branded icons for your organisation?
                   </p>
                   <a
-                    href="https://www.quirk.com.au"
+                    href={quirkUrl("/contact/", "guide-help")}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                   >
                     Contact Quirk Consulting →

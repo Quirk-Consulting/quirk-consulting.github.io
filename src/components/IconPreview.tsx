@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
+import { trackDownload, quirkUrl } from "@/lib/analytics";
+import { QuirkCta } from "@/components/QuirkCta";
 import {
   ColorHue,
   Variant,
@@ -177,20 +179,20 @@ const IconPreview = ({
   // SEO: Generate page title and description dynamically
   const getPageTitle = () => {
     if (selectedIcon && isSheetOpen) {
-      return `${selectedIcon.name} Icon - Jira Work Type Icons | Quirk Consulting`;
+      return `${selectedIcon.name} Icon for Jira (Free SVG and PNG) | Quirk`;
     } else if (selectedCategory) {
-      return `${selectedCategory} Icons - Jira Work Management Icons | Quirk Consulting`;
+      return `${selectedCategory} Icons for Jira | Quirk`;
     }
-    return "Jira Work Type Icons Library | Modern Work Management Tools by Quirk Consulting";
+    return "Free Jira Work Type Icons (SVG and PNG) | Quirk";
   };
 
   const getPageDescription = () => {
     if (selectedIcon && isSheetOpen) {
-      return `Download the ${selectedIcon.name} icon for your Jira projects. Available in SVG and PNG formats with multiple colour variants. Part of the Quirk Consulting icon library.`;
+      return `Download the ${selectedIcon.name} icon for your Jira projects. Available in SVG and PNG formats with multiple colour variants. Free from the Quirk icon library.`;
     } else if (selectedCategory && categoryDescriptions[selectedCategory]) {
       return categoryDescriptions[selectedCategory];
     }
-    return "Free, high-quality Jira work type icons for modern work management. Customisable SVG and PNG icons for your Jira projects and workflows. Created by Quirk Consulting.";
+    return "Free Jira work type icons in SVG and PNG. 1,600+ designs in 11 colours for epics, stories, tasks and bugs. MIT licensed, made by Quirk.";
   };
 
   const handleRandomSelection = () => {
@@ -408,6 +410,7 @@ const IconPreview = ({
   };
 
   const handleDownload = async (format: "svg" | "png") => {
+    trackDownload("work-type", selectedIcon.name, format, selectedHue, selectedVariant);
     const bgColor = backgroundColors[selectedHue][selectedVariant];
     const fgColor = foregroundMappings[selectedHue][selectedVariant];
     const iconState = iconPaths[selectedIcon.name];
@@ -518,7 +521,7 @@ const IconPreview = ({
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.quirk.com.au/jira-icons" />
+        <meta property="og:url" content="https://icons.quirk.com.au/" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -528,11 +531,7 @@ const IconPreview = ({
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href={`https://www.quirk.com.au/jira-icons${
-            selectedCategory
-              ? "/" + selectedCategory.toLowerCase().replace(/[^a-z0-9]/g, "-")
-              : ""
-          }`}
+          href="https://icons.quirk.com.au/"
         />
 
         {/* Structured Data */}
@@ -610,6 +609,24 @@ const IconPreview = ({
               <p className="pl-4 mt-2">
                 Yes, all icons in this library are free to use in your Jira
                 instance and other work management tools.
+              </p>
+            </details>
+            <details>
+              <summary className="font-medium cursor-pointer">
+                Can someone help us set up work types in Jira?
+              </summary>
+              <p className="pl-4 mt-2">
+                Yes. Quirk is an Australian Atlassian partner that designs Jira
+                work types, workflows and boards around how your teams work.{" "}
+                <a
+                  href={quirkUrl("/services/atlassian-consulting-services/", "faq-services")}
+                  target="_blank"
+                  rel="noopener"
+                  className="font-medium text-primary hover:underline"
+                >
+                  See our Atlassian consulting
+                </a>
+                .
               </p>
             </details>
           </div>
@@ -860,6 +877,7 @@ const IconPreview = ({
               </div>
             </div>
           </div>
+          <QuirkCta variant="download" placement="work-type-sheet" />
         </SheetContent>
       </Sheet>
     </div>
