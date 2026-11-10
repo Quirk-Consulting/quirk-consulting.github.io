@@ -94,7 +94,14 @@ export const generatePNG = async (
     }
   }
 
-  document.body.appendChild(container);
+  // Render off-screen in a fixed wrapper so adding and removing it never
+  // changes the page height (which made the page jump during ZIP builds).
+  const host = document.createElement("div");
+  host.setAttribute("aria-hidden", "true");
+  host.style.cssText =
+    "position:fixed;left:-10000px;top:0;pointer-events:none;";
+  host.appendChild(container);
+  document.body.appendChild(host);
 
   try {
     const dataUrl = await toPng(container, {
@@ -107,6 +114,6 @@ export const generatePNG = async (
     const response = await fetch(dataUrl);
     return await response.blob();
   } finally {
-    document.body.removeChild(container);
+    document.body.removeChild(host);
   }
 };
