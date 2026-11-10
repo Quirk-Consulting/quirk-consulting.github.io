@@ -75,3 +75,24 @@ export function installOutboundTracking(): void {
     { capture: true }
   );
 }
+
+/**
+ * Debounced search tracking. Sends GA4's recommended "search" event once the
+ * visitor pauses typing, plus "search_no_results" when nothing matched, which
+ * is the list of icons people want that the library does not have yet.
+ */
+export function makeSearchTracker(library: string, delay = 1200) {
+  let timer: number | undefined;
+  let last = "";
+  return (term: string, results: number) => {
+    window.clearTimeout(timer);
+    const clean = term.trim().toLowerCase();
+    if (clean.length < 2) return;
+    timer = window.setTimeout(() => {
+      if (clean === last) return;
+      last = clean;
+      track("search", { search_term: clean, library, results });
+      if (results === 0) track("search_no_results", { search_term: clean, library });
+    }, delay);
+  };
+}

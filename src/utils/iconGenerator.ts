@@ -101,6 +101,7 @@ export const generatePNG = async (
       width: size,
       height: size,
       pixelRatio,
+      skipFonts: true,
     });
 
     const response = await fetch(dataUrl);
