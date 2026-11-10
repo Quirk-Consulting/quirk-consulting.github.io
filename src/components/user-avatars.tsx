@@ -6,6 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
+import { trackDownload } from "@/lib/analytics";
+import { QuirkCta } from "@/components/QuirkCta";
+import { LibraryHero } from "@/components/LibraryHero";
 import {
   ColorHue,
   Variant,
@@ -140,20 +143,20 @@ export function UserAvatars() {
 
   const getPageTitle = () => {
     if (selectedIcon && isSheetOpen) {
-      return `${selectedIcon.name} User Avatar - Jira User Avatars | Quirk Consulting`;
+      return `${selectedIcon.name} Avatar for Jira | Quirk`;
     } else if (selectedCategory) {
-      return `${selectedCategory} User Avatars - Jira User Profile Icons | Quirk Consulting`;
+      return `${selectedCategory} Avatars for Jira | Quirk`;
     }
-    return "Jira User Avatars Library | Modern User Profile Icons by Quirk Consulting";
+    return "Free Jira User Avatars (SVG and PNG) | Quirk";
   };
 
   const getPageDescription = () => {
     if (selectedIcon && isSheetOpen) {
-      return `Download the ${selectedIcon.name} user avatar for your Jira user profiles. Available in SVG and PNG formats optimised for Jira user management. Part of the Quirk Consulting user avatar library.`;
+      return `Download the ${selectedIcon.name} user avatar for your Jira user profiles. Available in SVG and PNG formats optimised for Jira user management. Free from the Quirk icon library.`;
     } else if (selectedCategory && userCategoryDescriptions[selectedCategory]) {
       return userCategoryDescriptions[selectedCategory];
     }
-    return "Free, high-quality Jira user avatars for modern team management. Customisable SVG and PNG user profile icons optimised for Jira user identification and team visualisation. Created by Quirk Consulting.";
+    return "Free user avatars for Jira and Confluence profiles in SVG and PNG. Pick a style and colour, then download. MIT licensed, made by Quirk.";
   };
 
   const handleRandomSelection = () => {
@@ -328,6 +331,7 @@ export function UserAvatars() {
   };
 
   const handleDownload = async (format: "svg" | "png") => {
+    trackDownload("avatar", selectedIcon.name, format, selectedHue, selectedVariant);
     const bgColor = backgroundColors[selectedHue][selectedVariant];
     const fgColor = foregroundMappings[selectedHue][selectedVariant];
     const iconState = iconStates[selectedIcon.name];
@@ -405,17 +409,16 @@ export function UserAvatars() {
         <meta property="og:description" content={getPageDescription()} />
         <link
           rel="canonical"
-          href="https://www.quirk.com.au/jira-icons/user-avatars"
+          href="https://icons.quirk.com.au/"
         />
       </Helmet>
 
-      <div className="mb-6">
-        <h1 className="text-xl font-bold md:text-2xl">Jira User Avatars</h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse and download our comprehensive collection of Jira user avatars for modern team management. 
-          Customisable SVG and PNG user profile icons optimised for Jira user identification and team visualisation.
-        </p>
-      </div>
+      <LibraryHero
+        eyebrow="Free for Jira"
+        title="Jira and Confluence user avatars"
+        intro="Friendly, consistent profile pictures for service accounts, bots, shared mailboxes and teammates who never upload a photo."
+        stats={[{ value: userIconTypes.length.toLocaleString("en-AU"), label: "avatars" },{ value: "11", label: "colours" },{ value: "SVG + PNG", label: "downloads" },{ value: "MIT", label: "licence" }]}
+      />
 
       <div className="flex flex-col flex-grow">
         <div className="sticky top-0 z-10 bg-background">
@@ -427,8 +430,8 @@ export function UserAvatars() {
               />
               <Input
                 type="text"
-                placeholder={`Search ${totalFilteredIcons} Jira user avatars...`}
-                className="pl-10"
+                placeholder={`Search ${totalFilteredIcons} avatars`}
+                className="pl-10 rounded-full h-11"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search for Jira user avatars"
@@ -621,7 +624,7 @@ export function UserAvatars() {
 
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download
+                Preview and download
               </h3>
               
               <div className="hidden gap-6 md:flex">
@@ -693,6 +696,7 @@ export function UserAvatars() {
               </div>
             </div>
           </div>
+          <QuirkCta variant="download" placement="avatar-sheet" />
         </SheetContent>
       </Sheet>
     </div>

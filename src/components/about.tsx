@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Package, Mail } from "lucide-react";
 import { Logo } from "@/components/logo/Logo";
+import { quirkUrl } from "@/lib/analytics";
 
 export const About = () => {
   return (
@@ -49,9 +50,9 @@ export const About = () => {
               </a>
 
               <a
-                href="https://www.quirk.com.au/services/atlassian-consulting-services/"
+                href={quirkUrl("/services/atlassian-consulting-services/", "about-services")}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="group"
               >
                 <Button variant="outline" className="w-full md:w-auto">
@@ -71,7 +72,10 @@ export const About = () => {
                 implementation or want to explore our broader services, we're
                 just a message away.
               </p>
-              <a href="www.quirk.com.au/contact" className="group">
+              <a href={quirkUrl("/contact/", "about-contact")}
+                target="_blank"
+                rel="noopener"
+                className="group">
                 <Button className="w-full bg-green-600 md:w-auto hover:bg-green-700">
                   <Mail className="w-4 h-4 mr-2 transition-transform group-hover:scale-110" />
                   Contact the Quirk Team

@@ -6,6 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
+import { trackDownload } from "@/lib/analytics";
+import { QuirkCta } from "@/components/QuirkCta";
+import { LibraryHero } from "@/components/LibraryHero";
 import {
   ColorHue,
   Variant,
@@ -104,20 +107,20 @@ export function ProjectIcons() {
   // SEO: Generate page title and description dynamically
   const getPageTitle = () => {
     if (selectedIcon && isSheetOpen) {
-      return `${selectedIcon.name} Project Icon - Jira Project Icons | Quirk Consulting`;
+      return `${selectedIcon.name} Jira Project Icon | Quirk`;
     } else if (selectedCategory) {
-      return `${selectedCategory} Project Icons - Jira Project Management Icons | Quirk Consulting`;
+      return `${selectedCategory} Project Icons for Jira | Quirk`;
     }
-    return "Jira Project Icons Library | Modern Project Management Tools by Quirk Consulting";
+    return "Free Jira Project Icons (SVG and PNG) | Quirk";
   };
 
   const getPageDescription = () => {
     if (selectedIcon && isSheetOpen) {
-      return `Download the ${selectedIcon.name} project icon for your Jira projects. Available in SVG and PNG formats optimised for Jira project management. Part of the Quirk Consulting project icon library.`;
+      return `Download the ${selectedIcon.name} project icon for your Jira projects. Available in SVG and PNG formats optimised for Jira project management. Free from the Quirk icon library.`;
     } else if (selectedCategory && projectCategoryDescriptions[selectedCategory]) {
       return projectCategoryDescriptions[selectedCategory];
     }
-    return "Free, high-quality Jira project icons for modern project management. Customisable SVG and PNG icons optimised for Jira project identification and visual organisation. Created by Quirk Consulting.";
+    return "Free Jira project icons in SVG and PNG, sized for Jira project avatars. Pick a colour, download and upload in seconds. MIT licensed, made by Quirk.";
   };
 
   const handleRandomSelection = () => {
@@ -292,6 +295,7 @@ export function ProjectIcons() {
   };
 
   const handleDownload = async (format: "svg" | "png") => {
+    trackDownload("project", selectedIcon.name, format, selectedHue, selectedVariant);
     const bgColor = backgroundColors[selectedHue][selectedVariant];
     const fgColor = foregroundMappings[selectedHue][selectedVariant];
     const iconState = iconStates[selectedIcon.name];
@@ -370,18 +374,17 @@ export function ProjectIcons() {
         <meta property="og:description" content={getPageDescription()} />
         <link
           rel="canonical"
-          href="https://www.quirk.com.au/jira-icons/projects"
+          href="https://icons.quirk.com.au/"
         />
       </Helmet>
 
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-xl font-bold md:text-2xl">Jira Project Icons</h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse and download our comprehensive collection of Jira project icons for modern project management. 
-          Customisable SVG and PNG icons optimised for Jira project identification and visual organisation.
-        </p>
-      </div>
+      <LibraryHero
+        eyebrow="Free for Jira"
+        title="Jira project icons that stand out in the sidebar"
+        intro="Give every Jira space a distinct, recognisable icon. Choose a design and colour, then download and upload it in project settings."
+        stats={[{ value: projectIconTypes.length.toLocaleString("en-AU"), label: "designs" },{ value: "11", label: "colours" },{ value: "SVG + PNG", label: "downloads" },{ value: "MIT", label: "licence" }]}
+      />
 
       <div className="flex flex-col flex-grow">
         {/* Search container */}
@@ -394,8 +397,8 @@ export function ProjectIcons() {
               />
               <Input
                 type="text"
-                placeholder={`Search ${totalFilteredIcons} Jira project icons...`}
-                className="pl-10"
+                placeholder={`Search ${totalFilteredIcons} project icons`}
+                className="pl-10 rounded-full h-11"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search for Jira project icons"
@@ -597,7 +600,7 @@ export function ProjectIcons() {
             {/* Preview Section */}
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download
+                Preview and download
               </h3>
               
               {/* Desktop layout */}
@@ -671,6 +674,7 @@ export function ProjectIcons() {
               </div>
             </div>
           </div>
+          <QuirkCta variant="download" placement="project-sheet" />
         </SheetContent>
       </Sheet>
     </div>

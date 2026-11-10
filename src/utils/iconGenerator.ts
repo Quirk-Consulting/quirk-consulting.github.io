@@ -76,7 +76,8 @@ export const generateSVGString = (
 
 export const generatePNG = async (
   svgString: string,
-  size: number = 24
+  size: number = 24,
+  pixelRatio: number = 2
 ): Promise<Blob> => {
   const container = document.createElement("div");
   container.innerHTML = svgString;
@@ -99,7 +100,7 @@ export const generatePNG = async (
     const dataUrl = await toPng(container, {
       width: size,
       height: size,
-      pixelRatio: 2,
+      pixelRatio,
     });
 
     const response = await fetch(dataUrl);

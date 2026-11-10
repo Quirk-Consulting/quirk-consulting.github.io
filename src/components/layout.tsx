@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo/Logo";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { categoryNames } from "../lib/iconTypes";
+import { QuirkCta } from "@/components/QuirkCta";
 
 type Tab = {
   id: string;
@@ -267,6 +268,7 @@ export function Layout({
         </div>
         <div ref={navRef} className="flex-none">
           <NavContent />
+          <QuirkCta variant="sidebar" placement="sidebar" />
         </div>
 
         {/* Category Sidebar for Jira Icons */}
@@ -334,6 +336,7 @@ export function Layout({
               </Button>
             </div>
             <NavContent />
+            <QuirkCta variant="sidebar" placement="mobile-menu" />
             {activeTab === "jira-icons" && (
               <div className="flex flex-col border-t">
                 <div className="flex items-center justify-between p-2">

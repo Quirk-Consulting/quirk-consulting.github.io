@@ -1,11 +1,14 @@
 // src/components/IconPreview.tsx with SEO enhancements
-import React, { useState, useEffect } from "react";
-import { Search, Shuffle } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { Search, Shuffle, Copy, Check, Link2, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
+import { trackDownload, quirkUrl, track } from "@/lib/analytics";
+import { LibraryHero } from "@/components/LibraryHero";
+import { QuirkCta } from "@/components/QuirkCta";
 import {
   ColorHue,
   Variant,
@@ -159,6 +162,26 @@ const categoryDescriptions: {
     "Climate condition and environmental factor icons for Jira field operations. Account for seasonal variations and meteorological impacts in outdoor project scheduling.",
 };
 
+const PNG_SIZES = [64, 128, 256, 512] as const;
+const PREVIEW_KEY = "quirk-icons-preview";
+const PNG_KEY = "quirk-icons-png-size";
+const HUES = Object.keys(backgroundColors).filter((h) => h !== "blank") as ColorHue[];
+const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const readPref = (key: string, fallback: string) => {
+  try {
+    return localStorage.getItem(key) || fallback;
+  } catch {
+    return fallback;
+  }
+};
+const writePref = (key: string, value: string) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    /* storage can be unavailable */
+  }
+};
+
 const IconPreview = ({
   searchQuery,
   onSearchChange,
@@ -173,24 +196,77 @@ const IconPreview = ({
   const [intersectionObserver, setIntersectionObserver] =
     useState<IntersectionObserver | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  // "outline" or "<hue>-<variant>": how the grid previews every icon
+  const [previewColour, setPreviewColour] = useState<string>(() => readPref(PREVIEW_KEY, "outline"));
+  const [pngSize, setPngSize] = useState<number>(() => Number(readPref(PNG_KEY, "128")) || 128);
+  const [copied, setCopied] = useState<"svg" | "link" | null>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  const choosePreview = (value: string) => {
+    setPreviewColour(value);
+    writePref(PREVIEW_KEY, value);
+    track("preview_colour", { colour: value });
+  };
+
+  // "/" focuses search, like most icon libraries
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA") {
+        e.preventDefault();
+        searchRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Shareable links: ?icon=<slug>&colour=<hue>-<variant> opens that icon
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("icon");
+    if (!slug) return;
+    const icon = iconTypes.find((i) => slugify(i.name) === slug);
+    if (!icon) return;
+    const [hue, variant] = (params.get("colour") || "").split("-");
+    if (hue && hue in backgroundColors) setSelectedHue(hue as ColorHue);
+    if (variant === "dark" || variant === "medium" || variant === "light") setSelectedVariant(variant);
+    loadIcon(icon.name, true).then(() => {
+      setSelectedIcon(icon);
+      setIsSheetOpen(true);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (isSheetOpen) {
+      url.searchParams.set("icon", slugify(selectedIcon.name));
+      url.searchParams.set("colour", `${selectedHue}-${selectedVariant}`);
+    } else {
+      url.searchParams.delete("icon");
+      url.searchParams.delete("colour");
+    }
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }, [isSheetOpen, selectedIcon, selectedHue, selectedVariant]);
 
   // SEO: Generate page title and description dynamically
   const getPageTitle = () => {
     if (selectedIcon && isSheetOpen) {
-      return `${selectedIcon.name} Icon - Jira Work Type Icons | Quirk Consulting`;
+      return `${selectedIcon.name} Icon for Jira (Free SVG and PNG) | Quirk`;
     } else if (selectedCategory) {
-      return `${selectedCategory} Icons - Jira Work Management Icons | Quirk Consulting`;
+      return `${selectedCategory} Icons for Jira | Quirk`;
     }
-    return "Jira Work Type Icons Library | Modern Work Management Tools by Quirk Consulting";
+    return "Free Jira Work Type Icons (SVG and PNG) | Quirk";
   };
 
   const getPageDescription = () => {
     if (selectedIcon && isSheetOpen) {
-      return `Download the ${selectedIcon.name} icon for your Jira projects. Available in SVG and PNG formats with multiple colour variants. Part of the Quirk Consulting icon library.`;
+      return `Download the ${selectedIcon.name} icon for your Jira projects. Available in SVG and PNG formats with multiple colour variants. Free from the Quirk icon library.`;
     } else if (selectedCategory && categoryDescriptions[selectedCategory]) {
       return categoryDescriptions[selectedCategory];
     }
-    return "Free, high-quality Jira work type icons for modern work management. Customisable SVG and PNG icons for your Jira projects and workflows. Created by Quirk Consulting.";
+    return "Free Jira work type icons in SVG and PNG. 1,100+ designs in 11 colours for epics, stories, tasks and bugs. MIT licensed, made by Quirk.";
   };
 
   const handleRandomSelection = () => {
@@ -380,6 +456,25 @@ const IconPreview = ({
     return <div className="w-[36px] h-[36px] bg-destructive/20 rounded-md" />;
   };
 
+  const renderTilePreview = (icon: IconType, size: number) => {
+    const path = iconPaths[icon.name]?.path;
+    if (!path) return renderSvgPreview(icon, 36);
+    const [hue, variant] = previewColour.split("-") as [ColorHue, Variant];
+    const svgString = generateSVGString(
+      path,
+      foregroundMappings[hue][variant],
+      backgroundColors[hue][variant],
+      size,
+      8
+    );
+    return (
+      <div
+        dangerouslySetInnerHTML={{ __html: svgString }}
+        aria-label={`${icon.name} icon in ${hue} ${variant}`}
+      />
+    );
+  };
+
   const renderIcon = (hue: ColorHue, variant: Variant) => {
     const bgColor = backgroundColors[hue][variant];
     const fgColor = foregroundMappings[hue][variant];
@@ -408,6 +503,7 @@ const IconPreview = ({
   };
 
   const handleDownload = async (format: "svg" | "png") => {
+    trackDownload("work-type", selectedIcon.name, format, selectedHue, selectedVariant);
     const bgColor = backgroundColors[selectedHue][selectedVariant];
     const fgColor = foregroundMappings[selectedHue][selectedVariant];
     const iconState = iconPaths[selectedIcon.name];
@@ -426,7 +522,7 @@ const IconPreview = ({
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${selectedIcon.name.toLowerCase()}-${selectedHue}-${selectedVariant}.svg`;
+      a.download = `${slugify(selectedIcon.name)}-${selectedHue}-${selectedVariant}.svg`;
       a.click();
       URL.revokeObjectURL(url);
     } else {
@@ -438,17 +534,105 @@ const IconPreview = ({
         undefined,
         true
       );
-      const pngBlob = await generatePNG(svgString);
+      const pngBlob = await generatePNG(
+        generateSVGString(pathContent, fgColor, bgColor, pngSize, pngSize / 6, true),
+        pngSize,
+        1
+      );
+      void svgString;
       const url = URL.createObjectURL(pngBlob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${selectedIcon.name.toLowerCase()}-${selectedHue}-${selectedVariant}.png`;
+      a.download = `${slugify(selectedIcon.name)}-${selectedHue}-${selectedVariant}-${pngSize}px.png`;
       a.click();
       URL.revokeObjectURL(url);
     }
   };
 
+  const flashCopied = (what: "svg" | "link") => {
+    setCopied(what);
+    window.setTimeout(() => setCopied(null), 1600);
+  };
+
+  const handleCopySvg = async () => {
+    const svgString = generateSVGString(
+      iconPaths[selectedIcon.name]?.path || "",
+      foregroundMappings[selectedHue][selectedVariant],
+      backgroundColors[selectedHue][selectedVariant],
+      undefined,
+      undefined,
+      true
+    );
+    try {
+      await navigator.clipboard.writeText(svgString);
+      flashCopied("svg");
+      track("icon_copy_svg", { icon_name: selectedIcon.name, colour: `${selectedHue}-${selectedVariant}` });
+    } catch {
+      /* clipboard blocked */
+    }
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      flashCopied("link");
+      track("icon_copy_link", { icon_name: selectedIcon.name });
+    } catch {
+      /* clipboard blocked */
+    }
+  };
+
+  const renderDownloadActions = (compact: boolean) => (
+    <div className={`flex flex-col gap-3 ${compact ? "items-center" : ""}`}>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground" role="radiogroup" aria-label="PNG size">
+        <span>PNG size</span>
+        {PNG_SIZES.map((sz) => (
+          <button
+            key={sz}
+            type="button"
+            role="radio"
+            aria-checked={pngSize === sz}
+            onClick={() => {
+              setPngSize(sz);
+              writePref(PNG_KEY, String(sz));
+            }}
+            className={`px-2.5 py-1 rounded-full border text-xs transition-colors ${
+              pngSize === sz
+                ? "border-foreground bg-foreground text-background"
+                : "border-border hover:border-foreground"
+            }`}
+          >
+            {sz}
+          </button>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Button onClick={() => handleDownload("png")}>
+          <Download /> PNG
+        </Button>
+        <Button onClick={() => handleDownload("svg")} variant="outline">
+          <Download /> SVG
+        </Button>
+        <Button onClick={handleCopySvg} variant="outline" aria-label="Copy SVG code">
+          {copied === "svg" ? <Check /> : <Copy />} {copied === "svg" ? "Copied" : "Copy SVG"}
+        </Button>
+        <Button onClick={handleCopyLink} variant="ghost" aria-label="Copy a link to this icon">
+          {copied === "link" ? <Check /> : <Link2 />} {copied === "link" ? "Link copied" : "Share"}
+        </Button>
+      </div>
+      <p className="max-w-sm text-xs text-muted-foreground">
+        Tip: Jira shows work type icons small, so bold colours with high contrast read best.
+        128 px PNG suits most Jira uploads.
+      </p>
+    </div>
+  );
+
   const handleIconSelect = (icon: IconType) => {
+    if (previewColour !== "outline") {
+      const [hue, variant] = previewColour.split("-");
+      setSelectedHue(hue as ColorHue);
+      setSelectedVariant(variant as Variant);
+    }
     // Load the icon content immediately
     loadIcon(icon.name, true).then(() => {
       setSelectedIcon(icon);
@@ -461,10 +645,9 @@ const IconPreview = ({
     });
   };
 
-  const totalFilteredIcons = categorizedFilteredIcons.reduce(
-    (total, { icons }) => total + icons.length,
-    0
-  );
+  const uniqueFilteredIcons = new Set(
+    categorizedFilteredIcons.flatMap(({ icons }) => icons.map((i) => i.name))
+  ).size;
 
   // SEO: Generate structured data for the page
   const generateStructuredData = () => {
@@ -518,7 +701,7 @@ const IconPreview = ({
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.quirk.com.au/jira-icons" />
+        <meta property="og:url" content="https://icons.quirk.com.au/" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -528,11 +711,7 @@ const IconPreview = ({
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href={`https://www.quirk.com.au/jira-icons${
-            selectedCategory
-              ? "/" + selectedCategory.toLowerCase().replace(/[^a-z0-9]/g, "-")
-              : ""
-          }`}
+          href="https://icons.quirk.com.au/"
         />
 
         {/* Structured Data */}
@@ -542,15 +721,17 @@ const IconPreview = ({
       </Helmet>
 
       {/* SEO: More semantic heading structure */}
-      <div className="mb-6">
-        <h1 className="text-xl font-bold md:text-2xl">Jira Work Type Icons</h1>
-        {/* SEO: Add introductory paragraph with keywords */}
-        <p className="mt-2 text-muted-foreground">
-          Browse and download our comprehensive collection of Jira work type
-          icons for modern work management. Customisable SVG and PNG icons to
-          enhance your Jira projects and workflows.
-        </p>
-      </div>
+      <LibraryHero
+        eyebrow="Free for Jira"
+        title="Jira work type icons, ready to upload"
+        intro="Pick an icon, choose a colour and download it as SVG or PNG. Make epics, stories, bugs and your own custom work types easy to spot on every board."
+        stats={[
+          { value: "1,100+", label: "icons" },
+          { value: "11", label: "colours, 3 shades" },
+          { value: "SVG + PNG", label: "up to 512 px" },
+          { value: "MIT", label: "licence" },
+        ]}
+      />
 
       <div className="flex flex-col flex-grow">
         {/* Sticky search container */}
@@ -563,8 +744,9 @@ const IconPreview = ({
               />
               <Input
                 type="text"
-                placeholder={`Search ${totalFilteredIcons} Jira work type icons...`}
-                className="pl-10"
+                placeholder={`Search ${uniqueFilteredIcons.toLocaleString("en-AU")} icons, for example bug, release, risk`}
+                className="pl-10 rounded-full h-11"
+                ref={searchRef}
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 aria-label="Search for Jira icons" // SEO: Accessibility improvement
@@ -580,6 +762,59 @@ const IconPreview = ({
             >
               <Shuffle className="w-4 h-4" />
             </Button>
+          </div>
+          {/* Preview colour: shows every icon as it will look in Jira */}
+          <div className="flex flex-wrap items-center gap-2 py-3" role="radiogroup" aria-label="Preview colour">
+            <span className="mr-1 text-xs font-medium text-muted-foreground">Preview in</span>
+            <button
+              type="button"
+              role="radio"
+              aria-checked={previewColour === "outline"}
+              onClick={() => choosePreview("outline")}
+              className={`h-7 px-3 text-xs rounded-full border transition-colors ${
+                previewColour === "outline" ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground"
+              }`}
+            >
+              Outline
+            </button>
+            {HUES.map((hue) => {
+              const key = `${hue}-medium`;
+              return (
+                <button
+                  key={hue}
+                  type="button"
+                  role="radio"
+                  aria-checked={previewColour.startsWith(`${hue}-`)}
+                  aria-label={`Preview in ${hue}`}
+                  title={hue}
+                  onClick={() => choosePreview(previewColour.startsWith(`${hue}-`) ? previewColour : key)}
+                  className={`w-7 h-7 rounded-full transition-transform hover:scale-110 ${
+                    previewColour.startsWith(`${hue}-`) ? "ring-2 ring-offset-2 ring-foreground ring-offset-background" : ""
+                  }`}
+                  style={{ backgroundColor: backgroundColors[hue].medium }}
+                />
+              );
+            })}
+            {previewColour !== "outline" && (
+              <div className="flex ml-1 overflow-hidden border rounded-full" role="radiogroup" aria-label="Shade">
+                {(["light", "medium", "dark"] as const).map((v) => {
+                  const hue = previewColour.split("-")[0];
+                  const active = previewColour.endsWith(`-${v}`);
+                  return (
+                    <button
+                      key={v}
+                      type="button"
+                      role="radio"
+                      aria-checked={active}
+                      onClick={() => choosePreview(`${hue}-${v}`)}
+                      className={`h-7 px-3 text-xs capitalize ${active ? "bg-foreground text-background" : "hover:bg-accent"}`}
+                    >
+                      {v}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
 
@@ -612,6 +847,24 @@ const IconPreview = ({
                 instance and other work management tools.
               </p>
             </details>
+            <details>
+              <summary className="font-medium cursor-pointer">
+                Can someone help us set up work types in Jira?
+              </summary>
+              <p className="pl-4 mt-2">
+                Yes. Quirk is an Australian Atlassian partner that designs Jira
+                work types, workflows and boards around how your teams work.{" "}
+                <a
+                  href={quirkUrl("/services/atlassian-consulting-services/", "faq-services")}
+                  target="_blank"
+                  rel="noopener"
+                  className="font-medium text-primary hover:underline"
+                >
+                  See our Atlassian consulting
+                </a>
+                .
+              </p>
+            </details>
           </div>
         )}
 
@@ -640,14 +893,16 @@ const IconPreview = ({
                   {icons.map((icon) => (
                     <Card
                       key={`${category}-${icon.name}`}
-                      className={`filtered-icon-trigger cursor-pointer hover:bg-accent transition-colors ${
-                        selectedIcon.name === icon.name ? "border-primary" : ""
+                      className={`filtered-icon-trigger cursor-pointer transition-all hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-sm ${
+                        selectedIcon.name === icon.name && isSheetOpen ? "border-primary ring-1 ring-primary" : ""
                       }`}
                       onClick={() => handleIconSelect(icon)}
                     >
                       <CardContent className="p-2 text-center">
                         <div className="flex justify-center mb-2">
-                          {renderSvgPreview(icon, 36)}
+                          {previewColour === "outline"
+                            ? renderSvgPreview(icon, 36)
+                            : renderTilePreview(icon, 40)}
                         </div>
                         <div className="text-xs font-medium truncate md:text-sm">
                           {icon.name}
@@ -698,7 +953,7 @@ const IconPreview = ({
         >
           <div className="top-0 mb-4 bg-background">
             <SheetTitle className="text-base md:text-lg">
-              {selectedIcon.name} -{" "}
+              {selectedIcon.name}:{" "}
               {selectedHue === "blank" 
                 ? "Blank Background"
                 : selectedVariant === "medium"
@@ -722,7 +977,7 @@ const IconPreview = ({
             {/* Color Variants Section */}
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-muted-foreground">
-                Color Variants
+                Colour variants
               </h3>
 
               {/* Mobile: 6x6 grid */}
@@ -783,7 +1038,7 @@ const IconPreview = ({
             {/* Preview Section */}
             <div className="flex flex-col md:justify-center">
               <h3 className="mb-2 text-sm font-medium text-muted-foreground">
-                Preview & Download
+                Preview and download
               </h3>
               {/* Desktop layout - side by side */}
               <div className="hidden gap-6 md:flex">
@@ -802,23 +1057,7 @@ const IconPreview = ({
                   {renderSvgPreview(selectedIcon, 121, false)}
                 </div>
 
-                {/* Desktop: Buttons in column */}
-                <div className="flex flex-col gap-2">
-                  <Button
-                    onClick={() => handleDownload("png")}
-                    variant="default"
-                    className="w-32"
-                  >
-                    Download PNG
-                  </Button>
-                  <Button
-                    onClick={() => handleDownload("svg")}
-                    variant="default"
-                    className="w-32"
-                  >
-                    Download SVG
-                  </Button>
-                </div>
+                {renderDownloadActions(false)}
               </div>
 
               {/* Mobile layout - stacked */}
@@ -838,28 +1077,11 @@ const IconPreview = ({
                   {renderSvgPreview(selectedIcon, 88, false)}
                 </div>
 
-                {/* Mobile: Buttons in row */}
-                <div className="flex flex-row gap-2">
-                  <Button
-                    onClick={() => handleDownload("png")}
-                    variant="secondary"
-                    size="sm"
-                    className="w-32"
-                  >
-                    Download PNG
-                  </Button>
-                  <Button
-                    onClick={() => handleDownload("svg")}
-                    variant="default"
-                    size="sm"
-                    className="w-32"
-                  >
-                    Download SVG
-                  </Button>
-                </div>
+                {renderDownloadActions(true)}
               </div>
             </div>
           </div>
+          <QuirkCta variant="download" placement="work-type-sheet" />
         </SheetContent>
       </Sheet>
     </div>
