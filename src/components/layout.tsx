@@ -18,6 +18,7 @@ import { Logo } from "@/components/logo/Logo";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { categoryNames } from "../lib/iconTypes";
 import { QuirkCta } from "@/components/QuirkCta";
+import { TAB_PATHS, categoryPath, isPlainClick } from "@/lib/routes";
 
 type Tab = {
   id: string;
@@ -108,9 +109,14 @@ export function Layout({
           const isSelected = selectedCategory === category;
 
           return (
-            <button
+            <a
               key={category}
-              onClick={() => handleCategoryClick(category)}
+              href={categoryPath(category)}
+                onClick={(e) => {
+                  if (!isPlainClick(e)) return;
+                  e.preventDefault();
+                  handleCategoryClick(category);
+                }}
               className={`
                 flex items-center justify-between w-full px-3 py-2 text-sm transition-colors rounded-md
                 ${
@@ -128,7 +134,7 @@ export function Layout({
               <span className="ml-auto text-xs tabular-nums text-muted-foreground">
                 {count}
               </span>
-            </button>
+            </a>
           );
         })}
       </div>
@@ -156,9 +162,13 @@ export function Layout({
             <ButtonContent />
           </a>
         ) : (
-          <button
+          <a
             key={tab.id}
-            onClick={() => {
+            href={TAB_PATHS[tab.id]}
+            aria-current={activeTab === tab.id ? "page" : undefined}
+            onClick={(e) => {
+              if (!isPlainClick(e)) return;
+              e.preventDefault();
               onTabChange(tab.id);
               setIsMobileMenuOpen(false);
             }}
@@ -170,7 +180,7 @@ export function Layout({
               }`}
           >
             <ButtonContent />
-          </button>
+          </a>
         );
       })}
     </nav>
@@ -191,9 +201,14 @@ export function Layout({
             const isSelected = selectedCategory === category;
 
             return (
-              <button
+              <a
                 key={category}
-                onClick={() => handleCategoryClick(category)}
+                href={categoryPath(category)}
+                onClick={(e) => {
+                  if (!isPlainClick(e)) return;
+                  e.preventDefault();
+                  handleCategoryClick(category);
+                }}
                 className={`flex items-center justify-between w-full px-3 py-1 text-sm transition-colors rounded-md
                   ${
                     isSelected
@@ -216,7 +231,7 @@ export function Layout({
                 >
                   {count}
                 </span>
-              </button>
+              </a>
             );
           })}
         </div>

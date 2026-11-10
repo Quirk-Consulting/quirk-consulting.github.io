@@ -1,6 +1,6 @@
 // src/components/IconPreview.tsx with SEO enhancements
 import React, { useState, useEffect, useRef } from "react";
-import { Search, Shuffle, Copy, Check, Link2, Download } from "lucide-react";
+import { Search, Shuffle, Copy, Check, Link2, Download, Plus } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,9 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
 import { trackDownload, quirkUrl, track } from "@/lib/analytics";
 import { LibraryHero } from "@/components/LibraryHero";
+import { StarterPacks, PackBar } from "@/components/PackBuilder";
+import { SITE, slugify, iconPath, categoryPath, navigate, isPlainClick } from "@/lib/routes";
+import { makeSearchTracker } from "@/lib/analytics";
 import { QuirkCta } from "@/components/QuirkCta";
 import {
   ColorHue,
@@ -22,6 +25,7 @@ import {
   extractPathsFromSvg,
 } from "../utils/iconGenerator";
 import { iconTypes, type IconType } from "../lib/iconTypes";
+import { categoryDescriptions } from "../lib/categoryDescriptions";
 import type { CategoryResults } from "../App";
 
 interface IconPathState {
@@ -35,6 +39,8 @@ interface IconPreviewProps {
   categorizedResults: CategoryResults[];
   selectedCategory: string | null; // Add this prop
   setSelectedCategory: (category: string | null) => void; // Add this prop
+  routeIcon?: string | null;
+  onRouteIconHandled?: () => void;
 }
 
 const getRandomElement = <T,>(array: T[]): T => {
@@ -42,131 +48,12 @@ const getRandomElement = <T,>(array: T[]): T => {
 };
 
 // Enhanced SEO-optimised description text for categories
-const categoryDescriptions: {
-  [key: string]: string; // Index signature to allow string indexing
-} = {
-  Accessibility:
-    "Comprehensive accessible design icons for Jira work management that enhance inclusivity and improve compliance with WCAG standards. Perfect for digital accessibility initiatives and inclusive experience design.",
-
-  "Accounts & Access":
-    "Secure user management and authentication icons for Jira workflows. Visualise identity verification, permission controls, and role-based access in enterprise work management systems.",
-
-  Animals:
-    "Distinctive animal-themed icons to symbolise team personalities, project characteristics, or product lines in Jira. Create memorable visual taxonomies for complex work management ecosystems.",
-
-  Arrows:
-    "Dynamic directional indicators and process flow icons optimised for Jira boards and roadmaps. Streamline user navigation with clear visual cues for workflow direction and prioritisation.",
-
-  Brands:
-    "Integration-ready brand and corporate identity icons for Jira marketplace apps and cross-platform workflows. Enhance visibility of third-party tools within your work management ecosystem.",
-
-  Buildings:
-    "Architectural and facility management icons for Jira property projects. Ideal for workplace planning, office allocation, and infrastructure initiatives within enterprise environments.",
-
-  Charts:
-    "Data-rich visualisation icons for Jira dashboards that transform complex metrics into comprehensible visual insights. Perfect for agile metrics, performance tracking, and business intelligence.",
-
-  "Coding & Development":
-    "Specialised software engineering and development icons that represent programming languages, frameworks, and DevOps processes in Jira Software boards and backlog management.",
-
-  Communication:
-    "Collaboration-focused messaging and interaction icons for enhancing team coordination in Jira. Streamline communication channels and feedback loops in distributed work environments.",
-
-  Connectivity:
-    "Network infrastructure and system integration icons for Jira IT service management. Visualise complex technical dependencies and connection statuses across enterprise systems.",
-
-  Cursors:
-    "Interactive pointer and selection icons for Jira user interface elements. Improve user experience with clear visual indicators for action areas and interactive components.",
-
-  Design:
-    "Creative toolset and design thinking icons for Jira that support UX/UI workflows and design systems. Perfect for creative teams managing design sprints and approval processes.",
-
-  Devices:
-    "Hardware and technology asset icons for Jira IT inventory management. Track device allocation, maintenance schedules, and compatibility across organisational resources.",
-
-  Emoji:
-    "Expressive reaction icons for Jira that enrich team feedback and status updates. Add emotional context to work items and enhance communication in global, multilingual teams.",
-
-  "Files & Folders":
-    "Document organisation and information architecture icons for Jira knowledge management. Structure digital assets and establish clear document hierarchies within projects.",
-
-  Finance:
-    "Comprehensive financial and accounting icons for tracking budgets, expenses, and ROI metrics in Jira portfolios. Essential for cost management and financial reporting workflows.",
-
-  "Food & Drink":
-    "Culinary and beverage icons for Jira event planning, catering management, and hospitality projects. Perfect for visualising product categories in food service industries.",
-
-  Gaming:
-    "Interactive entertainment and gamification icons for Jira boards that increase team engagement. Ideal for representing achievement systems and competitive motivational frameworks.",
-
-  Holidays:
-    "Seasonal celebration and cultural event icons for Jira calendar management. Enhance project planning with visual markers for important dates and regional observances.",
-
-  Home: "Residential and domestic environment icons for Jira projects in property management, smart home solutions, and household service coordination.",
-
-  Layout:
-    "Interface structure and visual organisation icons for Jira that support design system governance. Essential for maintaining consistent layouts across digital products.",
-
-  Math: "Mathematical operation and statistical analysis icons for data-driven Jira workflows. Represent complex calculations and analytical processes in quantitative project management.",
-
-  Medical:
-    "Healthcare compliance and medical procedure icons for Jira health management systems. Support clinical workflows and patient care coordination in healthcare organisations.",
-
-  "Nature & Sustainability":
-    "Environmental initiative and conservation project icons for Jira sustainability tracking. Visualise carbon footprint reduction, renewable energy adoption, and ecological impact metrics.",
-
-  Navigation:
-    "Wayfinding and location-based service icons for Jira geographical projects. Enhance spatial orientation and route planning in logistics and field service management applications.",
-
-  Notifications:
-    "Alert system and status update icons for Jira communication workflows. Improve information visibility with distinctive visual cues for different priority levels and notification types.",
-
-  Numbers:
-    "Numerical ranking and quantitative indicator icons for Jira prioritisation frameworks. Create clear visual hierarchies for task importance and sequential processing requirements.",
-
-  Photography:
-    "Visual asset management and image editing icons for Jira creative workflows. Streamline digital content production and media library organisation for marketing teams.",
-
-  Science:
-    "Scientific research and laboratory icons for Jira data analysis workflows. Represent experimental procedures, research methodologies, and scientific discoveries.",
-  Security:
-    "Data protection and cybersecurity icons for Jira compliance tracking. Visualise security protocols, threat levels, and protective measures in risk management frameworks.",
-
-  Shapes:
-    "Geometric form and abstract concept icons for Jira workflow categorisation. Create intuitive visual taxonomies based on standardised shapes for quick pattern recognition.",
-
-  Shopping:
-    "E-commerce and retail management icons for Jira sales operations. Track product lifecycles, inventory levels, and purchasing workflows in commercial environments.",
-
-  "Social & Messaging":
-    "Digital communication platform and social media icons for Jira marketing campaigns. Coordinate multi-channel engagement strategies and content distribution workflows.",
-
-  Sports:
-    "Athletic activity and competitive event icons for Jira team management. Perfect for representing fitness challenges, sporting initiatives, and recreational programs.",
-
-  Text: "Typography and content formatting icons for Jira editorial workflows. Support content creation teams with visual representations of different text elements and styles.",
-
-  "Time & Calendar":
-    "Temporal management and scheduling icons for Jira project timelines. Enhance deadline visibility and time allocation in complex project planning scenarios.",
-
-  Tools:
-    "Equipment and utility function icons for Jira maintenance workflows. Visualise technical resources and operational tools used in physical infrastructure projects.",
-
-  Transportation:
-    "Vehicle and logistics icons for Jira mobility management systems. Optimise fleet operations, delivery scheduling, and transport coordination in supply chain workflows.",
-
-  Travel:
-    "Tourism and business travel icons for Jira itinerary planning. Coordinate journey logistics, accommodation bookings, and travel expense management across global operations.",
-
-  Weather:
-    "Climate condition and environmental factor icons for Jira field operations. Account for seasonal variations and meteorological impacts in outdoor project scheduling.",
-};
 
 const PNG_SIZES = [64, 128, 256, 512] as const;
 const PREVIEW_KEY = "quirk-icons-preview";
 const PNG_KEY = "quirk-icons-png-size";
+const PACK_KEY = "quirk-icons-pack";
 const HUES = Object.keys(backgroundColors).filter((h) => h !== "blank") as ColorHue[];
-const slugify = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const readPref = (key: string, fallback: string) => {
   try {
     return localStorage.getItem(key) || fallback;
@@ -187,7 +74,8 @@ const IconPreview = ({
   onSearchChange,
   categorizedResults,
   selectedCategory,
-  setSelectedCategory,
+  routeIcon = null,
+  onRouteIconHandled,
 }: IconPreviewProps) => {
   const [selectedHue, setSelectedHue] = useState<ColorHue>("blue");
   const [selectedVariant, setSelectedVariant] = useState<Variant>("medium");
@@ -201,6 +89,26 @@ const IconPreview = ({
   const [pngSize, setPngSize] = useState<number>(() => Number(readPref(PNG_KEY, "128")) || 128);
   const [copied, setCopied] = useState<"svg" | "link" | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const [pack, setPackState] = useState<string[]>(() => {
+    try {
+      return JSON.parse(readPref(PACK_KEY, "[]"));
+    } catch {
+      return [];
+    }
+  });
+  const [packId, setPackId] = useState<string>("custom");
+  const setPack = (names: string[], id = "custom") => {
+    setPackState(names);
+    setPackId(id);
+    writePref(PACK_KEY, JSON.stringify(names));
+  };
+  const togglePack = (name: string) => {
+    const next = pack.includes(name) ? pack.filter((n) => n !== name) : [...pack, name];
+    setPack(next, packId);
+    track(pack.includes(name) ? "pack_remove" : "pack_add", { icon_name: name });
+  };
+  const packColour =
+    previewColour !== "outline" ? previewColour : `${selectedHue}-${selectedVariant}`;
 
   const choosePreview = (value: string) => {
     setPreviewColour(value);
@@ -221,34 +129,72 @@ const IconPreview = ({
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Shareable links: ?icon=<slug>&colour=<hue>-<variant> opens that icon
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("icon");
-    if (!slug) return;
+  // Routing. /icon/<slug>/ opens an icon; the old ?icon=<slug> links still work.
+  const routeReady = useRef(false);
+  const openIconBySlug = (slug: string, colour?: string | null) => {
     const icon = iconTypes.find((i) => slugify(i.name) === slug);
-    if (!icon) return;
-    const [hue, variant] = (params.get("colour") || "").split("-");
+    if (!icon) return false;
+    const [hue, variant] = (colour || "").split("-");
     if (hue && hue in backgroundColors) setSelectedHue(hue as ColorHue);
     if (variant === "dark" || variant === "medium" || variant === "light") setSelectedVariant(variant);
     loadIcon(icon.name, true).then(() => {
       setSelectedIcon(icon);
       setIsSheetOpen(true);
+      routeReady.current = true;
     });
+    return true;
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const legacy = params.get("icon");
+    const slug = routeIcon || legacy;
+    if (slug && openIconBySlug(slug, params.get("colour"))) return;
+    routeReady.current = true;
+    if (selectedCategory) {
+      window.setTimeout(() => {
+        document
+          .getElementById(`category-${selectedCategory.toLowerCase().replace(/[^a-z0-9]/g, "-")}`)
+          ?.scrollIntoView();
+      }, 300);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Back/forward between icons
   useEffect(() => {
-    const url = new URL(window.location.href);
-    if (isSheetOpen) {
-      url.searchParams.set("icon", slugify(selectedIcon.name));
-      url.searchParams.set("colour", `${selectedHue}-${selectedVariant}`);
-    } else {
-      url.searchParams.delete("icon");
-      url.searchParams.delete("colour");
+    const onPop = () => {
+      const m = window.location.pathname.match(/^\/icon\/([a-z0-9-]+)\/?$/);
+      if (m) openIconBySlug(m[1], new URLSearchParams(window.location.search).get("colour"));
+      else setIsSheetOpen(false);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep the address bar in step with what is on screen
+  useEffect(() => {
+    if (!routeReady.current) return;
+    const colourQuery = `?colour=${selectedHue}-${selectedVariant}`;
+    const target = isSheetOpen
+      ? iconPath(selectedIcon.name)
+      : selectedCategory
+      ? categoryPath(selectedCategory)
+      : "/";
+    if (window.location.pathname !== target) {
+      navigate(target + (isSheetOpen ? colourQuery : ""));
+      onRouteIconHandled?.();
+    } else if (isSheetOpen && window.location.search !== colourQuery) {
+      window.history.replaceState(null, "", target + colourQuery);
+    } else if (!isSheetOpen && window.location.search) {
+      window.history.replaceState(null, "", target);
     }
-    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
-  }, [isSheetOpen, selectedIcon, selectedHue, selectedVariant]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSheetOpen, selectedIcon, selectedHue, selectedVariant, selectedCategory]);
+
+  const canonicalUrl =
+    SITE + (isSheetOpen ? iconPath(selectedIcon.name) : selectedCategory ? categoryPath(selectedCategory) : "/");
 
   // SEO: Generate page title and description dynamically
   const getPageTitle = () => {
@@ -266,7 +212,7 @@ const IconPreview = ({
     } else if (selectedCategory && categoryDescriptions[selectedCategory]) {
       return categoryDescriptions[selectedCategory];
     }
-    return "Free Jira work type icons in SVG and PNG. 1,100+ designs in 11 colours for epics, stories, tasks and bugs. MIT licensed, made by Quirk.";
+    return "Free Jira work type icons in SVG and PNG. 1,150+ designs in 11 colours for epics, stories, tasks and bugs. MIT licensed, made by Quirk.";
   };
 
   const handleRandomSelection = () => {
@@ -616,6 +562,9 @@ const IconPreview = ({
         <Button onClick={handleCopySvg} variant="outline" aria-label="Copy SVG code">
           {copied === "svg" ? <Check /> : <Copy />} {copied === "svg" ? "Copied" : "Copy SVG"}
         </Button>
+        <Button onClick={() => togglePack(selectedIcon.name)} variant={pack.includes(selectedIcon.name) ? "secondary" : "outline"}>
+          {pack.includes(selectedIcon.name) ? <Check /> : <Plus />} {pack.includes(selectedIcon.name) ? "In your set" : "Add to set"}
+        </Button>
         <Button onClick={handleCopyLink} variant="ghost" aria-label="Copy a link to this icon">
           {copied === "link" ? <Check /> : <Link2 />} {copied === "link" ? "Link copied" : "Share"}
         </Button>
@@ -637,17 +586,18 @@ const IconPreview = ({
     loadIcon(icon.name, true).then(() => {
       setSelectedIcon(icon);
       setIsSheetOpen(true);
-
-      // Update the selected category based on the first category of the icon
-      if (icon.categories.length > 0) {
-        setSelectedCategory(icon.categories[0]);
-      }
+      routeReady.current = true;
     });
   };
 
   const uniqueFilteredIcons = new Set(
     categorizedFilteredIcons.flatMap(({ icons }) => icons.map((i) => i.name))
   ).size;
+
+  const trackSearch = React.useMemo(() => makeSearchTracker("work-type"), []);
+  useEffect(() => {
+    trackSearch(searchQuery, uniqueFilteredIcons);
+  }, [searchQuery, uniqueFilteredIcons, trackSearch]);
 
   // SEO: Generate structured data for the page
   const generateStructuredData = () => {
@@ -701,7 +651,7 @@ const IconPreview = ({
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://icons.quirk.com.au/" />
+        <meta property="og:url" content={canonicalUrl} />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -711,7 +661,7 @@ const IconPreview = ({
         {/* Canonical URL */}
         <link
           rel="canonical"
-          href="https://icons.quirk.com.au/"
+          href={canonicalUrl}
         />
 
         {/* Structured Data */}
@@ -726,7 +676,7 @@ const IconPreview = ({
         title="Jira work type icons, ready to upload"
         intro="Pick an icon, choose a colour and download it as SVG or PNG. Make epics, stories, bugs and your own custom work types easy to spot on every board."
         stats={[
-          { value: "1,100+", label: "icons" },
+          { value: "1,150+", label: "icons" },
           { value: "11", label: "colours, 3 shades" },
           { value: "SVG + PNG", label: "up to 512 px" },
           { value: "MIT", label: "licence" },
@@ -818,6 +768,16 @@ const IconPreview = ({
           </div>
         </div>
 
+        {!searchQuery && (
+          <StarterPacks
+            onUse={(names, id) => {
+              setPack(names, id);
+              track("starter_pack", { pack_id: id });
+              if (previewColour === "outline") choosePreview("blue-medium");
+            }}
+          />
+        )}
+
         {/* SEO: Add FAQ section for rich snippets */}
         {!searchQuery && (
           <div className="p-4 my-4 rounded-lg bg-accent">
@@ -891,13 +851,24 @@ const IconPreview = ({
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-12 md:gap-4">
                   {icons.map((icon) => (
-                    <Card
+                    <a
                       key={`${category}-${icon.name}`}
-                      className={`filtered-icon-trigger cursor-pointer transition-all hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-sm ${
+                      href={iconPath(icon.name)}
+                      className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      onClick={(e) => {
+                        if (!isPlainClick(e)) return;
+                        e.preventDefault();
+                        handleIconSelect(icon);
+                      }}
+                    >
+                    <Card
+                      className={`relative filtered-icon-trigger cursor-pointer transition-all hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-sm ${
                         selectedIcon.name === icon.name && isSheetOpen ? "border-primary ring-1 ring-primary" : ""
                       }`}
-                      onClick={() => handleIconSelect(icon)}
                     >
+                      {pack.includes(icon.name) && (
+                        <span className="absolute w-2 h-2 rounded-full top-1.5 right-1.5 bg-primary" aria-label="In your set" />
+                      )}
                       <CardContent className="p-2 text-center">
                         <div className="flex justify-center mb-2">
                           {previewColour === "outline"
@@ -909,6 +880,7 @@ const IconPreview = ({
                         </div>
                       </CardContent>
                     </Card>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -1084,6 +1056,16 @@ const IconPreview = ({
           <QuirkCta variant="download" placement="work-type-sheet" />
         </SheetContent>
       </Sheet>
+      <PackBar
+        pack={pack}
+        packId={packId}
+        colour={packColour}
+        pngSize={pngSize}
+        onClear={() => setPack([])}
+        onRemove={(n) => togglePack(n)}
+        hidden={isSheetOpen}
+      />
+      {pack.length > 0 && <div className="h-28" aria-hidden />}
     </div>
   );
 };

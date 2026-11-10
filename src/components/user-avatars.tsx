@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Helmet } from "react-helmet";
-import { trackDownload } from "@/lib/analytics";
+import { trackDownload, makeSearchTracker } from "@/lib/analytics";
 import { QuirkCta } from "@/components/QuirkCta";
 import { LibraryHero } from "@/components/LibraryHero";
 import {
@@ -394,6 +394,11 @@ export function UserAvatars() {
     0
   );
 
+  const trackSearch = React.useMemo(() => makeSearchTracker("avatar"), []);
+  useEffect(() => {
+    trackSearch(searchQuery, totalFilteredIcons);
+  }, [searchQuery, totalFilteredIcons, trackSearch]);
+
   return (
     <div className="flex flex-col h-full p-4 md:p-8">
       <Helmet>
@@ -407,9 +412,10 @@ export function UserAvatars() {
         />
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />
+        <meta property="og:url" content="https://icons.quirk.com.au/avatars/" />
         <link
           rel="canonical"
-          href="https://icons.quirk.com.au/"
+          href="https://icons.quirk.com.au/avatars/"
         />
       </Helmet>
 
